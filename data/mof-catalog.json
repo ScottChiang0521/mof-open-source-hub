@@ -1,0 +1,1144 @@
+{
+  "catalogVersion": "2026-10-09",
+  "title": "MOF Open Source Hub verified catalog",
+  "language": "zh-Hant",
+  "verificationDate": "2026-10-09",
+  "itemCount": 15,
+  "curationGuide": {
+    "immediate": "官方來源、核心用途與主要授權／資料存取可明確對應。",
+    "caveat": "已核實但需注意版本、來源、資料權利、模型適用範圍或維護訊號。"
+  },
+  "resources": [
+    {
+      "id": "graspa",
+      "name": "gRASPA",
+      "author": "snurr-group",
+      "githubUrl": "https://github.com/snurr-group/gRASPA",
+      "webUrl": "https://zhaoli2042.github.io/gRASPA-mkdoc/",
+      "entityType": "software",
+      "curationTier": "immediate",
+      "sourceStatus": "官方程式庫、MIT 授權與正式論文均已核實。",
+      "description": "以 CUDA/C++ 與 SYCL/C++ 實作的 GPU 加速 Monte Carlo 軟體，用於多孔材料（明確包含 MOF）中的分子吸附模擬。",
+      "capabilities": [
+        "GCMC",
+        "混合氣體吸附",
+        "Widom insertion",
+        "GPU 加速",
+        "ML potentials"
+      ],
+      "languages": [
+        "C++",
+        "CUDA",
+        "SYCL"
+      ],
+      "category": "gas",
+      "categoryLabel": "氣體吸附與分離",
+      "license": "MIT License（程式碼）",
+      "licenseUrl": "https://raw.githubusercontent.com/snurr-group/gRASPA/main/LICENSE",
+      "dataAccess": "not-applicable",
+      "dataAccessLabel": "不適用（軟體）",
+      "maintenanceStatus": "官方 GitHub 有版本化 release；請以 release 頁確認目前硬體支援路徑。",
+      "mofApplicability": "直接適用。官方 README 與原始論文均明示目標材料含 MOF，並以 Mg-MOF-74 的 CO₂ 吸附示例說明。",
+      "paper": {
+        "title": "Efficient Implementation of Monte Carlo Algorithms on Graphical Processing Units for Simulation of Adsorption in Porous Materials",
+        "doi": "10.1021/acs.jctc.4c01058",
+        "url": "https://doi.org/10.1021/acs.jctc.4c01058"
+      },
+      "supplementaryResources": [
+        {
+          "label": "gRASPA GitHub Releases",
+          "resourceType": "程式碼 release",
+          "url": "https://github.com/snurr-group/gRASPA/releases",
+          "access": "公開",
+          "dataType": "版本化原始碼與 release 資產"
+        },
+        {
+          "label": "ACS Supporting Information",
+          "resourceType": "出版者 SI",
+          "url": "https://doi.org/jctcce/article-supplement/163686/pdf/ct4c01058_si_001/",
+          "access": "出版者頁標示可免費取得",
+          "dataType": "計時、力場、ML potential 訓練與補充圖表"
+        }
+      ],
+      "primarySource": {
+        "label": "gRASPA 官方程式庫",
+        "url": "https://github.com/snurr-group/gRASPA"
+      },
+      "problemsSolved": [
+        "將多孔材料的 Monte Carlo 吸附模擬轉移到 GPU，以支援高通量篩選。",
+        "支援混合物、Widom 與 GC-TMMC 等吸附計算，而非只限單組分等溫線。"
+      ],
+      "keyFeatures": [
+        "NVT、GCMC、NVT-Gibbs、Widom、GC-TMMC",
+        "CUDA、ROCm/HIP 與 SYCL 路徑依文件分別支援",
+        "可串接機器學習勢能；此能力不代表提供訓練資料"
+      ],
+      "trainingUse": "非訓練資料庫。可在模擬中整合 ML potentials，但不提供可直接作為 ML 訓練集的 MOF 性質資料。",
+      "caveats": [
+        "不同 GPU 後端與 ML potential 路徑的相容性不同，建置前應查閱官方文件。",
+        "論文 SI 的檔案內容已由出版者頁辨識；實際下載與再利用須依出版者條款。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "quantum-espresso",
+      "name": "Quantum ESPRESSO",
+      "author": "Quantum ESPRESSO Foundation",
+      "githubUrl": "https://github.com/QEF/q-e",
+      "webUrl": "https://www.quantum-espresso.org/",
+      "entityType": "software",
+      "curationTier": "immediate",
+      "sourceStatus": "QEF 正式 GitLab、GPL 授權、release 與 MOF 應用文獻均已核實。",
+      "description": "基於平面波與贗勢的開源週期性 DFT 平台，可用於 MOF 的電子結構、幾何鬆弛、振動與反應相關第一原理工作流程。",
+      "capabilities": [
+        "週期性 DFT",
+        "結構鬆弛",
+        "DFPT",
+        "DFT+U",
+        "NEB 反應路徑"
+      ],
+      "languages": [
+        "Fortran",
+        "C"
+      ],
+      "category": "photo",
+      "categoryLabel": "光電／電催化",
+      "license": "GPL-2.0-or-later（程式碼）",
+      "licenseUrl": "https://gitlab.com/QEF/q-e/-/blob/develop/License",
+      "dataAccess": "not-applicable",
+      "dataAccessLabel": "不適用（軟體）",
+      "maintenanceStatus": "正式開發與 release 以 QEF GitLab 為準；GitHub 為鏡像。",
+      "mofApplicability": "直接適用於週期性 MOF 計算；已發表研究以 Quantum ESPRESSO 進行 M-MOF-74 的結構與電子性質計算。",
+      "paper": {
+        "title": "QUANTUM ESPRESSO: a modular and open-source software project for quantum simulations of materials",
+        "doi": "10.1088/0953-8984/21/39/395502",
+        "url": "https://iopscience.iop.org/article/10.1088/0953-8984/21/39/395502"
+      },
+      "supplementaryResources": [
+        {
+          "label": "Quantum ESPRESSO v7.6",
+          "resourceType": "程式碼 release",
+          "url": "https://gitlab.com/QEF/q-e/-/releases/qe-7.6",
+          "access": "公開",
+          "dataType": "版本化原始碼封存與 release notes"
+        },
+        {
+          "label": "PWscf input reference",
+          "resourceType": "官方文件",
+          "url": "https://www.quantum-espresso.org/Doc/INPUT_PW.html",
+          "access": "公開",
+          "dataType": "週期性 DFT 輸入與功能文件"
+        }
+      ],
+      "primarySource": {
+        "label": "QEF 正式 GitLab 專案庫",
+        "url": "https://gitlab.com/QEF/q-e"
+      },
+      "problemsSolved": [
+        "提供經典力場無法描述的週期性 MOF 電子結構與磁性問題之計算平台。",
+        "支援幾何鬆弛、振動與反應路徑等第一原理工作流程。"
+      ],
+      "keyFeatures": [
+        "平面波／贗勢 DFT",
+        "晶胞與原子位置鬆弛",
+        "DFPT、色散修正與 DFT+U",
+        "可延伸至反應路徑與材料性質計算"
+      ],
+      "trainingUse": "非訓練資料庫。GPL 規範程式碼，並不授權使用者生成的計算結果、第三方贗勢或其他論文資料作訓練。",
+      "caveats": [
+        "MOF 結果依賴結構、泛函、色散、贗勢、磁態、DFT+U 與收斂設定，不能預先保證。",
+        "GitHub 鏡像不是正式 issue 或 pull request 入口。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "qmof-database",
+      "name": "QMOF Database",
+      "author": "Rosen et al. / QMOF contributors",
+      "githubUrl": "https://github.com/Andrew-S-Rosen/QMOF",
+      "webUrl": "https://figshare.com/articles/dataset/QMOF_Database/13147324",
+      "entityType": "database",
+      "curationTier": "immediate",
+      "sourceStatus": "正式 Figshare 發布、資料授權、GitHub 程式碼與原始論文均已核實。",
+      "description": "公開的高通量週期性 DFT 資料庫，提供 20,000+ 個 MOF 與相關配位聚合物／MOF-like 結構的最佳化幾何與量子化學性質。",
+      "capabilities": [
+        "DFT 性質資料",
+        "能隙與電荷",
+        "結構下載",
+        "圖神經網路訓練",
+        "Materials Project 鏡像"
+      ],
+      "languages": [
+        "CIF",
+        "XYZ",
+        "CSV",
+        "JSON"
+      ],
+      "category": "ml",
+      "categoryLabel": "機器學習與資料",
+      "license": "資料：CC BY 4.0；GitHub 程式碼：MIT",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "dataAccess": "open",
+      "dataAccessLabel": "公開／可再利用",
+      "maintenanceStatus": "Figshare 提供版本化 release；使用時應記錄具體版本。",
+      "mofApplicability": "直接面向 MOF／相關配位聚合物；含已合成與假想結構，應使用 synthesized、source 與孔隙欄位進一步篩選。",
+      "paper": {
+        "title": "Machine Learning the Quantum-Chemical Properties of Metal–Organic Frameworks for Accelerated Materials Discovery",
+        "doi": "10.1016/j.matt.2021.02.015",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2590238521000709"
+      },
+      "supplementaryResources": [
+        {
+          "label": "QMOF Database v18",
+          "resourceType": "資料保存庫",
+          "url": "https://figshare.com/articles/dataset/QMOF_Database/13147324/18",
+          "access": "公開，CC BY 4.0",
+          "dataType": "版本化資料 ZIP；DFT 結構與性質"
+        },
+        {
+          "label": "Matter Document S1",
+          "resourceType": "出版者 SI",
+          "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2590238521000709-mmc1.pdf",
+          "access": "公開下載",
+          "dataType": "補充方法、圖與表"
+        },
+        {
+          "label": "QMOF PBE on NOMAD",
+          "resourceType": "資料保存庫",
+          "url": "https://doi.org/10.17172/NOMAD/2021.10.10-1",
+          "access": "公開瀏覽；個別再利用條件請查記錄",
+          "dataType": "VASP DFT input/output"
+        },
+        {
+          "label": "MPContribs QMOF mirror",
+          "resourceType": "資料服務／API",
+          "url": "https://contribs.materialsproject.org/projects/qmof",
+          "access": "公開查詢與下載入口",
+          "dataType": "JSON、CSV、結構與附件鏡像"
+        }
+      ],
+      "primarySource": {
+        "label": "QMOF Figshare 版本化資料發布",
+        "url": "https://figshare.com/articles/dataset/QMOF_Database/13147324"
+      },
+      "problemsSolved": [
+        "將大量週期性 DFT 結構與性質整理為可重複取得的 MOF 資料基線。",
+        "支援由晶體結構預測能隙、電荷、自旋與磁性等量子化學性質的 ML 任務。"
+      ],
+      "keyFeatures": [
+        "DFT 最佳化 CIF／XYZ",
+        "能隙、能量、DDEC6／CM5／Bader 電荷、磁性與孔隙欄位",
+        "Figshare 版本化下載、MPContribs 鏡像與 NOMAD 計算檔",
+        "資料 CC BY 4.0 與程式碼 MIT 分開標示"
+      ],
+      "trainingUse": "適合結構至量子化學性質的監督式學習、晶體圖模型、能隙與電荷／自旋／磁性預測。資料為 CC BY 4.0，訓練或衍生時需適當署名並標示修改。",
+      "caveats": [
+        "原始論文的樣本數不可直接外推至目前版本。",
+        "資料含假想結構與 MOF-like coordination polymers；研究限定已合成、多孔 MOF 時必須篩選。",
+        "NOMAD 條目與最新 QMOF 版本可能不同步。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "raspa2-iraspa",
+      "name": "RASPA2（iRASPA 生態系）",
+      "author": "iRASPA / RASPA contributors",
+      "githubUrl": "https://github.com/iRASPA/RASPA2",
+      "webUrl": "https://iraspa.org/raspa/",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "sourceStatus": "功能與 MOF 用途已核實；歷史 GPL 表述與目前 repository MIT 正文不一致。",
+      "description": "古典分子模擬軟體，用於柔性奈米多孔材料中的吸附與擴散；RASPA2 是模擬引擎，iRASPA 則是同一生態系的視覺化套件。",
+      "capabilities": [
+        "GCMC",
+        "分子動力學",
+        "吸附",
+        "擴散",
+        "柔性 MOF"
+      ],
+      "languages": [
+        "C++"
+      ],
+      "category": "gas",
+      "categoryLabel": "氣體吸附與分離",
+      "license": "目前 repository COPYING：MIT；歷史官方／論文表述曾為 GPL",
+      "licenseUrl": "https://raw.githubusercontent.com/iRASPA/RASPA2/master/COPYING",
+      "dataAccess": "not-applicable",
+      "dataAccessLabel": "不適用（軟體）",
+      "maintenanceStatus": "公開、未封存；正式 release 與主分支更新節奏不同。",
+      "mofApplicability": "直接適用。官方 README 明列 MOF，並附 rigid 與 flexible MOF 力場範例。",
+      "paper": {
+        "title": "RASPA: molecular simulation software for adsorption and diffusion in flexible nanoporous materials",
+        "doi": "10.1080/08927022.2015.1010082",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/08927022.2015.1010082"
+      },
+      "supplementaryResources": [
+        {
+          "label": "RASPA2 v2.0.47 binary release",
+          "resourceType": "程式碼 release",
+          "url": "https://github.com/iRASPA/RASPA2/releases/download/v2.0.47/raspa-2.0.47-ubuntu-22.04_amd64.deb",
+          "access": "公開",
+          "dataType": "Ubuntu Debian 二進位套件"
+        }
+      ],
+      "primarySource": {
+        "label": "RASPA2 官方程式庫",
+        "url": "https://github.com/iRASPA/RASPA2"
+      },
+      "problemsSolved": [
+        "支援多孔材料中單一／多組分吸附與擴散的古典分子模擬。",
+        "提供柔性框架與多種 Monte Carlo／MD 工作流程的研究型程式實作。"
+      ],
+      "keyFeatures": [
+        "MOF 吸附與擴散模擬",
+        "剛性與柔性 MOF 力場範例",
+        "RASPA2 模擬引擎與 iRASPA 視覺化角色分開呈現"
+      ],
+      "trainingUse": "非訓練資料庫。repository 內的力場與結構檔是範例，不能直接視為通用訓練資料。",
+      "caveats": [
+        "目前 MIT 正文與早期 GPL 表述不一致；重用舊版本或做法務判斷時應向著作權人確認。",
+        "範例力場／結構需由使用者針對自身系統建構與驗證。",
+        "iRASPA 的視覺化功能不可誤作 RASPA2 模擬功能。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "zeopp",
+      "name": "Zeo++",
+      "author": "Zeo++ contributors / EPFL LSMO fork",
+      "githubUrl": "https://github.com/lsmo-epfl/zeopp-lsmo",
+      "webUrl": "https://www.zeoplusplus.org/",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "sourceStatus": "MOF 幾何分析能力已核實；可讀取的開源證據來自 EPFL LSMO fork。",
+      "description": "以 Voronoi 分割分析週期性晶態多孔材料孔隙幾何與拓撲的 C++ 工具，可用於 MOF 孔徑、表面積、可及體積、通道與開放金屬位點等分析。",
+      "capabilities": [
+        "Voronoi 分割",
+        "PLD／LCD",
+        "可及表面積",
+        "孔徑分布",
+        "開放金屬位點"
+      ],
+      "languages": [
+        "C++"
+      ],
+      "category": "structure",
+      "categoryLabel": "結構處理與孔隙分析",
+      "license": "修改版 BSD／BSD 3-clause-like（含額外 enhancement 條款）",
+      "licenseUrl": "https://github.com/lsmo-epfl/zeopp-lsmo/blob/master/LICENSE",
+      "dataAccess": "not-applicable",
+      "dataAccessLabel": "不適用（軟體）",
+      "maintenanceStatus": "公開的 LSMO fork；可核實 release／推送停在 2022，且與原官方發布脈絡不同。",
+      "mofApplicability": "直接適用。官方網站與方法論文均將 MOF 列為目標材料，並說明脫溶劑 MOF 的開放金屬位點分析。",
+      "paper": {
+        "title": "Algorithms and tools for high-throughput geometry-based analysis of crystalline porous materials",
+        "doi": "10.1016/j.micromeso.2011.08.020",
+        "url": "https://doi.org/10.1016/j.micromeso.2011.08.020"
+      },
+      "supplementaryResources": [
+        {
+          "label": "Zeo++-LSMO v0.4.7",
+          "resourceType": "程式碼 release",
+          "url": "https://github.com/lsmo-epfl/zeopp-lsmo/releases/tag/v0.4.7",
+          "access": "公開",
+          "dataType": "C++ 原始碼版本封存"
+        }
+      ],
+      "primarySource": {
+        "label": "Zeo++ 官方網站",
+        "url": "https://www.zeoplusplus.org/"
+      },
+      "problemsSolved": [
+        "為大量晶態多孔結構建立一致的幾何描述子與孔道連通資訊。",
+        "協助在吸附／擴散計算前篩選探針可及孔隙與框架幾何。"
+      ],
+      "keyFeatures": [
+        "最大內切球與最大自由球直徑",
+        "可及表面積、可及體積與孔徑分布",
+        "通道維度、blocking spheres 與 OMS 分析",
+        "可從 building blocks 與 topology 檔組裝 MOF／COF"
+      ],
+      "trainingUse": "非訓練資料庫；適合計算結構描述子作為下游模型特徵。",
+      "caveats": [
+        "LSMO v0.4.7 不應宣稱為原作者 canonical release。",
+        "LICENSE 不是可直接簡化成標準 BSD-3-Clause 的 SPDX 標示。",
+        "論文雖提及 Supporting Materials，但未在本次核實中確認可直接對應的附件 URL。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "poreblazer",
+      "name": "PoreBlazer",
+      "author": "Sarkisov Group",
+      "githubUrl": "https://github.com/SarkisovGitHub/PoreBlazer",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "sourceStatus": "功能與 MOF 案例已核實；程式授權依 README，資料表再利用條件未確認。",
+      "description": "以 Fortran 90 實作的多孔材料幾何性質分析工具，可由原子座標與晶胞計算孔徑、連通性、可及表面積、孔體積與孔徑分布。",
+      "capabilities": [
+        "PLD／LCD",
+        "可及表面積",
+        "孔體積",
+        "連通性",
+        "孔徑分布"
+      ],
+      "languages": [
+        "Fortran"
+      ],
+      "category": "structure",
+      "categoryLabel": "結構處理與孔隙分析",
+      "license": "GPL-3.0-or-later（作者 README 宣告）",
+      "licenseUrl": "https://github.com/SarkisovGitHub/PoreBlazer#license",
+      "dataAccess": "limited",
+      "dataAccessLabel": "程式公開；隨附資料表再利用未確認",
+      "maintenanceStatus": "公開、未封存；主分支可見更新停在 2020，且未見正式 GitHub release。",
+      "mofApplicability": "直接適用。官方案例與 v4.0 論文均以 HKUST-1、IRMOF-1、ZIF-8 等 MOF 作為範例。",
+      "paper": {
+        "title": "Computational structure characterisation tools in application to ordered and disordered porous materials",
+        "doi": "10.1080/08927022.2011.592832",
+        "url": "https://doi.org/10.1080/08927022.2011.592832"
+      },
+      "supplementaryResources": [
+        {
+          "label": "PoreBlazer code, examples and MOF tables",
+          "resourceType": "專案資料目錄",
+          "url": "https://github.com/SarkisovGitHub/PoreBlazer",
+          "access": "公開；資料表獨立授權未確認",
+          "dataType": "Fortran 原始碼、案例與 CSD MOF subset 性質表"
+        },
+        {
+          "label": "PoreBlazer v4.0 Supporting Information",
+          "resourceType": "出版者 SI",
+          "url": "https://acs.figshare.com/articles/journal_contribution/Materials_Informatics_with_PoreBlazer_v4_0_and_the_CSD_MOF_Database/13296133",
+          "access": "公開，CC BY-NC 4.0",
+          "dataType": "方法、比較、PCA 與補充圖表"
+        }
+      ],
+      "primarySource": {
+        "label": "PoreBlazer 官方程式庫",
+        "url": "https://github.com/SarkisovGitHub/PoreBlazer"
+      },
+      "problemsSolved": [
+        "批量計算 MOF 幾何特徵，支援結構篩選與材料資訊學。",
+        "使孔隙體積、表面積與連通性可在相同計算定義下比較。"
+      ],
+      "keyFeatures": [
+        "PLD、LCD、孔徑分布與連通維度",
+        "探針可及表面積與多種孔體積定義",
+        "隨附 MOF／沸石範例與性質表"
+      ],
+      "trainingUse": "方法論文展示幾何特徵與 ML 的關係，但隨附 CSD 衍生資料表沒有確認獨立 ML／再散布授權。",
+      "caveats": [
+        "README 宣告 GPL，但 repository 無可由 GitHub 辨識的獨立 LICENSE 檔。",
+        "隨附 CSD MOF subset 表格不會因程式碼授權而自動取得自由重用權。",
+        "維護訊號偏低。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "mofid-mofkey",
+      "name": "MOFid / MOFkey",
+      "author": "snurr-group",
+      "githubUrl": "https://github.com/snurr-group/mofid",
+      "webUrl": "https://snurr-group.github.io/web-mofid/",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "sourceStatus": "GPL 程式碼、3D MOF 結構辨識功能與論文／SI 均已核實。",
+      "description": "用於 3D MOF 結構辨識與化學資訊分析的工具，將 CIF 分解為無機節點、有機連接體及簡化拓撲，輸出 MOFid／MOFkey。",
+      "capabilities": [
+        "CIF 分解",
+        "SBU 識別",
+        "拓撲",
+        "MOFid",
+        "MOFkey"
+      ],
+      "languages": [
+        "C++",
+        "Python"
+      ],
+      "category": "structure",
+      "categoryLabel": "結構處理與孔隙分析",
+      "license": "GPL-2.0（程式碼）",
+      "licenseUrl": "https://github.com/snurr-group/mofid/blob/master/LICENSE",
+      "dataAccess": "not-applicable",
+      "dataAccessLabel": "不適用（軟體）",
+      "maintenanceStatus": "有主分支更新跡象；最新正式 release 為 2022 v1.1.0。",
+      "mofApplicability": "直接針對 MOF；官方網頁工具以 CIF 產生建構單元與識別字串。僅支援 3D MOF。",
+      "paper": {
+        "title": "Identification Schemes for Metal–Organic Frameworks To Enable Rapid Search and Cheminformatics Analysis",
+        "doi": "10.1021/acs.cgd.9b01050",
+        "url": "https://doi.org/10.1021/acs.cgd.9b01050"
+      },
+      "supplementaryResources": [
+        {
+          "label": "MOFid Supporting Information PDF",
+          "resourceType": "出版者 SI",
+          "url": "https://pubs.acs.org/doi/suppl/10.1021/acs.cgd.9b01050/suppl_file/cg9b01050_si_001.pdf",
+          "access": "公開下載；再利用請依 ACS 條款",
+          "dataType": "演算法、驗證與資料庫統計"
+        },
+        {
+          "label": "CoRE MOF 2019-ASR identifiers ZIP",
+          "resourceType": "出版者 SI",
+          "url": "https://pubs.acs.org/doi/suppl/10.1021/acs.cgd.9b01050/suppl_file/cg9b01050_si_002.zip",
+          "access": "公開下載；獨立資料授權未確認",
+          "dataType": "MOFid／MOFkey identifiers、重複與多晶型家族資訊"
+        },
+        {
+          "label": "MOFid v1.1.0 container",
+          "resourceType": "程式碼 release",
+          "url": "https://github.com/snurr-group/mofid/releases/tag/v1.1.0",
+          "access": "公開",
+          "dataType": "Singularity 容器映像"
+        }
+      ],
+      "primarySource": {
+        "label": "MOFid 官方程式庫",
+        "url": "https://github.com/snurr-group/mofid"
+      },
+      "problemsSolved": [
+        "為命名與座標差異下的 MOF 結構去重與搜尋提供機器可讀識別。",
+        "將結構拆解為建構單元與拓撲，支援化學資訊與資料探勘。"
+      ],
+      "keyFeatures": [
+        "MOFid 與 MOFkey 識別字串",
+        "節點、連接體與拓撲分解",
+        "本機、容器及瀏覽器工作流程"
+      ],
+      "trainingUse": "非 ML 訓練資料庫；可作結構識別、去重或特徵工程輔助。論文 SI 的資料授權未確認。",
+      "caveats": [
+        "格式是開放標準方向而非已收斂的社群最終標準。",
+        "不支援 1D／2D MOF；disorder、部分佔據、複雜溶劑或非框架離子可能造成錯誤。",
+        "部分 rod-like metal nodes 的拓撲需個案驗證。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "core-mof-tools",
+      "name": "CoRE MOF Tools",
+      "author": "Chung Research Group",
+      "githubUrl": "https://github.com/Chung-Research-Group/CoRE-MOF-Tools",
+      "webUrl": "https://core-mof-tools.readthedocs.io/en/latest/",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "sourceStatus": "公開 Python 工具、CC BY 4.0 程式碼與 CoRE 工作流程均已核實；外部資料與相依條件另有界線。",
+      "description": "CoRE MOF database 的 Python 介面，提供 MOF CIF 預處理、標準化、清理、驗證、描述子計算及部分資料庫查詢工作流程。",
+      "capabilities": [
+        "CIF 清理",
+        "結構驗證",
+        "描述子",
+        "資料庫查詢",
+        "預訓練性質預測"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "category": "structure",
+      "categoryLabel": "結構處理與孔隙分析",
+      "license": "CC BY 4.0（工具程式碼）",
+      "licenseUrl": "https://raw.githubusercontent.com/Chung-Research-Group/CoRE-MOF-Tools/main/LICENSE",
+      "dataAccess": "mixed",
+      "dataAccessLabel": "公開子集／混合限制",
+      "maintenanceStatus": "PyPI 有較新版本；Read the Docs 與套件版本不同步，GitHub 未建立 release。",
+      "mofApplicability": "直接面向 MOF CIF 清理與 CoRE 工作流程；可輸出處理後 CIF、JSON 與 CSV。",
+      "paper": {
+        "title": "CoRE MOF DB: A curated experimental metal-organic framework database with machine-learned properties for integrated material-process screening",
+        "doi": "10.1016/j.matt.2025.102140",
+        "url": "https://www.cell.com/matter/fulltext/S2590-2385(25)00183-3"
+      },
+      "supplementaryResources": [
+        {
+          "label": "coremof-tools on PyPI",
+          "resourceType": "程式碼 release",
+          "url": "https://pypi.org/project/coremof-tools/0.3.5/",
+          "access": "公開",
+          "dataType": "Python wheel 與 source distribution"
+        },
+        {
+          "label": "CoRE MOF 2024 Dataset v1.1",
+          "resourceType": "資料保存庫",
+          "url": "https://zenodo.org/records/15055758",
+          "access": "公開，CC BY 4.0",
+          "dataType": "CIF、CSV／XLSX 與結構驗證資訊"
+        },
+        {
+          "label": "Matter Data S2",
+          "resourceType": "出版者 SI",
+          "url": "https://www.cell.com/cms/10.1016/j.matt.2025.102140/attachment/8852f410-9050-4a67-8725-869f15b11d1d/mmc4.zip",
+          "access": "出版者下載；獨立再利用條款未確認",
+          "dataType": "CR／NCR 細節與非-CoRE 結構清單"
+        }
+      ],
+      "primarySource": {
+        "label": "CoRE MOF Tools 官方程式庫",
+        "url": "https://github.com/Chung-Research-Group/CoRE-MOF-Tools"
+      },
+      "problemsSolved": [
+        "將實驗 CIF 轉成可被計算工作流程使用的結構，並保留清理／驗證結果。",
+        "將結構檢查、描述子與下游預測接到同一 Python 流程。"
+      ],
+      "keyFeatures": [
+        "preprocess、clean 與 clean_pacman",
+        "結構檢查、孔隙與化學描述子",
+        "CIF、JSON、CSV 輸出與資料庫工作流程"
+      ],
+      "trainingUse": "工具本身不是訓練資料集。可用公開的 CoRE 資料保存庫，但每個資料檔、CSD 衍生結構與外部服務須分別查看權利。",
+      "caveats": [
+        "工具 CC BY 4.0 不延伸到 CSD、CoRE 或其他經工具存取的資料。",
+        "部分功能需要 CSD 授權、Python API 或 Zeo++、MOFid、MOFChecker 等外部相依套件。",
+        "文件版與 PyPI 版不一致。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "pacman-charge",
+      "name": "PACMAN-charge",
+      "author": "Chung Research Group",
+      "githubUrl": "https://github.com/Chung-Research-Group/PACMAN-charge",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "sourceStatus": "MIT 程式碼、MOF 部分電荷預測用途、論文與關聯保存庫均已核實。",
+      "description": "以晶體圖卷積網路由無部分電荷的 CIF 預測多孔材料部分原子電荷的 Python 工具，支援 MOF 的 DDEC6、Bader、CM5 與 REPEAT 模型。",
+      "capabilities": [
+        "DDEC6",
+        "Bader",
+        "CM5",
+        "REPEAT",
+        "CIF 輸入"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "category": "ml",
+      "categoryLabel": "機器學習與資料",
+      "license": "MIT License（程式碼）",
+      "licenseUrl": "https://raw.githubusercontent.com/Chung-Research-Group/PACMAN-charge/main/LICENSE",
+      "dataAccess": "not-applicable",
+      "dataAccessLabel": "不適用（軟體）",
+      "maintenanceStatus": "PyPI 與 GitHub release 版本不同步，使用時應釘選版本。",
+      "mofApplicability": "直接適用。官方 README 明列 MOF 的多種部分電荷預測與 CIF 工作流程。",
+      "paper": {
+        "title": "PACMAN: A Robust Partial Atomic Charge Predicter for Nanoporous Materials Based on Crystal Graph Convolution Networks",
+        "doi": "10.1021/acs.jctc.4c00434",
+        "url": "https://doi.org/10.1021/acs.jctc.4c00434"
+      },
+      "supplementaryResources": [
+        {
+          "label": "PACMAN-charge on PyPI",
+          "resourceType": "程式碼 release",
+          "url": "https://pypi.org/project/PACMAN-charge/1.4.2/",
+          "access": "公開",
+          "dataType": "Python wheel 與 source distribution"
+        },
+        {
+          "label": "PACMAN supplementary information",
+          "resourceType": "出版者 SI",
+          "url": "https://acs.figshare.com/articles/journal_contribution/PACMAN_A_Robust_Partial_Atomic_Charge_Predicter_for_Nanoporous_Materials_Based_on_Crystal_Graph_Convolution_Networks/25952558",
+          "access": "公開，CC BY-NC 4.0",
+          "dataType": "補充 PDF"
+        },
+        {
+          "label": "GCNCharge Zenodo archive",
+          "resourceType": "資料保存庫",
+          "url": "https://zenodo.org/records/10822403",
+          "access": "公開；模型／資料封存，名稱與目前版本需分開判讀",
+          "dataType": "模型、程式與資料 archive"
+        }
+      ],
+      "primarySource": {
+        "label": "PACMAN-charge 官方程式庫",
+        "url": "https://github.com/Chung-Research-Group/PACMAN-charge"
+      },
+      "problemsSolved": [
+        "縮短 MOF 吸附模擬前取得部分電荷的前處理時間。",
+        "讓多種電荷模型可由 CIF 直接預測，支援下游模擬準備。"
+      ],
+      "keyFeatures": [
+        "多種 MOF 部分電荷模型",
+        "Python API 與命令列",
+        "可在吸附模擬前進行電荷前處理"
+      ],
+      "trainingUse": "非統一授權的訓練資料庫。可再訓練或彙整資料的權利必須依各上游資料來源分別核實。",
+      "caveats": [
+        "預測電荷不等於對新結構重新執行 DFT 電荷分析。",
+        "支援元素受訓練資料限制；Th-MOF 的 Bader 模型訓練點極少。",
+        "預設 neutral=True 的中性化後處理可能影響下游流程。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "mofdscribe",
+      "name": "mofdscribe",
+      "author": "Lama Lab / mofdscribe contributors",
+      "githubUrl": "https://github.com/lamalab-org/mofdscribe",
+      "webUrl": "https://mofdscribe.readthedocs.io/en/latest/",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "sourceStatus": "MIT 工具庫、MOF ML 用途、原始論文與多個資料來源均已核實。",
+      "description": "數位網狀化學的 Python 工具庫，提供 40+ 特徵化器、資料集介面、結構去重、資料切分與基準比較，支援可重現的 MOF ML 工作流程。",
+      "capabilities": [
+        "MOF 描述子",
+        "資料切分",
+        "結構去重",
+        "基準測試",
+        "ML 驗證"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "category": "ml",
+      "categoryLabel": "機器學習與資料",
+      "license": "MIT License（程式碼）",
+      "licenseUrl": "https://raw.githubusercontent.com/lamalab-org/mofdscribe/main/LICENSE",
+      "dataAccess": "mixed",
+      "dataAccessLabel": "公開子集／混合限制",
+      "maintenanceStatus": "正式 PyPI／GitHub release 為 0.0.8；文件顯示 0.0.9-dev，兩者不同步。",
+      "mofApplicability": "直接面向 MOF；官方 README 與論文均以 MOF 特徵化、資料集與基準為核心。",
+      "paper": {
+        "title": "An Ecosystem for Digital Reticular Chemistry",
+        "doi": "10.1021/acscentsci.2c01177",
+        "url": "https://doi.org/10.1021/acscentsci.2c01177"
+      },
+      "supplementaryResources": [
+        {
+          "label": "mofdscribe Supporting Information",
+          "resourceType": "出版者 SI",
+          "url": "https://pubs.acs.org/doi/suppl/10.1021/acscentsci.2c01177/suppl_file/oc2c01177_si_001.pdf",
+          "access": "公開下載",
+          "dataType": "資料集、特徵化、切分與 leaderboard 細節"
+        },
+        {
+          "label": "Gas adsorption and process performance data",
+          "resourceType": "資料保存庫",
+          "url": "https://archive.materialscloud.org/record/2022.101",
+          "access": "公開，CC BY 4.0",
+          "dataType": "QMOF 結構之 GCMC 吸附／分離與製程資料"
+        },
+        {
+          "label": "MOF Explorer backend",
+          "resourceType": "資料服務／API",
+          "url": "https://doi.org/10.17188/mpcontribs/1883597",
+          "access": "下載介面；再利用授權未確認",
+          "dataType": "QMOF 結構、DFT、孔隙與吸附資料"
+        },
+        {
+          "label": "mofdscribe data – CoRE",
+          "resourceType": "資料保存庫",
+          "url": "https://zenodo.org/records/7032358",
+          "access": "公開，CC BY 4.0；頁面註記不宜直接使用",
+          "dataType": "子集、雜湊與特徵"
+        }
+      ],
+      "primarySource": {
+        "label": "mofdscribe 官方程式庫",
+        "url": "https://github.com/lamalab-org/mofdscribe"
+      },
+      "problemsSolved": [
+        "將 MOF 特徵化、資料切分與驗證規則整合，降低結構相似造成的資料洩漏。",
+        "提供一致基準與資料集介面，便於比較性質預測模型。"
+      ],
+      "keyFeatures": [
+        "40+ MOF／reticular chemistry 特徵化器",
+        "結構感知資料切分與去重",
+        "吸附、電子性質等基準工作流程"
+      ],
+      "trainingUse": "工具適合特徵工程與模型驗證。Materials Cloud 吸附資料可在 CC BY 4.0 下重用；MPContribs 與 Zenodo 子集須分別依其頁面限制判讀。",
+      "caveats": [
+        "本項目是工具庫，不是一個可單獨概括授權的資料庫。",
+        "Zenodo CoRE 子集明示「Not intended for direct use」。",
+        "正式 release 偏舊，文件為 dev 版。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "mofdiff",
+      "name": "MOFDiff",
+      "author": "Microsoft Research",
+      "githubUrl": "https://github.com/microsoft/MOFDiff",
+      "webUrl": "https://www.microsoft.com/en-us/research/publication/mofdiff-coarse-grained-diffusion-for-metal-organic-framework-design/",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "sourceStatus": "MIT 研究程式碼、ICLR 正式論文頁與 Zenodo 資料／模型保存庫均已核實。",
+      "description": "以建築區塊身分與座標做去雜訊的粗粒化 MOF 擴散生成工具，提供全原子解構、重建、UFF 鬆弛與吸附性質評估流程。",
+      "capabilities": [
+        "擴散生成",
+        "粗粒化 MOF",
+        "逆向設計",
+        "全原子組裝",
+        "CO₂ 工作容量"
+      ],
+      "languages": [
+        "Python",
+        "PyTorch"
+      ],
+      "category": "carbon",
+      "categoryLabel": "碳捕捉／DAC",
+      "license": "MIT License（程式碼）",
+      "licenseUrl": "https://github.com/microsoft/MOFDiff/blob/main/LICENSE",
+      "dataAccess": "open",
+      "dataAccessLabel": "Zenodo 資料／模型公開，CC BY 4.0",
+      "maintenanceStatus": "研究程式碼；未見 GitHub release，最後可見主分支提交為 2024。",
+      "mofApplicability": "直接針對 MOF 粗粒化結構生成與逆向設計；生成物需組裝為全原子結構後再評估。",
+      "paper": {
+        "title": "MOFDiff: Coarse-grained Diffusion for Metal-Organic Framework Design",
+        "doi": "10.48550/arXiv.2310.10732",
+        "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/47547ee84e3fbbcbbbbad7c1fd9a973b-Abstract-Conference.html"
+      },
+      "supplementaryResources": [
+        {
+          "label": "ICLR 2024 Supplementary",
+          "resourceType": "出版者 SI",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/47547ee84e3fbbcbbbbad7c1fd9a973b-Supplementary-Conference.zip",
+          "access": "公開",
+          "dataType": "top-10 生成 MOF CIF"
+        },
+        {
+          "label": "MOFDiff data and pretrained models",
+          "resourceType": "資料保存庫",
+          "url": "https://zenodo.org/records/10806179",
+          "access": "公開，CC BY 4.0",
+          "dataType": "BW-DB、預訓練模型、嵌入與生成樣本"
+        }
+      ],
+      "primarySource": {
+        "label": "MOFDiff 官方程式庫",
+        "url": "https://github.com/microsoft/MOFDiff"
+      },
+      "problemsSolved": [
+        "探索已知資料庫之外的 MOF 結構候選，而不是只做既有結構的正向篩選。",
+        "將目標吸附性質的最佳化接入生成式結構搜尋流程。"
+      ],
+      "keyFeatures": [
+        "粗粒化建築區塊擴散",
+        "全原子結構組裝與 UFF 鬆弛",
+        "可連接 RASPA2／eGULP 做 GCMC 評估"
+      ],
+      "trainingUse": "提供 BW-DB 資料、splits 與預訓練模型，供研究訓練與取樣；預訓練模型針對 BW-DB，其他資料集訓練僅有有限測試。",
+      "caveats": [
+        "生成的 CG 結構不保證可合成或可實現，尚未以真實實驗驗證。",
+        "無 GitHub release 且維護活躍度有限。",
+        "列出的 DOI 是 arXiv 預印本紀錄，不應描述為 ICLR 出版者 DOI。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "dac-sim",
+      "name": "DAC-SIM",
+      "author": "Hyunsoo Park",
+      "githubUrl": "https://github.com/hspark1212/DAC-SIM",
+      "webUrl": "https://hspark1212.github.io/DAC-SIM-project/",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "sourceStatus": "MIT 程式碼、MOF DAC 工作流程、Matter 論文及 GoldDAC／模型目錄均已核實。",
+      "description": "以可遷移 ML 力場 MACE-DAC 為基礎、直接針對 MOF 中 CO₂／H₂O 直接空氣捕捉設計的 Python 模擬工具，整合 Widom insertion、MD 與幾何最佳化。",
+      "capabilities": [
+        "DAC",
+        "Widom insertion",
+        "MOF-CO₂／H₂O",
+        "MLFF",
+        "分子動力學"
+      ],
+      "languages": [
+        "Python"
+      ],
+      "category": "carbon",
+      "categoryLabel": "碳捕捉／DAC",
+      "license": "MIT License（程式碼）",
+      "licenseUrl": "https://github.com/hspark1212/DAC-SIM/blob/main/LICENSE",
+      "dataAccess": "limited",
+      "dataAccessLabel": "GoldDAC／模型公開於 repository；獨立授權未確認",
+      "maintenanceStatus": "有較後主分支提交；正式 GitHub release／PyPI 仍為 v0.0.3。",
+      "mofApplicability": "直接適用於 MOF 中 CO₂／H₂O DAC；預設驗證範圍不應外推到其他氣體或所有多孔材料。",
+      "paper": {
+        "title": "Accelerating CO₂ direct air capture screening for metal-organic frameworks with a transferable machine learning force field",
+        "doi": "10.1016/j.matt.2025.102203",
+        "url": "https://doi.org/10.1016/j.matt.2025.102203"
+      },
+      "supplementaryResources": [
+        {
+          "label": "GoldDAC dataset",
+          "resourceType": "專案資料目錄",
+          "url": "https://github.com/hspark1212/DAC-SIM/tree/main/assets/GoldDAC",
+          "access": "公開；獨立資料授權未確認",
+          "dataType": "ASE-compatible XYZ、能量與力標籤"
+        },
+        {
+          "label": "MACE-DAC-1 model",
+          "resourceType": "專案資料目錄",
+          "url": "https://github.com/hspark1212/DAC-SIM/blob/main/dac_sim/models/mace-dac-1.model",
+          "access": "公開；獨立模型條款未確認",
+          "dataType": "MLFF 模型檔"
+        },
+        {
+          "label": "Matter Document S1",
+          "resourceType": "出版者 SI",
+          "url": "https://www.cell.com/cms/10.1016/j.matt.2025.102203/attachment/b7bcd583-b6ff-46cd-bc3b-450db116ec77/mmc1.pdf",
+          "access": "公開下載",
+          "dataType": "Notes、Figures 與 Tables"
+        },
+        {
+          "label": "DAC-SIM v0.0.3",
+          "resourceType": "程式碼 release",
+          "url": "https://github.com/hspark1212/DAC-SIM/releases/tag/v0.0.3",
+          "access": "公開",
+          "dataType": "原始碼 release"
+        }
+      ],
+      "primarySource": {
+        "label": "DAC-SIM 官方程式庫",
+        "url": "https://github.com/hspark1212/DAC-SIM"
+      },
+      "problemsSolved": [
+        "在極低 CO₂ 分壓與水氣競爭下，提供面向 MOF DAC 的模擬工作流程。",
+        "以 MLFF 加速 MOF–CO₂／H₂O 結構鬆弛與輸送性質評估。"
+      ],
+      "keyFeatures": [
+        "Henry 常數、交互作用能與吸附熱",
+        "CO₂／H₂O MD 與擴散",
+        "MACE-DAC MLFF 與批次 CIF 流程"
+      ],
+      "trainingUse": "GoldDAC 明確設計為 MOF DAC MLFF fine-tuning 資料，含能量與力標籤；資料與模型沒有獨立授權聲明，重用前應確認。",
+      "caveats": [
+        "MIT 僅明確覆蓋程式碼，不自動延伸到 GoldDAC 或模型檔。",
+        "已核實驗證範圍為 MOF 中 CO₂／H₂O。",
+        "沒有長期維護 SLA 或未來版本承諾。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "core-mof-db",
+      "name": "CoRE MOF DB",
+      "author": "Chung Research Group / CoRE MOF DB contributors",
+      "webUrl": "https://mof-db.pusan.ac.kr",
+      "entityType": "database",
+      "curationTier": "caveat",
+      "sourceStatus": "MOF 資料庫、2025 公開 SI、CC BY 4.0 與 Matter 論文已核實；完整庫另含受限 CSD 結構。",
+      "description": "以實驗報導 MOF 晶體結構為來源、經計算用途整理的資料庫，提供 computation-ready（CR）與 not-computation-ready（NCR）分類及多種幾何、結構與模型預測性質。",
+      "capabilities": [
+        "計算就緒 CIF",
+        "CR／NCR",
+        "孔隙與拓撲",
+        "穩定性預測",
+        "DDEC6 電荷"
+      ],
+      "languages": [
+        "CIF",
+        "CSV",
+        "JSON"
+      ],
+      "category": "ml",
+      "categoryLabel": "機器學習與資料",
+      "license": "2025 public SI：CC BY 4.0；完整庫與 CSD 衍生結構另有條件",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "dataAccess": "mixed",
+      "dataAccessLabel": "公開子集／混合限制",
+      "maintenanceStatus": "有 2025 版本化公開資料；其後持續發布狀態未確認。",
+      "mofApplicability": "直接面向實驗 MOF，提供 CR／NCR、ASR／FSR／Ion 分類與多種結構欄位。",
+      "paper": {
+        "title": "CoRE MOF DB: A curated experimental metal-organic framework database with machine-learned properties for integrated material-process screening",
+        "doi": "10.1016/j.matt.2025.102140",
+        "url": "https://doi.org/10.1016/j.matt.2025.102140"
+      },
+      "supplementaryResources": [
+        {
+          "label": "CoRE MOF 2025 Dataset",
+          "resourceType": "資料保存庫",
+          "url": "https://zenodo.org/records/15621349",
+          "access": "公開，CC BY 4.0",
+          "dataType": "公開 SI CIF、JSON metadata、篩選清單與錯誤旗標"
+        },
+        {
+          "label": "Matter Supplementary Information",
+          "resourceType": "出版者 SI",
+          "url": "https://www.cell.com/cms/10.1016/j.matt.2025.102140/attachment/4b4a57b1-4afd-447f-a94f-456945fd2e58/mmc1.pdf",
+          "access": "公開下載",
+          "dataType": "補充 PDF"
+        },
+        {
+          "label": "Matter Supplementary Data S1",
+          "resourceType": "出版者 SI",
+          "url": "https://www.cell.com/cms/10.1016/j.matt.2025.102140/attachment/bd29a0a4-a55e-4250-b35f-49b247619168/mmc2.zip",
+          "access": "公開下載",
+          "dataType": "2019／2024 CoRE MOF 多樣性分析"
+        }
+      ],
+      "primarySource": {
+        "label": "CoRE MOF DB 官方網站",
+        "url": "https://mof-db.pusan.ac.kr"
+      },
+      "problemsSolved": [
+        "將實驗結構按計算可用性與清理狀態整理，減少直接使用原始 CIF 的不確定性。",
+        "提供結構、幾何與預測性質，支援材料—製程篩選與 ML。"
+      ],
+      "keyFeatures": [
+        "CR／NCR 與 ASR／FSR／Ion 分類",
+        "孔徑、表面積、拓撲、OMS、MOFid 與 RACs",
+        "部分電荷、熱容、穩定性與疏水性模型輸出"
+      ],
+      "trainingUse": "公開 Zenodo SI 子集可用於結構—性質 ML、CR／NCR 分類與幾何描述子學習，須遵守 CC BY 4.0。模型預測性質不應混同為實測標籤。",
+      "caveats": [
+        "CC BY 4.0 只明確覆蓋 Zenodo public SI，不等同完整 CoRE MOF DB。",
+        "完整庫中的未修改 CSD CIF 需 CCDC 授權。",
+        "版本／截點與條目數不同，ASR／FSR 可能重疊，需去重並固定篩選規則。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "materials-project-mof-explorer",
+      "name": "Materials Project MOF Explorer",
+      "author": "Materials Project / QMOF contributors",
+      "githubUrl": "https://github.com/Andrew-S-Rosen/QMOF",
+      "webUrl": "https://materialsproject.org/mofs",
+      "entityType": "portal",
+      "curationTier": "caveat",
+      "sourceStatus": "QMOF 底層資料與檢索文件已核實；MOF Explorer 前端的開源程式庫與授權未確認。",
+      "description": "基於 QMOF Database 的互動式檢索入口，可依 MOF 結構、孔隙與 DFT 電子性質探索資料，並連結 MPContribs、NOMAD 與版本化下載資源。",
+      "capabilities": [
+        "結構搜尋",
+        "電子性質",
+        "孔隙資料",
+        "資料下載",
+        "MPContribs API"
+      ],
+      "languages": [
+        "CIF",
+        "JSON",
+        "CSV"
+      ],
+      "category": "ml",
+      "categoryLabel": "機器學習與資料",
+      "license": "底層 QMOF 資料：CC BY 4.0；QMOF 程式碼：MIT；入口前端授權未確認",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "dataAccess": "mixed",
+      "dataAccessLabel": "公開子集／混合限制",
+      "maintenanceStatus": "底層 QMOF 有版本化發布；入口前端長期維護承諾未確認。",
+      "mofApplicability": "直接面向 QMOF 的 MOF 與相關材料；含實驗與 hypothetical MOF，應以 source 與 synthesized 篩選。",
+      "paper": {
+        "title": "High-throughput predictions of metal–organic framework electronic properties: theoretical challenges, graph neural networks, and data exploration",
+        "doi": "10.1038/s41524-022-00796-6",
+        "url": "https://www.nature.com/articles/s41524-022-00796-6"
+      },
+      "supplementaryResources": [
+        {
+          "label": "QMOF versioned archive",
+          "resourceType": "資料保存庫",
+          "url": "https://doi.org/10.6084/m9.figshare.13147324",
+          "access": "公開，CC BY 4.0",
+          "dataType": "DFT 結構與表格化性質"
+        },
+        {
+          "label": "QMOF PBE on NOMAD",
+          "resourceType": "資料保存庫",
+          "url": "https://doi.org/10.17172/NOMAD/2021.10.10-1",
+          "access": "公開瀏覽；再利用條件請查記錄",
+          "dataType": "VASP input/output"
+        },
+        {
+          "label": "MOF Explorer backend record",
+          "resourceType": "資料服務／API",
+          "url": "https://doi.org/10.17188/mpcontribs/1883597",
+          "access": "公開資料集紀錄；細部條件未確認",
+          "dataType": "MOF Explorer backend 資料紀錄"
+        }
+      ],
+      "primarySource": {
+        "label": "Materials Project MOF Explorer 文件",
+        "url": "https://docs.materialsproject.org/apps/explorer-apps/mof-explorer"
+      },
+      "problemsSolved": [
+        "將 QMOF 結構、孔隙與電子性質以互動式入口提供檢索。",
+        "將版本化資料、計算 archive 與 API 鏡像連結到同一發現流程。"
+      ],
+      "keyFeatures": [
+        "依能隙、電荷、磁性與孔隙篩選",
+        "連結 QMOF Figshare、MPContribs 與 NOMAD",
+        "支援結構與性質導向的候選探索"
+      ],
+      "trainingUse": "底層 Figshare QMOF 資料可在 CC BY 4.0 下用於 MOF ML；前端入口本身不是訓練資料集。",
+      "caveats": [
+        "不可將整個 MOF Explorer 前端描述為 MIT 開源。",
+        "PBE 能隙通常低估實驗值，HSE06 只存在於部分材料。",
+        "QMOF 發布資料與重跑計算所需的 VASP 軟體授權是不同問題。"
+      ],
+      "lastVerified": "2026-10-09"
+    },
+    {
+      "id": "crystallography-open-database-cod",
+      "name": "Crystallography Open Database (COD)",
+      "author": "COD contributors",
+      "webUrl": "https://www.crystallography.net/cod/",
+      "entityType": "database",
+      "curationTier": "caveat",
+      "sourceStatus": "COD 資料與資料庫 CC0、存取方式與晶體結構範圍已核實；其不是 MOF 專用資料庫。",
+      "description": "公開晶體結構資料庫，收錄有機、無機、金屬有機化合物與礦物；可取得 CIF、部分 HKL／Fobs、批次快照與多種查詢介面。",
+      "capabilities": [
+        "CIF",
+        "結構搜尋",
+        "批次下載",
+        "REST",
+        "OPTIMADE"
+      ],
+      "languages": [
+        "CIF",
+        "SQL",
+        "JSON"
+      ],
+      "category": "structure",
+      "categoryLabel": "結構處理與孔隙分析",
+      "license": "CC0 1.0（資料與資料庫本身）",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "dataAccess": "open",
+      "dataAccessLabel": "公開／可再利用",
+      "maintenanceStatus": "官方首頁與取得指南顯示持續資料更新與可同步的版本控制流程。",
+      "mofApplicability": "直接相關但非 MOF 專庫。官方包含金屬有機化合物，沒有可核實的 MOF 受控子集、孔隙或吸附標籤。",
+      "paper": {
+        "title": "Crystallography Open Database – an open-access collection of crystal structures",
+        "doi": "10.1107/S0021889809016690",
+        "url": "https://journals.iucr.org/j/issues/2009/04/00/kk5039/"
+      },
+      "supplementaryResources": [
+        {
+          "label": "COD anonymous SVN repository",
+          "resourceType": "資料保存庫",
+          "url": "svn://www.crystallography.net/cod",
+          "access": "公開、唯讀",
+          "dataType": "CIF、Fobs／HKL、修訂歷史"
+        },
+        {
+          "label": "COD CIF/MySQL snapshot",
+          "resourceType": "資料保存庫",
+          "url": "http://www.crystallography.net/archives/cod-cifs-mysql.txz",
+          "access": "公開；為定期快照，可能落後每日更新",
+          "dataType": "CIF 與 MySQL dumps"
+        },
+        {
+          "label": "COD OPTIMADE API",
+          "resourceType": "資料服務／API",
+          "url": "https://www.crystallography.net/cod/optimade/v1/info",
+          "access": "公開 JSON API",
+          "dataType": "structures、references 與欄位資訊"
+        }
+      ],
+      "primarySource": {
+        "label": "COD 官方資料庫",
+        "url": "https://www.crystallography.net/cod/"
+      },
+      "problemsSolved": [
+        "提供可自由下載與再利用的廣泛晶體結構基線。",
+        "以多種介面支援結構搜尋、晶格／組成篩選與批量資料取得。"
+      ],
+      "keyFeatures": [
+        "CC0 結構資料與資料庫",
+        "單筆 CIF／HKL、SVN、rsync、MySQL、REST、OPTIMADE",
+        "品質、狀態與書目欄位供資料清理"
+      ],
+      "trainingUse": "就 COD 資料與資料庫的 CC0 而言，可作結構表徵、晶體圖、去重與品質旗標等 ML 任務。它不是 MOF 吸附、孔隙、合成或材料性質的標準化標註集。",
+      "caveats": [
+        "須自行篩選 MOF／金屬有機子集及去溶劑／活化狀態。",
+        "建模前應依 status、duplicate／optimal、座標與實驗品質欄位清理。",
+        "HTTP 快照可能落後；批量 API 需實測、重試並保留資料快照。"
+      ],
+      "lastVerified": "2026-10-09"
+    }
+  ]
+}
