@@ -8,7 +8,7 @@ English first, Traditional Chinese (繁體中文) second. The site, `data/mof-ca
 
 ## English
 
-This project collects open-source tools and data resources for **MOF structure processing, gas adsorption, carbon capture / direct air capture (DAC), periodic DFT, photo- and electrocatalysis, and machine learning**. The site separates *code license*, *data-access terms*, *paper supplementary data*, *training-data availability*, and *required restrictions*, and shows every text field in English first and Traditional Chinese second.
+This project collects open-source tools and data resources for **MOF structure processing, gas adsorption, carbon capture / direct air capture (DAC), periodic DFT, and machine learning**. Photo- and electrocatalysis are covered only as general-purpose DFT workflows: no dedicated open-source MOF tool or database for them could be verified (see section 3 of the source manifest). The site separates *code license*, *data-access terms*, *paper supplementary data*, *training-data availability*, and *required restrictions*, and shows every text field in English first and Traditional Chinese second.
 
 ### For ChatGPT and other research assistants
 
@@ -112,7 +112,7 @@ The site code is under the MIT license set in `package.json`; **the listed third
 
 ## 繁體中文
 
-本專案整理適用於 **MOF 結構處理、氣體吸附、碳捕捉／直接空氣捕捉（DAC）、週期性 DFT、光電／電催化，以及機器學習** 的開源工具與資料資源。網站將「程式碼授權」、「資料存取條件」、「論文補充資料」、「訓練資料可用性」與「必要限制」分開標示，且所有文字欄位皆英文在前、繁體中文在後。
+本專案整理適用於 **MOF 結構處理、氣體吸附、碳捕捉／直接空氣捕捉（DAC）、週期性 DFT，以及機器學習**。光電／電催化目前僅以通用 DFT 工作流程呈現：尚無可核實的 MOF 專用開源工具或資料庫（見來源清冊第三節） 的開源工具與資料資源。網站將「程式碼授權」、「資料存取條件」、「論文補充資料」、「訓練資料可用性」與「必要限制」分開標示，且所有文字欄位皆英文在前、繁體中文在後。
 
 ### 給 ChatGPT 與其他研究助理
 
