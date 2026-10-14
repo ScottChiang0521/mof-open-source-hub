@@ -218,6 +218,27 @@
       "detected": [
         "BSD"
       ]
+    },
+    "alab-management": {
+      "url": "https://raw.githubusercontent.com/CederGroupHub/alab_management/main/LICENSE",
+      "sha256": "937430f2708bc25552eafb560cec3cb546f9939a920749183e0e46e16eb6acb6",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "gnome": {
+      "url": "https://raw.githubusercontent.com/google-deepmind/materials_discovery/main/LICENSE",
+      "sha256": "0ffddef9e48f8a09aed5caf2d44f7ba1c1be2d9b8e0a6f693b1635b2d5566645",
+      "detected": [
+        "Apache"
+      ]
+    },
+    "materials-project": {
+      "url": "https://raw.githubusercontent.com/materialsproject/api/main/LICENSE",
+      "sha256": "800f87825fa2dfbc0678acbab8384a618243f29ee241656c68dc8dde79d129d5",
+      "detected": [
+        "BSD"
+      ]
     }
   }
 }
