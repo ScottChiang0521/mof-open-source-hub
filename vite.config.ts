@@ -1,20 +1,37 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import path from "node:path";
+import { defineConfig } from "vite";
 
-// https://vitejs.dev/config/
+const plugins = [react(), tailwindcss(), jsxLocPlugin()];
+
 export default defineConfig({
-  root: 'client',
-  base: '/mof-open-source-hub/',
-  plugins: [react()],
+  plugins,
+  // GitHub Pages serves this site from /mof-open-source-hub/. The deploy workflow
+  // sets VITE_BASE; everywhere else (pnpm dev / build / start) stays at "/".
+  base: process.env.VITE_BASE ?? "/",
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'client/src'),
-      '@shared': path.resolve(__dirname, 'shared'),
+      "@": path.resolve(import.meta.dirname, "client", "src"),
+      "@shared": path.resolve(import.meta.dirname, "shared"),
+      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
+  envDir: path.resolve(import.meta.dirname),
+  root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: '../dist',
+    outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
-})
+  server: {
+    port: 3000,
+    strictPort: false, // Will find next available port if 3000 is busy
+    host: true,
+    allowedHosts: ["localhost", "127.0.0.1"],
+    fs: {
+      strict: true,
+      deny: ["**/.*"],
+    },
+  },
+});
