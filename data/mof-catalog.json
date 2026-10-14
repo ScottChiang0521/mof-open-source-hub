@@ -47,7 +47,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/snurr-group/gRASPA/main/LICENSE",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | ready to display",
         "categoryLabel": "Gas adsorption and separation",
         "dataAccessLabel": "Not applicable (software)",
@@ -96,7 +96,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜可立即展示",
         "categoryLabel": "氣體吸附與分離",
         "dataAccessLabel": "不適用（軟體）",
@@ -170,7 +170,7 @@
       "licenseUrl": "https://gitlab.com/QEF/q-e/-/blob/develop/License",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | ready to display",
         "categoryLabel": "Photo- / electrocatalysis",
         "dataAccessLabel": "Not applicable (software)",
@@ -220,7 +220,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜可立即展示",
         "categoryLabel": "光電／電催化",
         "dataAccessLabel": "不適用（軟體）",
@@ -451,7 +451,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/iRASPA/RASPA2/master/COPYING",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Gas adsorption and separation",
         "dataAccessLabel": "Not applicable (software)",
@@ -494,7 +494,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "氣體吸附與分離",
         "dataAccessLabel": "不適用（軟體）",
@@ -561,7 +561,7 @@
       "licenseUrl": "https://github.com/lsmo-epfl/zeopp-lsmo/blob/master/LICENSE",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Not applicable (software)",
@@ -605,7 +605,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "不適用（軟體）",
@@ -672,7 +672,7 @@
       "licenseUrl": "https://github.com/SarkisovGitHub/PoreBlazer#license",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Program is public; reuse of the bundled data tables is not confirmed",
@@ -722,7 +722,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "程式公開；隨附資料表再利用未確認",
@@ -797,7 +797,7 @@
       "licenseUrl": "https://github.com/snurr-group/mofid/blob/master/LICENSE",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Not applicable (software)",
@@ -854,7 +854,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "不適用（軟體）",
@@ -935,7 +935,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/Chung-Research-Group/CoRE-MOF-Tools/main/LICENSE",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Open subset / mixed restrictions",
@@ -992,7 +992,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "公開子集／混合限制",
@@ -1072,7 +1072,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/Chung-Research-Group/PACMAN-charge/main/LICENSE",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Not applicable (software)",
@@ -1129,7 +1129,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "不適用（軟體）",
@@ -1210,7 +1210,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/lamalab-org/mofdscribe/main/LICENSE",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Open subset / mixed restrictions",
@@ -1274,7 +1274,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "公開子集／混合限制",
@@ -1363,7 +1363,7 @@
       "licenseUrl": "https://github.com/microsoft/MOFDiff/blob/main/LICENSE",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Carbon capture / DAC",
         "dataAccessLabel": "Zenodo data / models are public, CC BY 4.0",
@@ -1413,7 +1413,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "碳捕捉／DAC",
         "dataAccessLabel": "Zenodo 資料／模型公開，CC BY 4.0",
@@ -1487,7 +1487,7 @@
       "licenseUrl": "https://github.com/hspark1212/DAC-SIM/blob/main/LICENSE",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Carbon capture / DAC",
         "dataAccessLabel": "GoldDAC / model are public in the repository; separate license not confirmed",
@@ -1551,7 +1551,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "碳捕捉／DAC",
         "dataAccessLabel": "GoldDAC／模型公開於 repository；獨立授權未確認",
@@ -2085,7 +2085,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/iRASPA/RASPA3/main/LICENSE.md",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Gas adsorption and separation",
         "dataAccessLabel": "Not applicable (software)",
@@ -2136,7 +2136,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "氣體吸附與分離",
         "dataAccessLabel": "不適用（軟體）",
@@ -2211,7 +2211,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/AI4ChemS/mofsim-bench/main/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | ready to display",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Figshare results public, CC BY 4.0",
@@ -2261,7 +2261,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜可立即展示",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "Figshare 結果檔公開，CC BY 4.0",
@@ -2334,7 +2334,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/uowoolab/MOSAEC/main/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Not applicable (software)",
@@ -2384,7 +2384,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "不適用（軟體）",
@@ -2453,7 +2453,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/lamalab-org/mofchecker/main/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Not applicable (software)",
@@ -2504,7 +2504,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "不適用（軟體）",
@@ -2578,7 +2578,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/Sangwon91/PORMAKE/main/LICENSE.md",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | ready to display",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Not applicable (software)",
@@ -2621,7 +2621,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜可立即展示",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "不適用（軟體）",
@@ -2687,7 +2687,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/DCoupry/autografs/master/LICENSE.txt",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Not applicable (software)",
@@ -2745,7 +2745,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "不適用（軟體）",
@@ -2826,7 +2826,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/tobacco-mofs/tobacco_3.0/master/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Not applicable (software)",
@@ -2874,7 +2874,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "不適用（軟體）",
@@ -2946,7 +2946,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/peteboyd/lammps_interface/master/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Molecular simulation and thermodynamics",
         "dataAccessLabel": "Not applicable (software)",
@@ -2994,7 +2994,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "分子模擬與熱力學",
         "dataAccessLabel": "不適用（軟體）",
@@ -3060,7 +3060,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/bafgreat/mofstructure/main/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Not applicable (software)",
@@ -3103,7 +3103,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "不適用（軟體）",
@@ -3171,7 +3171,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/hspark1212/MOFTransformer/master/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Weights and data public, but the repositories carry different license labels",
@@ -3229,7 +3229,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "權重與資料公開，但各保存庫授權標示不同",
@@ -3311,7 +3311,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/zcao0420/MOFormer/main/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Data public but aggregated from third parties; original terms not checked individually",
@@ -3360,7 +3360,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "資料公開但為第三方彙整，原始授權未逐一確認",
@@ -3434,7 +3434,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/hjkgrp/MOFSimplify/main/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Data terms not stated in the repository README",
@@ -3485,7 +3485,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "資料條款未於程式庫 README 載明",
@@ -3560,7 +3560,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/nayoung10/MOFFlow/main/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Zenodo data / checkpoints public, CC BY 4.0",
@@ -3610,7 +3610,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "Zenodo 資料／checkpoint 公開，CC BY 4.0",
@@ -3683,7 +3683,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/Yeonghun1675/ChatMOF/master/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Database public (CC BY 4.0), but contains third-party data and requires a paid API",
@@ -3726,7 +3726,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "資料庫公開（CC BY 4.0），但內含第三方資料且需付費 API",
@@ -3792,7 +3792,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/Yeonghun1675/L2M3/master/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Database public, but derived from publications; redistribution rights not confirmed",
@@ -3835,7 +3835,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "資料庫公開，但源自出版物，再散布權利未確認",
@@ -3902,7 +3902,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/hyunp2/ghp_mof/main/LICENSE-CC-BY",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Carbon capture / DAC",
         "dataAccessLabel": "Includes hMOF-derived tables; original terms not confirmed",
@@ -3945,7 +3945,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "碳捕捉／DAC",
         "dataAccessLabel": "含 hMOF 衍生資料表，原始條款未確認",
@@ -4012,7 +4012,7 @@
       "licenseUrl": "https://raw.githubusercontent.com/Tsotsalas-Group/MOF_Literature_Extraction/main/LICENSE",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open-source software",
+        "entityTypeLabel": "Software",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "README says all training data are in the repo; terms not stated",
@@ -4054,7 +4054,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開源軟體",
+        "entityTypeLabel": "軟體",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "README 稱訓練所需資料皆在 repo 內，其條款未載明",

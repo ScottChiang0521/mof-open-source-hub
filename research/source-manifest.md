@@ -96,7 +96,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### MOFSimBench
 
-- **ID / type:** `mofsimbench`; Open-source software / Machine learning and data. A benchmark code for evaluating universal machine learning interatomic potentials (uMLIPs) on MOF molecular modeling tasks: structure optimization, molecular dynamics stability, bulk modulus and heat capacity.
+- **ID / type:** `mofsimbench`; Software / Machine learning and data. A benchmark code for evaluating universal machine learning interatomic potentials (uMLIPs) on MOF molecular modeling tasks: structure optimization, molecular dynamics stability, bulk modulus and heat capacity.
 - **Display decision:** Ready to display. The official repository, MIT license, npj Computational Materials paper and Figshare results were verified.
 - **MOF applicability:** Directly applicable. The paper title and README both take MOFs as the object of evaluation. The QMOF energy comparison and GoldDAC interaction-energy tasks require external data to be downloaded separately.
 - **License and status:** MIT License (code); the Figshare results record is CC BY 4.0. Last push 2025-12-17 (GitHub API); releases were not checked individually.
@@ -119,7 +119,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### PORMAKE
 
-- **ID / type:** `pormake`; Open-source software / Structure processing and pore analysis. A Python library that assembles porous materials (including MOFs) from topologies and building blocks, with an experimental module that extracts building blocks from existing MOFs.
+- **ID / type:** `pormake`; Software / Structure processing and pore analysis. A Python library that assembles porous materials (including MOFs) from topologies and building blocks, with an experimental module that extracts building blocks from existing MOFs.
 - **Display decision:** Ready to display. The official repository, MIT LICENSE.md and the ACS AMI paper were verified.
 - **MOF applicability:** Directly applicable. The original paper uses large-scale computational screening of MOFs as its example, and the README includes a module for extracting building blocks from MOFs.
 - **License and status:** MIT License (code). Last push 2026-08-09 (GitHub API); the README documents version 0.2.3 with a CHANGELOG and ROADMAP.
@@ -395,7 +395,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### RASPA3
 
-- **ID / type:** `raspa3`; Open-source software / Gas adsorption and separation. A classical molecular simulation code rewritten from scratch in C++23, using force-field Monte Carlo and molecular dynamics for adsorption and diffusion in nanoporous materials and for thermodynamic and transport properties of fluids. It succeeds RASPA2.
+- **ID / type:** `raspa3`; Software / Gas adsorption and separation. A classical molecular simulation code rewritten from scratch in C++23, using force-field Monte Carlo and molecular dynamics for adsorption and diffusion in nanoporous materials and for thermodynamic and transport properties of fluids. It succeeds RASPA2.
 - **Display decision:** Display with caveats. The official repository, LICENSE.md (full MIT text) and the J. Chem. Phys. paper were verified. The README and abstract do not use the term MOF to define the target materials.
 - **MOF applicability:** Indirectly confirmed only. The paper and README target nanoporous materials, and rigid frameworks and framework grids match MOF adsorption work, but neither the README nor the abstract uses the word MOF, and MOF examples in the project documentation were not confirmed.
 - **License and status:** MIT License (code; LICENSE.md lists Dubbeldam, Calero, Vlugt and Snurr as copyright holders). Last push 2026-10-06 (GitHub API). The README shows a release-workflow badge; the release list itself was not checked.
@@ -418,7 +418,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### MOSAEC
 
-- **ID / type:** `mosaec`; Open-source software / Structure processing and pore analysis. An algorithm that detects chemically invalid crystal structures (MOFs, coordination polymers and others) in CIF or MOL2 files by analyzing metal oxidation states, and outputs the oxidation state and error flags for each metal site.
+- **ID / type:** `mosaec`; Software / Structure processing and pore analysis. An algorithm that detects chemically invalid crystal structures (MOFs, coordination polymers and others) in CIF or MOL2 files by analyzing metal oxidation states, and outputs the oxidation state and error flags for each metal site.
 - **Display decision:** Display with caveats. The official repository, GPL-3.0 LICENSE and JACS paper were verified. The code depends on the licensed CCDC CSD Python API.
 - **MOF applicability:** Directly applicable. The README states validation was mainly performed on MOF structures; the method itself applies to metal-containing CIF or MOL2 files.
 - **License and status:** GNU GPL v3.0 (code). Last push 2025-04-11 (GitHub API), about 18 months before the verification date; treat updates as slowing.
@@ -441,7 +441,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### MOFChecker (mofchecker)
 
-- **ID / type:** `mofchecker`; Open-source software / Structure processing and pore analysis. A Python package for quick sanity checks on MOF crystal structures: missing elements, overlapping atoms, overvalent atoms, likely missing hydrogens, unusual EQeq charges, floating molecules and structure-graph hashes.
+- **ID / type:** `mofchecker`; Software / Structure processing and pore analysis. A Python package for quick sanity checks on MOF crystal structures: missing elements, overlapping atoms, overvalent atoms, likely missing hydrogens, unusual EQeq charges, floating molecules and structure-graph hashes.
 - **Display decision:** Display with caveats. The official repository and MIT LICENSE were verified. No paper that can be confirmed to belong to this repository was found, so no paper is listed.
 - **MOF applicability:** Directly applicable. The README states the purpose is quick sanity checks on MOF crystal structures and says it only weeds out clearly unreasonable structures.
 - **License and status:** MIT License (code). Last push 2026-07-06 (GitHub API); the README provides a PyPI package and Read the Docs documentation.
@@ -463,7 +463,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### AuToGraFS
 
-- **ID / type:** `autografs`; Open-source software / Structure processing and pore analysis. A Python tool that maps molecular building blocks (SBUs) onto topological blueprints (nets) to generate MOFs, COFs and other periodic frameworks, and that can run in reverse to deconstruct a structure into building blocks and identify its net.
+- **ID / type:** `autografs`; Software / Structure processing and pore analysis. A Python tool that maps molecular building blocks (SBUs) onto topological blueprints (nets) to generate MOFs, COFs and other periodic frameworks, and that can run in reverse to deconstruct a structure into building blocks and identify its net.
 - **Display decision:** Display with caveats. The official repository and the J. Phys. Chem. A paper were verified. The three license-related files in the repository are mutually inconsistent, so the license status cannot be reduced to one conclusion.
 - **MOF applicability:** Directly applicable. The README and the paper both center on MOF generation and use MOF-5 as the example.
 - **License and status:** License files disagree: the README says MIT; LICENSE.txt is an LGPL 2.1-or-later notice; COPYING is the full GPL v2 text; COPYING.LESSER is the full LGPL v2.1 text. Last push 2026-09-02 (GitHub API); the README describes version 3 as a ground-up rewrite, and the PyPI package is named AuToGraFS.
@@ -487,7 +487,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### ToBaCCo 3.0
 
-- **ID / type:** `tobacco-3`; Open-source software / Structure processing and pore analysis. The Topologically Based Crystal Constructor: generates CIF files of porous crystals (including MOFs) from topologies and molecular building blocks, for molecular simulation or materials characterization.
+- **ID / type:** `tobacco-3`; Software / Structure processing and pore analysis. The Topologically Based Crystal Constructor: generates CIF files of porous crystals (including MOFs) from topologies and molecular building blocks, for molecular simulation or materials characterization.
 - **Display decision:** Display with caveats. The official repository and GPL-3.0 LICENSE were verified. The README cites no paper; the paper listed is inferred from authors and content, not declared by the repository.
 - **MOF applicability:** Directly applicable. The README and the listed paper both target MOF and porous crystal construction.
 - **License and status:** GNU GPL v3.0 (code). Last push 2021-04-07 (GitHub API), more than five years without updates; the README environment was tested on Python 2.7 and 3.7 / 3.8.
@@ -509,7 +509,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### lammps_interface
 
-- **ID / type:** `lammps-interface`; Open-source software / Molecular simulation and thermodynamics. A Python tool that converts CIF structures into LAMMPS simulation input files (UFF parameters by default) for molecular dynamics of MOFs.
+- **ID / type:** `lammps-interface`; Software / Molecular simulation and thermodynamics. A Python tool that converts CIF structures into LAMMPS simulation input files (UFF parameters by default) for molecular dynamics of MOFs.
 - **Display decision:** Display with caveats. The official repository, MIT LICENSE and paper were verified. The README states the package is currently unmaintained.
 - **MOF applicability:** Directly applicable. The repository description and the cited paper both take MOFs as the subject.
 - **License and status:** MIT License (code). The README opens by stating the package is currently unmaintained (see issue #61 for a call for maintainers); last push 2023-05-24 (GitHub API).
@@ -532,7 +532,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### mofstructure
 
-- **ID / type:** `mofstructure`; Open-source software / Structure processing and pore analysis. A Python package that deconstructs MOFs, COFs or cages into building units, computes porosity, removes unbound guests and outputs cheminformatics data for building units; the README also describes net identification.
+- **ID / type:** `mofstructure`; Software / Structure processing and pore analysis. A Python package that deconstructs MOFs, COFs or cages into building units, computes porosity, removes unbound guests and outputs cheminformatics data for building units; the README also describes net identification.
 - **Display decision:** Display with caveats. The official repository was verified. The LICENSE file contains two different license texts. The preprint the README designates for citation was not used as this tool's paper, so no paper is listed.
 - **MOF applicability:** Directly applicable. The README centers on MOF deconstruction and porosity analysis.
 - **License and status:** README and badge state MIT; but the LICENSE file contains the full MIT text (copyright 2023 bafgreat) followed by the full Apache License 2.0 text. Last push 2026-10-05 (GitHub API); active.
@@ -552,7 +552,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### MOFTransformer / PMTransformer
 
-- **ID / type:** `moftransformer`; Open-source software / Machine learning and data. A multi-modal pretrained Transformer for transfer learning of porous-material properties. From version 2.0.0 the default pretrained model is PMTransformer (covering MOFs and other porous materials), and MOFTransformer is retained.
+- **ID / type:** `moftransformer`; Software / Machine learning and data. A multi-modal pretrained Transformer for transfer learning of porous-material properties. From version 2.0.0 the default pretrained model is PMTransformer (covering MOFs and other porous materials), and MOFTransformer is retained.
 - **Display decision:** Display with caveats. The official repository, MIT license, Nature Machine Intelligence paper and the Figshare pretrained weights were verified.
 - **MOF applicability:** Directly applicable. The paper title targets MOFs; PMTransformer also covers COFs, PPNs and zeolites.
 - **License and status:** MIT License (code); the Figshare pretrained-weights record is labelled CC BY 4.0. Last push 2026-05-23 (GitHub API); the README documents version 2.2.0.
@@ -577,7 +577,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### MOFormer
 
-- **ID / type:** `moformer`; Open-source software / Machine learning and data. A self-supervised Transformer that takes MOFid strings as input, without three-dimensional structure, for MOF property prediction; it is pretrained jointly with a structure-based CGCNN in a Barlow Twins fashion.
+- **ID / type:** `moformer`; Software / Machine learning and data. A self-supervised Transformer that takes MOFid strings as input, without three-dimensional structure, for MOF property prediction; it is pretrained jointly with a structure-based CGCNN in a Barlow Twins fashion.
 - **Display decision:** Display with caveats. The official repository, Apache-2.0 license and JACS paper were verified. The data are aggregated from several third-party databases.
 - **MOF applicability:** Directly applicable. The paper and README both target MOF property prediction.
 - **License and status:** Apache License 2.0 (code); the Figshare pretraining-data record is labelled MIT. Last push 2026-07-02 (GitHub API); the README says the authors have graduated but monitor GitHub issues regularly.
@@ -599,7 +599,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### MOFSimplify
 
-- **ID / type:** `mofsimplify`; Open-source software / Machine learning and data. A website, with its source code, that predicts MOF stability (activation and thermal stability) and related properties; the models are trained on stability data extracted from the literature.
+- **ID / type:** `mofsimplify`; Software / Machine learning and data. A website, with its source code, that predicts MOF stability (activation and thermal stability) and related properties; the models are trained on stability data extracted from the literature.
 - **Display decision:** Display with caveats. The official repository, MIT LICENSE and both papers were verified. The backend code connects to the authors' MongoDB when run locally; users without access must comment it out.
 - **MOF applicability:** Directly applicable. Both papers address MOF stability prediction.
 - **License and status:** MIT License (code). Last push 2025-10-24 (GitHub API); the README test environment is Python 3.8.5 and 2021 browser versions, and whether the website currently works was not tested.
@@ -623,7 +623,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### MOFFlow
 
-- **ID / type:** `mofflow`; Open-source software / Machine learning and data. A generative model using flow matching for MOF structure prediction: given the building blocks, it predicts their arrangement in the unit cell.
+- **ID / type:** `mofflow`; Software / Machine learning and data. A generative model using flow matching for MOF structure prediction: given the building blocks, it predicts their arrangement in the unit cell.
 - **Display decision:** Display with caveats. The official repository, MIT license and the Zenodo data / checkpoints (CC BY 4.0) were verified. The paper is an ICLR 2025 paper that Crossref does not index, so the DOI used is the arXiv DataCite record.
 - **MOF applicability:** Directly applicable. The title and README both target MOF structure prediction.
 - **License and status:** MIT License (code); the Zenodo data and checkpoints are CC BY 4.0. Last push 2025-08-28 (GitHub API); releases were not checked individually.
@@ -646,7 +646,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### ChatMOF
 
-- **ID / type:** `chatmof`; Open-source software / Machine learning and data. An AI system that uses large language models (the README lists GPT-4 and GPT-3.5-turbo variants) to extract requests from text and perform MOF data lookup, property prediction and structure generation.
+- **ID / type:** `chatmof`; Software / Machine learning and data. An AI system that uses large language models (the README lists GPT-4 and GPT-3.5-turbo variants) to extract requests from text and perform MOF data lookup, property prediction and structure generation.
 - **Display decision:** Display with caveats. The official repository, MIT license, Nature Communications paper and Figshare database were verified. Running it requires the OpenAI API.
 - **MOF applicability:** Directly applicable. The paper and README both target MOF prediction and generation.
 - **License and status:** MIT License (code); the Figshare database and Zenodo release are labelled CC BY 4.0. Last push 2025-05-15 (GitHub API), about 17 months before the verification date; the README documents version 0.2.0.
@@ -668,7 +668,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### L2M3 (Large Language Models Material Miner)
 
-- **ID / type:** `l2m3`; Open-source software / Machine learning and data. Uses several language-model agents (categorization, inclusion, extraction) to extract experimental MOF data (properties and synthesis conditions) from the text and tables of the scientific literature, and outputs structured JSON.
+- **ID / type:** `l2m3`; Software / Machine learning and data. Uses several language-model agents (categorization, inclusion, extraction) to extract experimental MOF data (properties and synthesis conditions) from the text and tables of the scientific literature, and outputs structured JSON.
 - **Display decision:** Display with caveats. The official repository, MIT license, JACS paper and Figshare database were verified. Running it requires the OpenAI API, and the database is text-mined from publications.
 - **MOF applicability:** Directly applicable. The README and paper both target collecting MOF data from the literature.
 - **License and status:** MIT License (code); the Figshare database record is labelled MIT. Last push 2026-03-21 (GitHub API).
@@ -690,7 +690,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### GHP-MOFassemble
 
-- **ID / type:** `ghp-mofassemble`; Open-source software / Carbon capture / DAC. A carbon-capture MOF design workflow combining a diffusion model (DiffLinker) for linker generation, assembly into pcu-topology MOFs, CGCNN prediction of CO2 capacity and molecular dynamics screening.
+- **ID / type:** `ghp-mofassemble`; Software / Carbon capture / DAC. A carbon-capture MOF design workflow combining a diffusion model (DiffLinker) for linker generation, assembly into pcu-topology MOFs, CGCNN prediction of CO2 capacity and molecular dynamics screening.
 - **Display decision:** Display with caveats. The official repository and the Communications Chemistry paper were verified. The license file LICENSE-CC-BY is the full CC BY 4.0 text applied to code, which is an unusual license choice.
 - **MOF applicability:** Directly applicable. The paper and README both target MOF design for carbon capture.
 - **License and status:** CC BY 4.0 (the README says the framework is released under CC BY 4.0; the license file is LICENSE-CC-BY). Last push 2024-04-04 (GitHub API), about 2.5 years ago; treat as archival research code.
@@ -712,7 +712,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### MOF Literature Extraction (SynMOF)
 
-- **ID / type:** `synmof-literature-extraction`; Open-source software / Machine learning and data. Code that automatically extracts MOF synthesis information from the literature: Node.js handles publication downloading and Python handles literature extraction; the machine learning training code is in a separate repository.
+- **ID / type:** `synmof-literature-extraction`; Software / Machine learning and data. Code that automatically extracts MOF synthesis information from the literature: Node.js handles publication downloading and Python handles literature extraction; the machine learning training code is in a separate repository.
 - **Display decision:** Display with caveats. The official repository and MIT LICENSE were verified. The paper was confirmed by matching the title and authors listed in the README against Crossref.
 - **MOF applicability:** Directly applicable. The paper title and README both target MOF synthesis prediction.
 - **License and status:** MIT License (code). Last push 2021-08-03 (GitHub API), more than five years without updates.
@@ -1145,7 +1145,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### MOFSimBench
 
-- **ID／類型：** `mofsimbench`；開源軟體／機器學習與資料。用於評測通用機器學習原子間勢（uMLIP）在 MOF 分子模型任務上表現的基準程式：結構最佳化、分子動力學穩定性、體積模數與熱容等。
+- **ID／類型：** `mofsimbench`；軟體／機器學習與資料。用於評測通用機器學習原子間勢（uMLIP）在 MOF 分子模型任務上表現的基準程式：結構最佳化、分子動力學穩定性、體積模數與熱容等。
 - **展示判定：** 可立即展示。官方程式庫、MIT 授權、npj Comput. Mater. 論文與 Figshare 結果檔均已核實。
 - **MOF 適用性：** 直接適用。論文標題與 README 均以 MOF 為評測對象；QMOF 能量比較與 GoldDAC 交互作用能任務需另行下載外部資料。
 - **授權與狀態：** MIT License（程式碼）；Figshare 結果檔為 CC BY 4.0。最後推送 2025-12-17（GitHub API）；未逐項核對 release。
@@ -1168,7 +1168,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### PORMAKE
 
-- **ID／類型：** `pormake`；開源軟體／結構處理與孔隙分析。以拓撲（topology）與建築區塊（building blocks）組裝多孔材料（含 MOF）的 Python 函式庫，並含從既有 MOF 抽取建築區塊的實驗性模組。
+- **ID／類型：** `pormake`；軟體／結構處理與孔隙分析。以拓撲（topology）與建築區塊（building blocks）組裝多孔材料（含 MOF）的 Python 函式庫，並含從既有 MOF 抽取建築區塊的實驗性模組。
 - **展示判定：** 可立即展示。官方程式庫、MIT LICENSE.md 與 ACS AMI 論文均已核實。
 - **MOF 適用性：** 直接適用。原始論文以 MOF 的大規模計算篩選為例；README 另有從 MOF 抽取建築區塊的模組。
 - **授權與狀態：** MIT License（程式碼）。最後推送 2026-08-09（GitHub API）；README 記載 0.2.3 版並附 CHANGELOG 與 ROADMAP。
@@ -1444,7 +1444,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### RASPA3
 
-- **ID／類型：** `raspa3`；開源軟體／氣體吸附與分離。以 C++23 從頭重寫的古典分子模擬程式，採力場式 Monte Carlo／分子動力學，用於奈米多孔材料中的吸附與擴散，以及流體的熱力學與傳輸性質；為 RASPA2 的後繼版本。
+- **ID／類型：** `raspa3`；軟體／氣體吸附與分離。以 C++23 從頭重寫的古典分子模擬程式，採力場式 Monte Carlo／分子動力學，用於奈米多孔材料中的吸附與擴散，以及流體的熱力學與傳輸性質；為 RASPA2 的後繼版本。
 - **展示判定：** 可展示但須註記。官方程式庫、LICENSE.md（MIT 全文）與 J. Chem. Phys. 論文均已核實；README 與論文摘要未以 MOF 一詞界定目標材料。
 - **MOF 適用性：** 適用性為間接確認：論文與 README 的對象是「nanoporous materials」，剛性骨架與骨架格點等功能與 MOF 吸附模擬相符，但 README 與摘要未出現 MOF 一詞，專案文件中的 MOF 範例未確認。
 - **授權與狀態：** MIT License（程式碼；LICENSE.md 版權人為 Dubbeldam、Calero、Vlugt、Snurr）。最後推送 2026-10-06（GitHub API）；README 列有 release 工作流程徽章，實際 release 清單未逐一核對。
@@ -1467,7 +1467,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### MOSAEC
 
-- **ID／類型：** `mosaec`；開源軟體／結構處理與孔隙分析。以金屬氧化態分析自動偵測 CIF 或 MOL2 中化學上不合理的晶體結構（MOF、配位聚合物等）的演算法，輸出每個金屬位點的氧化態與錯誤旗標。
+- **ID／類型：** `mosaec`；軟體／結構處理與孔隙分析。以金屬氧化態分析自動偵測 CIF 或 MOL2 中化學上不合理的晶體結構（MOF、配位聚合物等）的演算法，輸出每個金屬位點的氧化態與錯誤旗標。
 - **展示判定：** 可展示但須註記。官方程式庫、GPL-3.0 LICENSE 與 JACS 論文均已核實；程式相依需授權的 CCDC CSD Python API。
 - **MOF 適用性：** 直接適用。README 說明驗證主要在 MOF 結構上進行；方法本身可用於含金屬的 CIF／MOL2。
 - **授權與狀態：** GNU GPL v3.0（程式碼）。最後推送 2025-04-11（GitHub API），距核實日約 18 個月；視為更新趨緩。
@@ -1490,7 +1490,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### MOFChecker (mofchecker)
 
-- **ID／類型：** `mofchecker`；開源軟體／結構處理與孔隙分析。對 MOF 晶體結構做快速合理性檢查的 Python 套件：偵測缺元素、原子重疊、價數過高、可能缺氫位置、異常 EQeq 電荷、浮動分子與結構圖雜湊等。
+- **ID／類型：** `mofchecker`；軟體／結構處理與孔隙分析。對 MOF 晶體結構做快速合理性檢查的 Python 套件：偵測缺元素、原子重疊、價數過高、可能缺氫位置、異常 EQeq 電荷、浮動分子與結構圖雜湊等。
 - **展示判定：** 可展示但須註記。官方程式庫與 MIT LICENSE 已核實；未找到可確認屬於此程式庫的專屬論文，故不列 paper。
 - **MOF 適用性：** 直接適用。README 明言用途為 MOF 晶體結構的快速合理性檢查，並稱僅用於剔除明顯不合理的結構。
 - **授權與狀態：** MIT License（程式碼）。最後推送 2026-07-06（GitHub API）；README 提供 PyPI 套件與 readthedocs 文件。
@@ -1512,7 +1512,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### AuToGraFS
 
-- **ID／類型：** `autografs`；開源軟體／結構處理與孔隙分析。將分子建築區塊（SBU）映射到拓撲藍圖（nets）以生成 MOF、COF 與其他週期性骨架的 Python 工具，也可反向把結構拆解為建築區塊並辨識其 net。
+- **ID／類型：** `autografs`；軟體／結構處理與孔隙分析。將分子建築區塊（SBU）映射到拓撲藍圖（nets）以生成 MOF、COF 與其他週期性骨架的 Python 工具，也可反向把結構拆解為建築區塊並辨識其 net。
 - **展示判定：** 可展示但須註記。官方程式庫與 J. Phys. Chem. A 論文已核實；程式庫內三份授權相關檔案內容彼此不一致，授權狀態未能簡化為單一結論。
 - **MOF 適用性：** 直接適用。README 與論文均以 MOF 生成為核心，並以 MOF-5 為示例。
 - **授權與狀態：** 授權檔案不一致：README 稱 MIT；LICENSE.txt 為 LGPL 2.1-or-later 聲明；COPYING 為 GPL v2 全文；COPYING.LESSER 為 LGPL v2.1 全文。最後推送 2026-09-02（GitHub API）；README 描述為第 3 版全面重寫，PyPI 套件名為 AuToGraFS。
@@ -1536,7 +1536,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### ToBaCCo 3.0
 
-- **ID／類型：** `tobacco-3`；開源軟體／結構處理與孔隙分析。Topologically Based Crystal Constructor：依拓撲與分子建築區塊產生多孔晶體（含 MOF）的 CIF，供分子模擬或材料表徵使用。
+- **ID／類型：** `tobacco-3`；軟體／結構處理與孔隙分析。Topologically Based Crystal Constructor：依拓撲與分子建築區塊產生多孔晶體（含 MOF）的 CIF，供分子模擬或材料表徵使用。
 - **展示判定：** 可展示但須註記。官方程式庫與 GPL-3.0 LICENSE 已核實；README 未引用任何論文，論文對應為依作者與內容推定，並非程式庫自行聲明。
 - **MOF 適用性：** 直接適用。README 與所列論文均以 MOF 與多孔晶體建構為目標。
 - **授權與狀態：** GNU GPL v3.0（程式碼）。最後推送 2021-04-07（GitHub API），已逾五年未更新；README 測試版本為 Python 2.7 與 3.7／3.8。
@@ -1558,7 +1558,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### lammps_interface
 
-- **ID／類型：** `lammps-interface`；開源軟體／分子模擬與熱力學。把 CIF 結構自動轉成 LAMMPS 模擬輸入檔（預設 UFF 參數）的 Python 工具，用於 MOF 的分子動力學。
+- **ID／類型：** `lammps-interface`；軟體／分子模擬與熱力學。把 CIF 結構自動轉成 LAMMPS 模擬輸入檔（預設 UFF 參數）的 Python 工具，用於 MOF 的分子動力學。
 - **展示判定：** 可展示但須註記。官方程式庫、MIT LICENSE 與論文均已核實；README 明言目前無人維護。
 - **MOF 適用性：** 直接適用。程式庫描述與所引論文均以 MOF 為對象。
 - **授權與狀態：** MIT License（程式碼）。README 開頭聲明套件目前無人維護（徵求維護者見 issue #61）；最後推送 2023-05-24（GitHub API）。
@@ -1581,7 +1581,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### mofstructure
 
-- **ID／類型：** `mofstructure`；開源軟體／結構處理與孔隙分析。將 MOF、COF 或籠狀分子拆解為建築單元、計算孔隙、移除未鍵結客體並輸出建築單元化學資訊學資料的 Python 套件，README 另述 net 辨識。
+- **ID／類型：** `mofstructure`；軟體／結構處理與孔隙分析。將 MOF、COF 或籠狀分子拆解為建築單元、計算孔隙、移除未鍵結客體並輸出建築單元化學資訊學資料的 Python 套件，README 另述 net 辨識。
 - **展示判定：** 可展示但須註記。官方程式庫已核實；LICENSE 檔含兩份不同授權文字；未將其 README 指定的預印本當作本工具論文，故不列 paper。
 - **MOF 適用性：** 直接適用。README 以 MOF 拆解與孔隙分析為主要功能。
 - **授權與狀態：** README 與 badge 標示 MIT；但 LICENSE 檔先為 MIT 全文（版權 2023 bafgreat），其後接 Apache License 2.0 全文。最後推送 2026-10-05（GitHub API）；活躍。
@@ -1601,7 +1601,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### MOFTransformer / PMTransformer
 
-- **ID／類型：** `moftransformer`；開源軟體／機器學習與資料。多模態預訓練 Transformer，用於多孔材料性質預測的遷移學習；2.0.0 起預設預訓練模型為 PMTransformer（涵蓋 MOF 及其他多孔材料），並保留 MOFTransformer。
+- **ID／類型：** `moftransformer`；軟體／機器學習與資料。多模態預訓練 Transformer，用於多孔材料性質預測的遷移學習；2.0.0 起預設預訓練模型為 PMTransformer（涵蓋 MOF 及其他多孔材料），並保留 MOFTransformer。
 - **展示判定：** 可展示但須註記。官方程式庫、MIT 授權、Nature Machine Intelligence 論文與 Figshare 預訓練權重均已核實。
 - **MOF 適用性：** 直接適用。論文標題以 MOF 為對象；PMTransformer 另涵蓋 COF、PPN 與沸石。
 - **授權與狀態：** MIT License（程式碼）；Figshare 預訓練權重頁標示 CC BY 4.0。最後推送 2026-05-23（GitHub API）；README 記載 2.2.0 版。
@@ -1626,7 +1626,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### MOFormer
 
-- **ID／類型：** `moformer`；開源軟體／機器學習與資料。以 MOFid 字串為輸入、無需三維結構的自監督 Transformer，用於 MOF 性質預測；與結構式 CGCNN 以 Barlow Twins 方式聯合預訓練。
+- **ID／類型：** `moformer`；軟體／機器學習與資料。以 MOFid 字串為輸入、無需三維結構的自監督 Transformer，用於 MOF 性質預測；與結構式 CGCNN 以 Barlow Twins 方式聯合預訓練。
 - **展示判定：** 可展示但須註記。官方程式庫、Apache-2.0 授權與 JACS 論文均已核實；資料為彙整自多個第三方資料庫。
 - **MOF 適用性：** 直接適用。論文與 README 均以 MOF 性質預測為目標。
 - **授權與狀態：** Apache License 2.0（程式碼）；Figshare 預訓練資料記錄標示 MIT。最後推送 2026-07-02（GitHub API）；README 稱作者已畢業，但會定期查看 GitHub issue。
@@ -1648,7 +1648,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### MOFSimplify
 
-- **ID／類型：** `mofsimplify`；開源軟體／機器學習與資料。提供 MOF 穩定性（活化與熱穩定性）等性質預測的網站與其原始碼，模型以由文獻萃取的穩定性資料訓練。
+- **ID／類型：** `mofsimplify`；軟體／機器學習與資料。提供 MOF 穩定性（活化與熱穩定性）等性質預測的網站與其原始碼，模型以由文獻萃取的穩定性資料訓練。
 - **展示判定：** 可展示但須註記。官方程式庫、MIT LICENSE 與兩篇論文均已核實；本機執行的後端程式碼會連到作者的 MongoDB，無權限者須自行註解。
 - **MOF 適用性：** 直接適用。兩篇論文均以 MOF 穩定性預測為主題。
 - **授權與狀態：** MIT License（程式碼）。最後推送 2025-10-24（GitHub API）；README 測試環境為 Python 3.8.5 與 2021 年的瀏覽器版本，網站目前是否可用未逐項測試。
@@ -1672,7 +1672,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### MOFFlow
 
-- **ID／類型：** `mofflow`；開源軟體／機器學習與資料。以 flow matching 做 MOF 結構預測的生成模型：給定建築區塊，預測其在晶胞中的排列。
+- **ID／類型：** `mofflow`；軟體／機器學習與資料。以 flow matching 做 MOF 結構預測的生成模型：給定建築區塊，預測其在晶胞中的排列。
 - **展示判定：** 可展示但須註記。官方程式庫、MIT 授權與 Zenodo 資料／checkpoint（CC BY 4.0）已核實；論文為 ICLR 2025，無法以 Crossref 查證，故 DOI 使用 arXiv 的 DataCite 記錄。
 - **MOF 適用性：** 直接適用。標題與 README 均以 MOF 結構預測為對象。
 - **授權與狀態：** MIT License（程式碼）；Zenodo 資料與 checkpoint 為 CC BY 4.0。最後推送 2025-08-28（GitHub API）；未逐項核對 release。
@@ -1695,7 +1695,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### ChatMOF
 
-- **ID／類型：** `chatmof`；開源軟體／機器學習與資料。以大型語言模型（README 列 GPT-4、GPT-3.5-turbo 系列）從文字輸入萃取需求，進行 MOF 的資料查詢、性質預測與結構生成的 AI 系統。
+- **ID／類型：** `chatmof`；軟體／機器學習與資料。以大型語言模型（README 列 GPT-4、GPT-3.5-turbo 系列）從文字輸入萃取需求，進行 MOF 的資料查詢、性質預測與結構生成的 AI 系統。
 - **展示判定：** 可展示但須註記。官方程式庫、MIT 授權、Nature Communications 論文與 Figshare 資料庫均已核實；執行須使用 OpenAI API。
 - **MOF 適用性：** 直接適用。論文與 README 均以 MOF 預測與生成為目標。
 - **授權與狀態：** MIT License（程式碼）；Figshare 資料庫與 Zenodo release 標示 CC BY 4.0。最後推送 2025-05-15（GitHub API），距核實日約 17 個月；README 記載 0.2.0 版。
@@ -1717,7 +1717,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### L2M3 (Large Language Models Material Miner)
 
-- **ID／類型：** `l2m3`；開源軟體／機器學習與資料。以多個語言模型代理（分類、納入、萃取）從科學文獻的文字與表格中萃取 MOF 實驗資料（性質與合成條件），輸出結構化 JSON。
+- **ID／類型：** `l2m3`；軟體／機器學習與資料。以多個語言模型代理（分類、納入、萃取）從科學文獻的文字與表格中萃取 MOF 實驗資料（性質與合成條件），輸出結構化 JSON。
 - **展示判定：** 可展示但須註記。官方程式庫、MIT 授權、JACS 論文與 Figshare 資料庫均已核實；執行須使用 OpenAI API，資料庫為出版物文字萃取結果。
 - **MOF 適用性：** 直接適用。README 與論文均以 MOF 文獻資料收集為目標。
 - **授權與狀態：** MIT License（程式碼）；Figshare 資料庫記錄標示 MIT。最後推送 2026-03-21（GitHub API）。
@@ -1739,7 +1739,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### GHP-MOFassemble
 
-- **ID／類型：** `ghp-mofassemble`；開源軟體／碳捕捉／DAC。結合擴散模型（DiffLinker）生成 linker、組裝為 pcu 拓撲 MOF、CGCNN 預測 CO₂ 容量與分子動力學篩選的碳捕捉 MOF 設計流程。
+- **ID／類型：** `ghp-mofassemble`；軟體／碳捕捉／DAC。結合擴散模型（DiffLinker）生成 linker、組裝為 pcu 拓撲 MOF、CGCNN 預測 CO₂ 容量與分子動力學篩選的碳捕捉 MOF 設計流程。
 - **展示判定：** 可展示但須註記。官方程式庫與 Communications Chemistry 論文已核實；授權檔 LICENSE-CC-BY 為 CC BY 4.0 全文，套用於程式碼，屬少見的授權選擇。
 - **MOF 適用性：** 直接適用。論文與 README 均以 MOF 設計與碳捕捉為目標。
 - **授權與狀態：** CC BY 4.0（README 稱框架以 CC BY 4.0 發布；授權檔為 LICENSE-CC-BY）。最後推送 2024-04-04（GitHub API），已約 2.5 年；視為封存性研究程式碼。
@@ -1761,7 +1761,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### MOF Literature Extraction (SynMOF)
 
-- **ID／類型：** `synmof-literature-extraction`；開源軟體／機器學習與資料。從文獻自動萃取 MOF 合成資訊的程式：Node.js 負責出版物下載，Python 負責文獻萃取；機器學習模型訓練程式碼在另一個程式庫。
+- **ID／類型：** `synmof-literature-extraction`；軟體／機器學習與資料。從文獻自動萃取 MOF 合成資訊的程式：Node.js 負責出版物下載，Python 負責文獻萃取；機器學習模型訓練程式碼在另一個程式庫。
 - **展示判定：** 可展示但須註記。官方程式庫與 MIT LICENSE 已核實；論文由 README 列出的標題與作者，經 Crossref 比對後確認。
 - **MOF 適用性：** 直接適用。論文標題與 README 均以 MOF 合成預測為目標。
 - **授權與狀態：** MIT License（程式碼）。最後推送 2021-08-03（GitHub API），已逾五年未更新。

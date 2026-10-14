@@ -16,7 +16,7 @@ export const CATEGORY_LABELS_EN: Record<'gas' | 'carbon' | 'photo' | 'structure'
 };
 
 export const ENTITY_TYPE_LABELS_EN: Record<'software' | 'database' | 'portal', string> = {
-  software: 'Open-source software',
+  software: 'Software',
   database: 'Database',
   portal: 'Data retrieval portal',
 };

@@ -57,7 +57,7 @@ export const CATEGORY_LABELS: Record<MOFCategory, string> = {
 };
 
 export const ENTITY_TYPE_LABELS: Record<EntityType, string> = {
-  software: '開源軟體',
+  software: '軟體',
   database: '資料庫',
   portal: '資料檢索入口',
 };
