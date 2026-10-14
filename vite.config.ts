@@ -6,7 +6,14 @@ import { defineConfig } from "vite";
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin()];
 
+export default defineConfig(import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
 export default defineConfig({
+  base: '/mof-open-source-hub/',
+  plugins: [react()],
+}){
   plugins,
   resolve: {
     alias: {
