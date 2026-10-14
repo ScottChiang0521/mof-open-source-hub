@@ -15,7 +15,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 ## MOF Open Source Hub: Source Manifest and Conservative Curation Decisions
 
 **Manifest version:** 2026-10-14. The first 15 entries were compiled on 2026-10-09 from independent verification results provided in the brief; 24 entries were added on 2026-10-14.  
-**Curation principle:** For the original 15 entries this manifest **does not add, infer, or re-verify** any fact. The 24 entries added on 2026-10-14 are different: each was checked directly against its primary source (LICENSE file, README, publisher or archive page; DOIs resolved through Crossref or DataCite), and facts that could not be confirmed are stated as unconfirmed. For all entries, display decisions are made only from each result's `verdict`, `evidenceSummary`, `caveats`, and the listed URLs. Items marked `verified` are listed as "Ready to display"; items marked `verified_with_caveat` are listed as "Display with caveats". No original-15 item was judged unusable by its verification conclusion. The added entries cite their URLs inline in the source blocks and are not numbered in the References list.
+**Curation principle:** For the original 15 entries this manifest **does not add, infer, or re-verify** any fact. The 24 entries added on 2026-10-14 are different: each was checked directly against its primary source (LICENSE file, README, publisher or archive page; DOIs resolved through Crossref or DataCite), and facts that could not be confirmed are stated as unconfirmed. For all entries, display decisions are made only from each result's `verdict`, `evidenceSummary`, `caveats`, and the listed URLs. Items marked `verified` are listed as "Ready to display"; items marked `verified_with_caveat` are listed as "Display with caveats". No original-15 item was judged unusable by its verification conclusion. The added entries cite their URLs inline in the source blocks and are not numbered in the References list. Two Zenodo records appended to the original core-mof-db entry (CoRE MOF 2024 v1.1 and CoRE MOF 2019 v1.1.4) were checked on 2026-10-14; the rest of that entry keeps its 2026-10-09 verification.
 
 > **Data quality and boundaries of use**
 >
@@ -734,7 +734,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### ARC-MOF
 
-- **ID / type:** `arc-mof`; Open database / Machine learning and data. A database of about 280,000 MOFs described on Zenodo as "experimentally characterized or computationally generated"; per the record, DFT-derived REPEAT charges, adsorption data and descriptors are provided for all MOFs.
+- **ID / type:** `arc-mof`; Database / Machine learning and data. A database of about 280,000 MOFs described on Zenodo as "experimentally characterized or computationally generated"; per the record, DFT-derived REPEAT charges, adsorption data and descriptors are provided for all MOFs.
 - **Display decision:** Display with caveats. Zenodo record (v7, 2025-08), CC BY 4.0 and the Chem. Mater. paper are verified; license terms of the upstream structure sources are not itemized in the record.
 - **MOF applicability:** Directly MOF-focused. The record says it spans all publicly available MOF databases and mixes experimental and computationally generated structures, which must be separated by the user.
 - **License and status:** Data: CC BY 4.0 (as stated on the Zenodo record). The Zenodo version history runs v2 to v7 (v7 added dimensionality, published 2025-08); whether it is updated further is not confirmed.
@@ -758,7 +758,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### MOFX-DB
 
-- **ID / type:** `mofx-db`; Open database / Gas adsorption and separation. An online database of computational adsorption data (CIFs and isotherms) for MOFs and other nanoporous materials; the site lets users view and download CoRE MOF 2014/2019, hMOF, IZA, PCOD-syn, Tobacco and other datasets.
+- **ID / type:** `mofx-db`; Database / Gas adsorption and separation. An online database of computational adsorption data (CIFs and isotherms) for MOFs and other nanoporous materials; the site lets users view and download CoRE MOF 2014/2019, hMOF, IZA, PCOD-syn, Tobacco and other datasets.
 - **Display decision:** Display with caveats. The official site, database download page, API page and the JCED paper are verified; the site states no data license.
 - **MOF applicability:** Directly relevant: it hosts MOF datasets together with non-MOF collections such as IZA zeolites and PCOD-syn, so filtering by dataset is needed.
 - **License and status:** No data license stated on the site; Python client mofdb-client: MIT (as labelled on GitHub). The site shows the current database version dc8a0295db and accepts a version code to view older data; the GitHub archive repository was last pushed in 2022-12 and the client in 2023-04.
@@ -786,7 +786,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### NIST/ARPA-E Database of Novel and Emerging Adsorbent Materials
 
-- **ID / type:** `nist-arpa-e-adsorbent-db`; Open database / Gas adsorption and separation. A NIST-compiled database of adsorption isotherms for novel and emerging adsorbent materials (site title: NIST/ARPA-E Database of Novel and Emerging Adsorbent Materials); the materials are not limited to MOFs.
+- **ID / type:** `nist-arpa-e-adsorbent-db`; Database / Gas adsorption and separation. A NIST-compiled database of adsorption isotherms for novel and emerging adsorbent materials (site title: NIST/ARPA-E Database of Novel and Emerging Adsorbent Materials); the materials are not limited to MOFs.
 - **Display decision:** Display with caveats. The official site and its copyright line are verified; the site states "all rights reserved", which is not an open license, and the scope of permitted reuse is not confirmed.
 - **MOF applicability:** Partly relevant. MOF-type compound names appear among the materials, but the home page does not state the share or scope of MOFs, so filtering is needed.
 - **License and status:** Site states "(c)2016 copyright by the U. S. Department of Commerce on behalf of the United States of America. All rights reserved."; no separate license terms. The site opens normally; the created and updated date fields on the home page were blank in this fetch, so update frequency is not confirmed.
@@ -837,7 +837,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### Open DAC 2025 (ODAC25)
 
-- **ID / type:** `odac25`; Open database / Carbon capture / DAC. A DFT single-point dataset for screening sorbents for direct air capture (DAC): adsorption of CO2, H2O, N2 and O2 in about 15,000 MOFs, labelled with total energies and atomic forces (PBE+D3, VASP) for training machine-learned interatomic potentials.
+- **ID / type:** `odac25`; Database / Carbon capture / DAC. A DFT single-point dataset for screening sorbents for direct air capture (DAC): adsorption of CO2, H2O, N2 and O2 in about 15,000 MOFs, labelled with total energies and atomic forces (PBE+D3, VASP) for training machine-learned interatomic potentials.
 - **Display decision:** Display with caveats. The Hugging Face dataset card and the official fairchem documentation both state CC BY 4.0 for the data; access requires accepting conditions and giving personal details; the model files carry a different license.
 - **MOF applicability:** Directly MOF-focused DAC adsorption; it includes functionalized MOFs, high-energy GCMC-derived placements and synthetically generated frameworks, which should be distinguished by source.
 - **License and status:** Data: CC BY 4.0; model checkpoints: FAIR Chemistry License v1 (additional restrictions, not an open license); fairchem code: MIT. arXiv preprint v2 dated 2025-09-23; the fairchem documentation marks ODAC23 as deprecated and recommends ODAC25.
@@ -891,7 +891,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 ### Cambridge Structural Database (CSD)
 
-- **ID / type:** `csd-cambridge-structural-database`; Open database / Structure processing and pore analysis. A curated database of experimental organic and metal-organic crystal structures. Most MOF datasets (for example CoRE MOF and the construction workflow of MOSAEC-DB) use its structures as upstream input; systematic search needs a CSD license, with a free service for individual structures.
+- **ID / type:** `csd-cambridge-structural-database`; Database / Structure processing and pore analysis. A curated database of experimental organic and metal-organic crystal structures. Most MOF datasets (for example CoRE MOF and the construction workflow of MOSAEC-DB) use its structures as upstream input; systematic search needs a CSD license, with a free service for individual structures.
 - **Display decision:** Display with caveats. Official CCDC pages (CSD statistics, Access Structures terms) are verified; the CSD is a licensed commercial database, not open source or open data.
 - **MOF applicability:** Directly related but not a MOF-specific database. It is the main upstream source of experimental MOF structures, but no CCDC page offering a MOF subset was verified (an earlier probe of a MOF subset URL returned a generic landing page, not a MOF page).
 - **License and status:** Proprietary (institutional or individual CSD license); the free Access Structures service has its own terms of use. The statistics page reports over 1.4 million curated entries, generated weekly; exact release and date depend on the licensed distribution.
@@ -1064,7 +1064,7 @@ If a new verification result later confirms the license, availability, and MOF s
 ## MOF Open Source Hub：來源清冊與保守策展決定
 
 **清冊版本：** 2026-10-14。前 15 筆於 2026-10-09 依題示的獨立核實結果整理；2026-10-14 新增 24 筆。  
-**策展原則：** 對原 15 筆，本清冊**不新增、推斷或重新核實**任何事實；2026-10-14 新增的 24 筆則不同：每筆都直接對照其主要來源（LICENSE 檔、README、出版者或保存庫頁面；DOI 經 Crossref 或 DataCite 解析）核實，無法確認的事實一律標示為未確認。對所有條目，展示決定僅依每筆結果的 `verdict`、`evidenceSummary`、`caveats` 與所列 URL 作成。`verified` 項目列為「可立即展示」；`verified_with_caveat` 項目列為「可展示但須註記」。原 15 筆中沒有被原核實結論判為不可用的項目。新增條目的 URL 直接列於各自的來源區塊，未編入 References 編號。
+**策展原則：** 對原 15 筆，本清冊**不新增、推斷或重新核實**任何事實；2026-10-14 新增的 24 筆則不同：每筆都直接對照其主要來源（LICENSE 檔、README、出版者或保存庫頁面；DOI 經 Crossref 或 DataCite 解析）核實，無法確認的事實一律標示為未確認。對所有條目，展示決定僅依每筆結果的 `verdict`、`evidenceSummary`、`caveats` 與所列 URL 作成。`verified` 項目列為「可立即展示」；`verified_with_caveat` 項目列為「可展示但須註記」。原 15 筆中沒有被原核實結論判為不可用的項目。新增條目的 URL 直接列於各自的來源區塊，未編入 References 編號。附加於原 core-mof-db 條目的兩筆 Zenodo 紀錄（CoRE MOF 2024 v1.1 與 2019 v1.1.4）於 2026-10-14 核實；該條目其餘部分維持 2026-10-09 的核實。
 
 > **資料品質與使用邊界**
 >
@@ -1783,7 +1783,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### ARC-MOF
 
-- **ID／類型：** `arc-mof`；開放資料庫／機器學習與資料。收錄約 280,000 個「經實驗表徵或計算產生」的 MOF 結構之資料庫；依 Zenodo 說明，所有 MOF 皆附有 DFT 導出的 REPEAT 電荷、吸附資料與多種描述子。
+- **ID／類型：** `arc-mof`；資料庫／機器學習與資料。收錄約 280,000 個「經實驗表徵或計算產生」的 MOF 結構之資料庫；依 Zenodo 說明，所有 MOF 皆附有 DFT 導出的 REPEAT 電荷、吸附資料與多種描述子。
 - **展示判定：** 可展示但須註記。Zenodo 紀錄（v7，2025-08）、CC BY 4.0 與 Chem. Mater. 論文均已核實；上游結構來源的個別授權條件未在紀錄中逐項列出。
 - **MOF 適用性：** 直接面向 MOF。紀錄稱涵蓋「所有公開 MOF 資料庫」，同時含實驗與計算產生的結構，需自行區分。
 - **授權與狀態：** 資料：CC BY 4.0（Zenodo 紀錄所載）。Zenodo 有 v2 至 v7 的版本史（v7 加入維度資訊，2025-08 發布）；其後是否續更未確認。
@@ -1807,7 +1807,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### MOFX-DB
 
-- **ID／類型：** `mofx-db`；開放資料庫／氣體吸附與分離。提供 MOF 與其他奈米多孔材料的計算吸附資料（CIF 與等溫線）的線上資料庫，網站可檢視並下載 CoRE MOF 2014／2019、hMOF、IZA、PCOD-syn、Tobacco 等資料集。
+- **ID／類型：** `mofx-db`；資料庫／氣體吸附與分離。提供 MOF 與其他奈米多孔材料的計算吸附資料（CIF 與等溫線）的線上資料庫，網站可檢視並下載 CoRE MOF 2014／2019、hMOF、IZA、PCOD-syn、Tobacco 等資料集。
 - **展示判定：** 可展示但須註記。官方網站、資料庫下載頁、API 頁與 JCED 論文均已核實；網站未載明資料授權。
 - **MOF 適用性：** 直接相關：收錄 MOF 資料集，並含 IZA 沸石與 PCOD-syn 等非 MOF 集合，使用前需依資料集篩選。
 - **授權與狀態：** 網站未載明資料授權；Python 用戶端 mofdb-client：MIT（GitHub 標示）。網站顯示目前資料庫版本 dc8a0295db 並可輸入版本代碼檢視舊版；GitHub 封存庫最後推送為 2022-12，用戶端為 2023-04。
@@ -1835,7 +1835,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### NIST/ARPA-E Database of Novel and Emerging Adsorbent Materials
 
-- **ID／類型：** `nist-arpa-e-adsorbent-db`；開放資料庫／氣體吸附與分離。NIST 彙編的新興與新穎吸附材料之吸附等溫線資料庫（網站標題為 NIST/ARPA-E Database of Novel and Emerging Adsorbent Materials）；材料並非僅限 MOF。
+- **ID／類型：** `nist-arpa-e-adsorbent-db`；資料庫／氣體吸附與分離。NIST 彙編的新興與新穎吸附材料之吸附等溫線資料庫（網站標題為 NIST/ARPA-E Database of Novel and Emerging Adsorbent Materials）；材料並非僅限 MOF。
 - **展示判定：** 可展示但須註記。官方網站與版權聲明均已核實；網站標示 all rights reserved，不是開放授權，再利用範圍未確認。
 - **MOF 適用性：** 部分相關。材料名稱中可見 MOF 類化合物，但首頁未說明 MOF 的比例或範圍，需自行篩選。
 - **授權與狀態：** 網站標示「©2016 copyright by the U. S. Department of Commerce on behalf of the United States of America. All rights reserved.」；無獨立授權條款。網站可正常開啟；首頁的建立與更新日期欄位在本次抓取中為空白，更新頻率未確認。
@@ -1862,7 +1862,7 @@ If a new verification result later confirms the license, availability, and MOF s
 - **ID／類型：** `materials-cloud-archive`；資料檢索入口／機器學習與資料。計算材料科學社群的資料保存庫，研究者可將資料、腳本與補充材料存放並取得 DOI；並非 MOF 專用，下列兩筆為 MOF 相關紀錄。
 - **展示判定：** 可展示但須註記。官方 Archive 頁、政策頁與兩筆 MOF 紀錄均已核實；Archive 本身沒有預設資料授權，授權逐筆紀錄不同。
 - **MOF 適用性：** 部分相關。平台涵蓋計算材料科學，MOF 資料需逐筆搜尋；本次僅核實下列兩筆。
-- **授權與狀態：** 無平台預設授權；由上傳者逐筆選擇。本次核實的兩筆 MOF 紀錄皆為 CC BY 4.0；平台中繼資料為 CC BY-SA 4.0（電子郵件除外）。政策載明紀錄至少保存至存入後 10 年；下列紀錄為 2021、2022 年的 v1。
+- **授權與狀態：** 無平台預設授權；由上傳者逐筆選擇。本次核實的兩筆 MOF 紀錄皆為 CC BY 4.0；平台中繼資料為 CC BY-SA 4.0（電子郵件除外）。政策載明紀錄於 repository 存續期間內持續保存，且至少保存至存入後 10 年；下列紀錄為 2021、2022 年的 v1。
 - **必要註記：**
   - Archive 沒有預設授權；不得把一筆紀錄的授權外推到整個平台。
   - 本次核實的紀錄編號為 materialscloud:2021.126 與 2022.101（網址為 records/et2ts-zxh44、records/tet5j-6fd97）；以 972、1429 組成的 records/ 網址在抓取時回傳 404。
@@ -1886,7 +1886,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### Open DAC 2025 (ODAC25)
 
-- **ID／類型：** `odac25`；開放資料庫／碳捕捉／DAC。用於直接空氣捕碳（DAC）吸附劑篩選的 DFT 單點計算資料集：約 15,000 個 MOF 中 CO₂、H₂O、N₂、O₂ 的吸附，標籤為總能量與原子受力（PBE+D3，VASP），可用於訓練機器學習原子間勢能。
+- **ID／類型：** `odac25`；資料庫／碳捕捉／DAC。用於直接空氣捕碳（DAC）吸附劑篩選的 DFT 單點計算資料集：約 15,000 個 MOF 中 CO₂、H₂O、N₂、O₂ 的吸附，標籤為總能量與原子受力（PBE+D3，VASP），可用於訓練機器學習原子間勢能。
 - **展示判定：** 可展示但須註記。Hugging Face 資料卡與 fairchem 官方文件均載明資料為 CC BY 4.0；取得需同意條件並提供個人資訊；模型檔授權不同。
 - **MOF 適用性：** 直接針對 MOF 的 DAC 吸附；含功能化 MOF、GCMC 導出的高能放置與合成產生的框架，需區分來源。
 - **授權與狀態：** 資料：CC BY 4.0；模型檔：FAIR Chemistry License v1（另有限制，非開放授權）；fairchem 程式碼：MIT。arXiv 預印本 v2 於 2025-09-23；fairchem 文件已將 ODAC23 標為 deprecated，建議改用 ODAC25。
@@ -1940,7 +1940,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 ### Cambridge Structural Database (CSD)
 
-- **ID／類型：** `csd-cambridge-structural-database`；開放資料庫／結構處理與孔隙分析。收錄有機與金屬有機實驗晶體結構的精選資料庫。多數 MOF 資料集（如 CoRE MOF、MOSAEC-DB 的建置流程）以其結構為上游來源；系統性檢索需 CSD 授權，另有逐筆查詢的免費服務。
+- **ID／類型：** `csd-cambridge-structural-database`；資料庫／結構處理與孔隙分析。收錄有機與金屬有機實驗晶體結構的精選資料庫。多數 MOF 資料集（如 CoRE MOF、MOSAEC-DB 的建置流程）以其結構為上游來源；系統性檢索需 CSD 授權，另有逐筆查詢的免費服務。
 - **展示判定：** 可展示但須註記。CCDC 官方頁面（CSD 統計、Access Structures 條款）已核實；CSD 為授權制商用資料庫，不是開源或開放資料。
 - **MOF 適用性：** 直接相關但非 MOF 專庫。實驗 MOF 結構的主要上游，但本次未核實 CCDC 網站上有可用的 MOF 子集頁面（先前探測的 MOF subset 網址回傳的是首頁式內容，不是 MOF 頁）。
 - **授權與狀態：** 專有授權（機構／個人 CSD 授權）；免費 Access Structures 服務有獨立使用條款。統計頁稱 CSD 超過 140 萬筆精選條目，統計每週產生；具體版本與日期依授權發行。

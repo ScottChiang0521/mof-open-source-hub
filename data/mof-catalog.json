@@ -297,7 +297,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open database",
+        "entityTypeLabel": "Database",
         "curationTierLabel": "Verified | ready to display",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Open / reusable",
@@ -362,7 +362,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開放資料庫",
+        "entityTypeLabel": "資料庫",
         "curationTierLabel": "已核實｜可立即展示",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "公開／可再利用",
@@ -1640,7 +1640,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open database",
+        "entityTypeLabel": "Database",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Open subset / mixed restrictions",
@@ -1683,14 +1683,14 @@
             "resourceType": "Data repository",
             "url": "https://zenodo.org/records/15055758",
             "access": "Open, CC BY 4.0; CSD-derived parts need a separate CCDC licence",
-            "dataType": "2024 SI CIFs, ASR/FSR/ION lists and property tables (8,300 SI structures)"
+            "dataType": "2024 SI CIFs, ASR/FSR/ION lists and property tables (8,300 SI structures); record checked 2026-10-14"
           },
           {
             "label": "CoRE MOF 2019 Dataset (v1.1.4)",
             "resourceType": "Data repository",
             "url": "https://zenodo.org/records/7691378",
             "access": "Open, CC BY 4.0",
-            "dataType": "2019 ASR public 12,020 / FSR public 7,061 CIF archives and lists; companion paper doi 10.1021/acs.jced.9b00835"
+            "dataType": "2019 ASR public 12,020 / FSR public 7,061 CIF archives and lists; companion paper doi 10.1021/acs.jced.9b00835; record checked 2026-10-14"
           }
         ],
         "primarySourceLabel": "CoRE MOF DB official website",
@@ -1711,7 +1711,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開放資料庫",
+        "entityTypeLabel": "資料庫",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "公開子集／混合限制",
@@ -1754,14 +1754,14 @@
             "resourceType": "資料保存庫",
             "url": "https://zenodo.org/records/15055758",
             "access": "公開，CC BY 4.0；CSD 衍生部分另需 CCDC 授權",
-            "dataType": "2024 版 SI CIF、ASR／FSR／ION 清單與性質表（SI 8,300 筆）"
+            "dataType": "2024 版 SI CIF、ASR／FSR／ION 清單與性質表（SI 8,300 筆）；此紀錄於 2026-10-14 核實"
           },
           {
             "label": "CoRE MOF 2019 Dataset（v1.1.4）",
             "resourceType": "資料保存庫",
             "url": "https://zenodo.org/records/7691378",
             "access": "公開，CC BY 4.0",
-            "dataType": "2019 版 ASR public 12,020／FSR public 7,061 CIF 壓縮檔與清單；對應論文 doi 10.1021/acs.jced.9b00835"
+            "dataType": "2019 版 ASR public 12,020／FSR public 7,061 CIF 壓縮檔與清單；對應論文 doi 10.1021/acs.jced.9b00835；此紀錄於 2026-10-14 核實"
           }
         ],
         "primarySourceLabel": "CoRE MOF DB 官方網站",
@@ -1947,7 +1947,7 @@
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "lastVerified": "2026-10-09",
       "en": {
-        "entityTypeLabel": "Open database",
+        "entityTypeLabel": "Database",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Open / reusable",
@@ -2004,7 +2004,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開放資料庫",
+        "entityTypeLabel": "資料庫",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "公開／可再利用",
@@ -4121,7 +4121,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open database",
+        "entityTypeLabel": "Database",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Machine learning and data",
         "dataAccessLabel": "Open / reusable",
@@ -4180,7 +4180,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開放資料庫",
+        "entityTypeLabel": "資料庫",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "機器學習與資料",
         "dataAccessLabel": "公開／可再利用",
@@ -4264,7 +4264,7 @@
       "licenseUrl": "https://github.com/n8ta/mofdb-client",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open database",
+        "entityTypeLabel": "Database",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Gas adsorption and separation",
         "dataAccessLabel": "Public download; data license not stated",
@@ -4338,7 +4338,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開放資料庫",
+        "entityTypeLabel": "資料庫",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "氣體吸附與分離",
         "dataAccessLabel": "公開下載；資料授權未載明",
@@ -4430,7 +4430,7 @@
       "licenseUrl": "https://www.nist.gov/copyrights-disclaimers",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open database",
+        "entityTypeLabel": "Database",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Gas adsorption and separation",
         "dataAccessLabel": "Limited or needs separate confirmation",
@@ -4488,7 +4488,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開放資料庫",
+        "entityTypeLabel": "資料庫",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "氣體吸附與分離",
         "dataAccessLabel": "受限或需另行確認",
@@ -4657,7 +4657,7 @@
           "論文補充資料"
         ],
         "license": "無平台預設授權；由上傳者逐筆選擇。本次核實的兩筆 MOF 紀錄皆為 CC BY 4.0；平台中繼資料為 CC BY-SA 4.0（電子郵件除外）",
-        "maintenanceStatus": "政策載明紀錄至少保存至存入後 10 年；下列紀錄為 2021、2022 年的 v1。",
+        "maintenanceStatus": "政策載明紀錄於 repository 存續期間內持續保存，且至少保存至存入後 10 年；下列紀錄為 2021、2022 年的 v1。",
         "mofApplicability": "部分相關。平台涵蓋計算材料科學，MOF 資料需逐筆搜尋；本次僅核實下列兩筆。",
         "supplementaryResources": [
           {
@@ -4737,7 +4737,7 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open database",
+        "entityTypeLabel": "Database",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Carbon capture / DAC",
         "dataAccessLabel": "Data CC BY 4.0; conditions must be accepted to access files",
@@ -4812,7 +4812,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開放資料庫",
+        "entityTypeLabel": "資料庫",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "碳捕捉／DAC",
         "dataAccessLabel": "資料 CC BY 4.0；需同意條件才能存取檔案",
@@ -5068,7 +5068,7 @@
       "licenseUrl": "https://www.ccdc.cam.ac.uk/access-structures-terms",
       "lastVerified": "2026-10-14",
       "en": {
-        "entityTypeLabel": "Open database",
+        "entityTypeLabel": "Database",
         "curationTierLabel": "Verified | read the notes",
         "categoryLabel": "Structure processing and pore analysis",
         "dataAccessLabel": "Licensed commercial database; not open source",
@@ -5134,7 +5134,7 @@
         ]
       },
       "zh": {
-        "entityTypeLabel": "開放資料庫",
+        "entityTypeLabel": "資料庫",
         "curationTierLabel": "已核實｜須閱讀註記",
         "categoryLabel": "結構處理與孔隙分析",
         "dataAccessLabel": "授權制商用資料庫；非開源",
