@@ -112,7 +112,7 @@ The site code is under the MIT license set in `package.json`; **the listed third
 
 ## Unverified leads
 
-`data/mof-leads.json` lists MOF-related sources known only from search-result listings (a photocatalysis design-space paper with claimed code and a Zenodo record, the uMOF preprint, and a MOF-5 CO2 photoreduction preprint). They are shown on the site under "Unverified leads", are **not** in `data/mof-catalog.json`, and carry no license or data-access claim. A lead moves into the catalog only after its primary source has been opened and checked.
+`data/mof-leads.json` lists MOF-related sources known only from search-result listings (a photocatalysis design-space paper with claimed code and a Zenodo record, the uMOF preprint, a MOF-5 CO2 photoreduction preprint, MACE-MP-MOF0, and a direct-air-capture force-field benchmark), plus a list of general materials tools that were checked and not added because their own READMEs are not MOF-specific. They are shown on the site under "Unverified leads", are **not** in `data/mof-catalog.json`, and carry no license or data-access claim. A lead moves into the catalog only after its primary source has been opened and checked.
 
 ## 繁體中文
 
