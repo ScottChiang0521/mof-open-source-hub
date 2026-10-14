@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import {
   APPLICATION_GUIDE,
   CATEGORY_LABELS,
@@ -134,8 +134,14 @@ export default function Home() {
     }
   };
 
-  const selectProject = (project: MOFProject) => setSelectedProject(project);
-  const sel = selectedProject;
+  const detailRef = useRef<HTMLDivElement>(null);
+  const selectProject = (project: MOFProject) => {
+    setSelectedProject(project);
+    if (window.matchMedia('(max-width: 1023px)').matches) {
+      detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+  const sel = selectedProject && filteredProjects.some((project) => project.id === selectedProject.id) ? selectedProject : null;
   const selEn = sel ? ALL_PROJECTS_EN[sel.id] : null;
   const guide = APPLICATION_GUIDE[activeWorkflowTab];
   const guideEn = APPLICATION_GUIDE_EN[activeWorkflowTab];
@@ -258,39 +264,43 @@ export default function Home() {
                 />
               </p>
             </div>
-            <div className="relative w-full xl:w-80">
-              <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input
-                placeholder="Search tools, data types, ML tasks... / 搜尋工具、資料型態、ML 任務..."
-                className="pl-9 font-mono text-sm"
-                value={searchTerm}
-                onChange={(event) => setSearchTerm(event.target.value)}
-              />
+            <div className="w-full xl:w-80">
+              <label htmlFor="catalog-search" className="mb-1 block font-mono text-[11px] text-muted-foreground">{bl('Search the catalog', '搜尋目錄')}</label>
+              <div className="relative">
+                <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                <Input
+                  id="catalog-search"
+                  placeholder="Search tools, data types, ML tasks... / 搜尋工具、資料型態、ML 任務..."
+                  className="pl-9 font-mono text-sm"
+                  value={searchTerm}
+                  onChange={(event) => setSearchTerm(event.target.value)}
+                />
+              </div>
             </div>
           </div>
 
           <div className="mb-8 space-y-4 border border-border bg-muted/15 p-4">
             <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wide text-muted-foreground"><Filter className="h-3.5 w-3.5" /> {bl('Filters', '篩選器')}</div>
             <div className="flex flex-wrap gap-2">
-              <Button variant={selectedEntity === 'all' ? 'default' : 'outline'} size="sm" className="font-mono text-xs" onClick={() => setSelectedEntity('all')}>{bl('All entities', '全部實體')} ({total})</Button>
+              <Button variant={selectedEntity === 'all' ? 'default' : 'outline'} aria-pressed={selectedEntity === 'all'} size="sm" className="font-mono text-xs" onClick={() => setSelectedEntity('all')}>{bl('All entities', '全部實體')} ({total})</Button>
               {entityOrder.map((entity) => {
                 const count = MOF_PROJECTS.filter((project) => project.entityType === entity).length;
-                return <Button key={entity} variant={selectedEntity === entity ? 'default' : 'outline'} size="sm" className="font-mono text-xs" onClick={() => setSelectedEntity(entity)}>{bl(ENTITY_TYPE_LABELS_EN[entity], ENTITY_TYPE_LABELS[entity])} ({count})</Button>;
+                return <Button key={entity} variant={selectedEntity === entity ? 'default' : 'outline'} aria-pressed={selectedEntity === entity} size="sm" className="font-mono text-xs" onClick={() => setSelectedEntity(entity)}>{bl(ENTITY_TYPE_LABELS_EN[entity], ENTITY_TYPE_LABELS[entity])} ({count})</Button>;
               })}
             </div>
             <div className="flex flex-wrap gap-2">
-              <Button variant={selectedTier === 'all' ? 'default' : 'outline'} size="sm" className="font-mono text-xs" onClick={() => setSelectedTier('all')}>{bl('All verification statuses', '全部核實狀態')}</Button>
+              <Button variant={selectedTier === 'all' ? 'default' : 'outline'} aria-pressed={selectedTier === 'all'} size="sm" className="font-mono text-xs" onClick={() => setSelectedTier('all')}>{bl('All verification statuses', '全部核實狀態')}</Button>
               {(Object.keys(CURATION_TIER_LABELS) as CurationTier[]).map((tier) => {
                 const count = MOF_PROJECTS.filter((project) => project.curationTier === tier).length;
-                return <Button key={tier} variant={selectedTier === tier ? 'default' : 'outline'} size="sm" className="font-mono text-xs" onClick={() => setSelectedTier(tier)}>{bl(CURATION_TIER_LABELS_EN[tier], CURATION_TIER_LABELS[tier])} ({count})</Button>;
+                return <Button key={tier} variant={selectedTier === tier ? 'default' : 'outline'} aria-pressed={selectedTier === tier} size="sm" className="font-mono text-xs" onClick={() => setSelectedTier(tier)}>{bl(CURATION_TIER_LABELS_EN[tier], CURATION_TIER_LABELS[tier])} ({count})</Button>;
               })}
             </div>
             <div className="flex flex-wrap gap-2">
-              <Button variant={selectedCategory === 'all' ? 'default' : 'outline'} size="sm" className="font-mono text-xs" onClick={() => setSelectedCategory('all')}>{bl('All applications', '全部應用')}</Button>
+              <Button variant={selectedCategory === 'all' ? 'default' : 'outline'} aria-pressed={selectedCategory === 'all'} size="sm" className="font-mono text-xs" onClick={() => setSelectedCategory('all')}>{bl('All applications', '全部應用')}</Button>
               {categoryOrder.filter((category) => MOF_PROJECTS.some((project) => project.category === category)).map((category) => {
                 const count = MOF_PROJECTS.filter((project) => project.category === category).length;
                 return (
-                  <Button key={category} variant={selectedCategory === category ? 'default' : 'outline'} size="sm" className="flex items-center gap-1.5 font-mono text-xs" onClick={() => setSelectedCategory(category)}>
+                  <Button key={category} variant={selectedCategory === category ? 'default' : 'outline'} aria-pressed={selectedCategory === category} size="sm" className="flex items-center gap-1.5 font-mono text-xs" onClick={() => setSelectedCategory(category)}>
                     {getCategoryIcon(category)} {bl(CATEGORY_LABELS_EN[category], CATEGORY_LABELS[category])} ({count})
                   </Button>
                 );
@@ -320,12 +330,12 @@ export default function Home() {
                     <div className="mb-3 flex items-start justify-between gap-3">
                       <div>
                         <h3 className="font-sans text-lg font-bold transition-colors group-hover:text-primary">{project.name}</h3>
-                        <p className="mt-1 font-mono text-[10px] text-muted-foreground">{ENTITY_TYPE_LABELS_EN[project.entityType]} · {CATEGORY_LABELS_EN[project.category]}</p>
+                        <p lang="en" className="mt-1 font-mono text-[10px] text-muted-foreground">{ENTITY_TYPE_LABELS_EN[project.entityType]} · {CATEGORY_LABELS_EN[project.category]}</p>
                         <p lang="zh-Hant" className="font-mono text-[10px] text-muted-foreground opacity-75">{ENTITY_TYPE_LABELS[project.entityType]} · {project.categoryLabel}</p>
                       </div>
                       {project.curationTier === 'immediate' ? <Badge className="shrink-0 rounded-none bg-emerald-600 text-[10px]">Verified / 已核實</Badge> : <Badge variant="outline" className="shrink-0 rounded-none border-amber-500/40 bg-amber-500/10 text-[10px] text-amber-700 dark:text-amber-300">Notes / 需註記</Badge>}
                     </div>
-                    <p className="mb-1 line-clamp-2 font-mono text-xs leading-relaxed text-muted-foreground">{en.description}</p>
+                    <p lang="en" className="mb-1 line-clamp-2 font-mono text-xs leading-relaxed text-muted-foreground">{en.description}</p>
                     <p lang="zh-Hant" className="mb-3 line-clamp-2 font-mono text-xs leading-relaxed text-muted-foreground opacity-75">{project.description}</p>
                     <div className="flex flex-wrap gap-1.5">
                       <Badge variant="outline" className={`rounded-none text-[10px] ${dataAccessClass(project.dataAccess)}`}>{bl(en.dataAccessLabel, project.dataAccessLabel)}</Badge>
@@ -336,7 +346,7 @@ export default function Home() {
               })}
             </div>
 
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7" ref={detailRef}>
               {sel && selEn ? (
                 <article className="relative min-h-[640px] border border-border bg-muted/10 p-6">
                   <div className="metal-node left-0 top-0" /><div className="metal-node right-0 top-0" /><div className="metal-node bottom-0 left-0" /><div className="metal-node bottom-0 right-0" />
@@ -452,7 +462,7 @@ export default function Home() {
           <div className="mb-8 grid grid-cols-1 border border-border md:grid-cols-3">
             {(Object.keys(APPLICATION_GUIDE) as WorkflowKey[]).map((key, index) => {
               const icons = [<Atom key="gas" className="h-4 w-4" />, <Flame key="carbon" className="h-4 w-4" />, <Zap key="photo" className="h-4 w-4" />];
-              return <button key={key} type="button" onClick={() => setActiveWorkflowTab(key)} className={`flex items-center justify-between border-b border-border p-4 text-left font-mono text-xs font-bold transition-all md:border-b-0 ${index < 2 ? 'md:border-r' : ''} ${activeWorkflowTab === key ? 'bg-primary text-primary-foreground' : 'hover:bg-muted/50'}`}><span className="flex items-center gap-2">{icons[index]}{index + 1}. {APPLICATION_GUIDE_EN[key].title.split(/[:：]/)[0]} / {APPLICATION_GUIDE[key].title.split('：')[0]}</span><ChevronRight className="h-4 w-4 opacity-50" /></button>;
+              return <button key={key} type="button" aria-pressed={activeWorkflowTab === key} onClick={() => setActiveWorkflowTab(key)} className={`flex items-center justify-between border-b border-border p-4 text-left font-mono text-xs font-bold transition-all md:border-b-0 ${index < 2 ? 'md:border-r' : ''} ${activeWorkflowTab === key ? 'bg-primary text-primary-foreground' : 'hover:bg-muted/50'}`}><span className="flex items-center gap-2">{icons[index]}{index + 1}. {APPLICATION_GUIDE_EN[key].title.split(/[:：]/)[0]} / {APPLICATION_GUIDE[key].title.split('：')[0]}</span><ChevronRight className="h-4 w-4 opacity-50" /></button>;
             })}
           </div>
           <div className="relative border border-border bg-card p-6 md:p-8">
@@ -483,7 +493,7 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-12">
             <div className="space-y-4 md:col-span-5"><div className="flex items-center gap-3"><div className="flex h-6 w-6 items-center justify-center bg-primary text-xs font-bold text-primary-foreground">M</div><span className="font-sans text-sm font-bold tracking-tight">MOF Open Source Hub</span></div><p className="max-w-sm font-mono text-xs leading-relaxed text-muted-foreground"><Bi en="A traceable guide to tools for MOF design, simulation, and materials-data research. It does not replace the original papers, database terms, or project documentation." zh="面向 MOF 設計、模擬與材料資料研究的可追溯工具導覽。本站內容不取代原始論文、資料庫條款或專案文件。" /></p></div>
             <div className="space-y-3 md:col-span-4"><h4 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">{bl('Current curation', '本次資料策展')}</h4><p className="font-mono text-xs leading-relaxed text-muted-foreground"><Bi en="Verified 2026-10-09 (original 15 entries) and 2026-10-14 (added entries). Code license, data license, SI, models, and upstream structure data are shown in separate fields; judge actual reuse rights by the terms of each original source." zh="核實日：2026-10-09（原 15 筆）與 2026-10-14（新增項目）。程式碼授權、資料授權、SI、模型與上游結構資料均以不同欄位呈現；請依各原始來源條款判斷實際重用權利。" /></p></div>
-            <div className="space-y-3 md:col-span-3"><h4 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">{bl('Further resources', '延伸資源')}</h4><div className="flex gap-3"><a href="https://github.com/topics/metal-organic-frameworks" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary"><Github className="h-4 w-4" /></a><a href="https://www.materialsproject.org/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary"><Database className="h-4 w-4" /></a></div></div>
+            <div className="space-y-3 md:col-span-3"><h4 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">{bl('Further resources', '延伸資源')}</h4><div className="flex gap-3"><a href="https://github.com/topics/metal-organic-frameworks" target="_blank" rel="noopener noreferrer" aria-label="GitHub topic: metal-organic-frameworks" className="text-muted-foreground transition-colors hover:text-primary"><Github className="h-4 w-4" aria-hidden="true" /></a><a href="https://www.materialsproject.org/" target="_blank" rel="noopener noreferrer" aria-label="Materials Project" className="text-muted-foreground transition-colors hover:text-primary"><Database className="h-4 w-4" aria-hidden="true" /></a></div></div>
           </div>
           <div className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-border pt-6 font-mono text-[10px] text-muted-foreground sm:flex-row"><span>© 2026 MOF Open Source Hub · Evidence-led research catalog</span><span>Designed for academic research / 學術研究用途</span></div>
         </div>
