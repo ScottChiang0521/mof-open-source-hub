@@ -51,6 +51,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
+import LEADS from '../../../data/mof-leads.json';
 
 type WorkflowKey = keyof typeof APPLICATION_GUIDE;
 
@@ -503,6 +504,28 @@ export default function Home() {
               )}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="leads" className="border-b border-border bg-card">
+        <div className="container py-10">
+          <h2 className="font-sans text-xl font-bold">{bl('Unverified leads', '待核實線索')}</h2>
+          <p className="mt-2 max-w-3xl font-mono text-xs leading-relaxed text-muted-foreground">{bl(
+            'MOF-related sources found only through search-result listings. They are not in the catalog above and carry no license, data-access or maintenance claim. Each moves into the catalog only after its primary source has been opened and checked.',
+            '僅從搜尋結果清單得知的 MOF 相關來源。它們不在上方目錄內，也不附任何授權、資料存取或維護狀態的主張；須開啟並核對第一手來源後，才會移入目錄。')}</p>
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            {LEADS.leads.map((lead) => (
+              <div key={lead.id} className="border border-amber-500/40 bg-amber-500/5 p-3">
+                <Badge variant="outline" className="mb-2 rounded-none border-amber-500/40 font-mono text-[10px] text-amber-700 dark:text-amber-300">{bl('Not verified', '未核實')}</Badge>
+                <h3 className="font-sans text-sm font-bold leading-snug">{lead.title}</h3>
+                <p className="mt-2 font-mono text-[11px] leading-relaxed text-muted-foreground">{lead.whyUnverified}</p>
+                <ul className="mt-2 space-y-1 font-mono text-[11px]">
+                  {lead.links.map((l) => <li key={l.url}><a href={l.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{l.label}</a></li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 font-mono text-[10px] text-muted-foreground">{bl('Last reviewed', '最後檢視')}: {LEADS.lastReviewed}. {bl('Details are in English only.', '細節僅提供英文。')}</p>
         </div>
       </section>
 

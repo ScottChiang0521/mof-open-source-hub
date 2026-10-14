@@ -28,12 +28,12 @@ Compare the tools usable for MOF gas adsorption, DAC, and photo-/electrocatalysi
 
 ### Scope and curation levels
 
-This version lists **40 resources** (28 software, 9 databases, 3 portals) in two curation levels:
+This version lists **41 resources** (29 software, 9 databases, 3 portals) in two curation levels:
 
 | Curation status | Entries | Meaning |
 |---|---:|---|
 | Verified, ready to display | 5 | Official source, core use, and the main license / data access can be matched unambiguously. |
-| Verified, read the notes | 35 | Usable for research, but with version, source, restricted upstream data, unconfirmed license, model-applicability, or maintenance limits. |
+| Verified, read the notes | 36 | Usable for research, but with version, source, restricted upstream data, unconfirmed license, model-applicability, or maintenance limits. |
 
 Contents by theme:
 
@@ -110,6 +110,10 @@ The site code is under the MIT license set in `package.json`; **the listed third
 
 ---
 
+## Unverified leads
+
+`data/mof-leads.json` lists MOF-related sources known only from search-result listings (a photocatalysis design-space paper with claimed code and a Zenodo record, the uMOF preprint, and a MOF-5 CO2 photoreduction preprint). They are shown on the site under "Unverified leads", are **not** in `data/mof-catalog.json`, and carry no license or data-access claim. A lead moves into the catalog only after its primary source has been opened and checked.
+
 ## 繁體中文
 
 本專案整理適用於 **MOF 結構處理、氣體吸附、碳捕捉／直接空氣捕捉（DAC）、週期性 DFT，以及機器學習**。光電／電催化目前以通用 DFT 工作流程與一個非 MOF 的催化資料集（OC20）呈現：尚無可核實的 MOF 專用開源工具或資料庫（見來源清冊第三節） 的開源工具與資料資源。網站將「程式碼授權」、「資料存取條件」、「論文補充資料」、「訓練資料可用性」與「必要限制」分開標示，且所有文字欄位皆英文在前、繁體中文在後。
@@ -132,12 +136,12 @@ The site code is under the MIT license set in `package.json`; **the listed third
 
 ### 核實範圍
 
-本版本收錄 **40 項**資源（28 項軟體、9 項資料庫、3 項資料入口），分為兩個策展層級：
+本版本收錄 **41 項**資源（29 項軟體、9 項資料庫、3 項資料入口），分為兩個策展層級：
 
 | 策展狀態 | 項目 | 意義 |
 |---|---:|---|
 | 已核實，可立即展示 | 5 | 官方來源、核心用途與主要授權／資料存取可明確對應。 |
-| 已核實，須閱讀註記 | 35 | 可供研究使用，但有版本、來源、受限上游資料、授權未確認、模型適用範圍或維護狀態等必要限制。 |
+| 已核實，須閱讀註記 | 36 | 可供研究使用，但有版本、來源、受限上游資料、授權未確認、模型適用範圍或維護狀態等必要限制。 |
 
 依主題的收錄內容：
 
@@ -211,3 +215,7 @@ data/mof-catalog.json           供程式與 LLM 使用的雙語結構化資料
 - 出版者或保存庫阻擋自動化請求時，條目會如實註明，不宣稱該頁已核實。
 - **自動重新檢查。** `pnpm check:sources`（也由 `.github/workflows/source-check.yml` 每月執行）會重新讀取每份授權檔，與 `data/source-baseline.json` 及目錄中的授權文字比對；每個 DOI 會到 Crossref 與 DataCite 的 API 查詢；其餘網址則直接連線檢查。授權文字改變或與目錄不符、DOI 在兩個機構都查不到、連結回應 404／410，執行會失敗並開立 issue。DOI 註冊的標題與目錄標題幾乎不重疊，以及被擋或連不上的網址，只列為警告（出版者常拒絕自動化請求，這無法與失效連結區分）。DOI 是查註冊機構而不是直接連線，因為 doi.org 會轉到出版者，而出版者會以 403 回應機器人。這能證明 DOI 存在且標題與目錄相近，但不能證明該 DOI 就是某個工具該引用的文獻。只有本身是授權全文的檔案會做雜湊比對；條款頁與 creativecommons.org 頁面只檢查連結。確認變更屬正當後，執行 `pnpm sources:baseline` 記錄新文字。這個檢查能發現變動，但不能取代閱讀授權本身。
 - **前 15 項目前有多少經過獨立重新檢查**（截至 2026-10-14）。這 15 項的內容於 2026-10-09 依先前的核實報告整理，而來源清冊明確表示未重新核實這些事實，因此該報告的核實者與方法並未記錄在此。每月的來源檢查現在自行重新驗證其中一部分：15 項中的 10 項，確認授權檔仍屬目錄所述的授權類型（其餘 5 項的依據是 CC 頁面、README 或條款頁，只檢查連結）；15 項全部，確認論文 DOI 在 Crossref 或 DataCite 查得到，且註冊標題與目錄相近；每一項，確認網址仍有回應。**描述性文字沒有任何腳本檢查**（功能、MOF 適用性、ML 訓練用途、維護狀態、限制、資料存取分類），這 15 項在這些部分仍依據先前的報告。
+
+## 待核實線索
+
+`data/mof-leads.json` 收錄僅從搜尋結果清單得知的 MOF 相關來源（光催化化學設計空間論文及其宣稱的程式碼與 Zenodo 紀錄、uMOF 預印本、MOF-5 光還原 CO2 預印本）。它們顯示在網站的「待核實線索」區，**不**列入 `data/mof-catalog.json`，也不附授權或資料存取主張；須開啟並核對第一手來源後才會移入目錄。
