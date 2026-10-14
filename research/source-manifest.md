@@ -928,6 +928,14 @@ Two candidates examined on 2026-10-14 were not added. Neither is a verdict that 
 
 Not evaluated (pages unreachable on 2026-10-14, so nothing is claimed about them): RCSR (rcsr.net), OQMD (HTTP 502), and AFLOW (no usable content).
 
+**Search for photo- and electrocatalysis resources (2026-10-14).** The catalog's scope used to name photo- and electrocatalysis, but only one entry (Quantum ESPRESSO, a general-purpose DFT code) is filed under that application. A web search for dedicated open-source MOF tools or datasets for these applications, followed by direct checks of the candidates' files, produced no addition. Search-result summaries are not evidence, so what was and was not confirmed is stated separately:
+
+- **pred_cdp.** A search result said that code for *Exploring the Chemical Design Space of Metal-Organic Frameworks for Photocatalysis* (Chem. Sci. 2025) is at `github.com/bmourino/pred_cdp`, with data in Zenodo record 14727983. Not confirmed: on 2026-10-14 the raw `README.md`, `LICENSE`, `LICENSE.md` and `LICENSE.txt` of that repository all returned HTTP 404 on both `main` and `master`, and the Zenodo record could not be opened from the verifier's network. No repository, license or data terms are claimed.
+- **MatCreatioNN** (`github.com/SatyaK-0/MatCreatioNN`). Confirmed from its README: a framework for generating MOFs and predicting properties with CGCNN models. The README says "MIT License unless otherwise specified", but the repository has no license file (`LICENSE`, `LICENSE.md`, `LICENSE.txt` all returned HTTP 404 on `main`), so the license rests on the README alone. The predictors the README lists (thermal and water stability, CO2 adsorption and selectivity, surface area, synthesis likelihood, cost) do not include photo- or electrocatalytic activity, so it was not filed under that application. It may belong in the machine-learning category after a full review; it has not been given one.
+- **Electrocatalysis.** The searches surfaced papers describing curated MOF HER or OER data (one search result described a manually curated 566-entry MOF database for the hydrogen evolution reaction) and per-paper datasets on Zenodo and Materials Cloud. None was checked further; nothing is claimed about their data availability, license or MOF scope, and no dedicated open-source tool or resource-level database with a verifiable repository or archive record turned up in these searches.
+
+This agrees with the site's own workflow text, which presents photo- and electrocatalysis as the application of general-purpose DFT platforms to MOFs, not as a family of dedicated tools. A few searches cannot show that nothing exists; if you know of a resource, give its repository and the paper, and it will be checked the same way as the others.
+
 If a new verification result later confirms the license, availability, and MOF scope of an excluded or unevaluated source, re-review it and update this section with the new evidence.
 
 ---
@@ -1978,6 +1986,14 @@ If a new verification result later confirms the license, availability, and MOF s
 - **JARVIS-DFT**（NIST）。首頁未顯示授權文字，條款頁無法取得，主要來源頁面也未載明 MOF 數量或 MOF 專屬子集，因此資料授權與 MOF 範圍均無法確認。
 
 未評估（2026-10-14 頁面無法連線，故不對其作任何陳述）：RCSR（rcsr.net）、OQMD（HTTP 502）、AFLOW（無可用內容）。
+
+**光電／電催化資源的搜尋（2026-10-14）。** 目錄的範圍原本點名光電／電催化，但歸在這個應用下的只有一筆（Quantum ESPRESSO，通用 DFT 程式）。我們以網路搜尋尋找這些應用的 MOF 專用開源工具或資料集，再直接檢查候選項目的檔案，結果沒有新增任何條目。搜尋結果的摘要不算證據，因此「查證到的」與「未查證的」分開陳述：
+
+- **pred_cdp。** 有搜尋結果指出，*Exploring the Chemical Design Space of Metal-Organic Frameworks for Photocatalysis*（Chem. Sci. 2025）的程式碼在 `github.com/bmourino/pred_cdp`，資料在 Zenodo 紀錄 14727983。**未能確認：** 2026-10-14 該程式庫的 `README.md`、`LICENSE`、`LICENSE.md`、`LICENSE.txt` 原始檔在 `main` 與 `master` 分支皆回應 HTTP 404，且核實者的網路無法開啟該 Zenodo 紀錄。因此不對程式庫、授權或資料條款作任何陳述。
+- **MatCreatioNN**（`github.com/SatyaK-0/MatCreatioNN`）。**由其 README 確認：** 這是以 CGCNN 模型生成 MOF 並預測性質的框架。README 寫「MIT License unless otherwise specified」，但程式庫沒有授權檔（`LICENSE`、`LICENSE.md`、`LICENSE.txt` 在 `main` 皆回應 HTTP 404），授權僅依據 README。README 列出的預測器（熱穩定性與水穩定性、CO2 吸附與選擇性、表面積、合成可能性、成本）不含光催化或電催化活性，因此未歸入該應用。完整審查後它可能屬於機器學習類別，但目前尚未收錄。
+- **電催化。** 搜尋找到描述 MOF 產氫（HER）或產氧（OER）整理資料的論文（有一筆搜尋結果描述一個人工整理的 566 筆 MOF 產氫反應資料庫），以及 Zenodo 與 Materials Cloud 上依論文發布的資料集。這些均未進一步檢查；不對其資料可取得性、授權或 MOF 範圍作任何陳述；本次搜尋也沒有找到具備可核實程式庫或保存庫紀錄的專用開源工具或資源層級資料庫。
+
+這與網站自己的工作流程說明一致：光電／電催化是通用 DFT 平台在 MOF 上的應用，而不是一整套專用工具。幾次搜尋無法證明「不存在」；若您知道某項資源，請提供其程式庫與論文，我們會以同樣的方式核實。
 
 若日後有新的核實結果確認被排除或未評估來源的授權、可取得性與 MOF 範圍，應重新審查並以新證據更新本節。
 

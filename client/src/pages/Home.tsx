@@ -245,8 +245,8 @@ export default function Home() {
           </h1>
           <p className="mb-8 max-w-2xl font-mono text-lg font-light leading-relaxed text-muted-foreground md:text-xl">
             <Bi
-              en="A research guide for gas adsorption, carbon capture, photo- and electrocatalysis, and machine learning. Each entry states the code license, data availability, paper attachments, and required restrictions separately."
-              zh="為氣體吸附、碳捕捉、光電／電催化與機器學習設計的研究導覽。每個條目分別標示程式碼授權、資料可用性、論文附件與必要限制。"
+              en="A research guide for gas adsorption, carbon capture, and machine learning; photo- and electrocatalysis appear only as general-purpose DFT workflows, because no dedicated open-source MOF tool could be verified. Each entry states the code license, data availability, paper attachments, and required restrictions separately."
+              zh="為氣體吸附、碳捕捉與機器學習設計的研究導覽；光電／電催化目前僅以通用 DFT 工作流程呈現，因為尚無可核實的 MOF 專用開源工具。每個條目分別標示程式碼授權、資料可用性、論文附件與必要限制。"
             />
           </p>
           <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
