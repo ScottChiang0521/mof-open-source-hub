@@ -525,6 +525,14 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <details className="mt-4 border border-border p-3 font-mono text-[11px] text-muted-foreground">
+            <summary className="cursor-pointer font-semibold text-foreground">{bl('Checked but not added (not MOF-specific)', '已檢視但未收錄（非 MOF 專用）')}</summary>
+            <p className="mt-2 leading-relaxed">{LEADS.checkedNotAdded.reason}</p>
+            <ul className="mt-2 space-y-1">
+              {LEADS.checkedNotAdded.items.map((it) => <li key={it.url}><a href={it.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{it.name}</a>: {it.note}</li>)}
+            </ul>
+            <p className="mt-2 leading-relaxed">{LEADS.checkedNotAdded.notChecked}</p>
+          </details>
           <p className="mt-3 font-mono text-[10px] text-muted-foreground">{bl('Last reviewed', '最後檢視')}: {LEADS.lastReviewed}. {bl('Details are in English only.', '細節僅提供英文。')}</p>
         </div>
       </section>
