@@ -8,7 +8,7 @@ English first, Traditional Chinese (繁體中文) second. The site, `data/mof-ca
 
 ## English
 
-This project collects open-source tools and data resources for **MOF structure processing, gas adsorption, carbon capture / direct air capture (DAC), periodic DFT, and machine learning**. Photo- and electrocatalysis are covered only as general-purpose DFT workflows: no dedicated open-source MOF tool or database for them could be verified (see section 3 of the source manifest). The site separates *code license*, *data-access terms*, *paper supplementary data*, *training-data availability*, and *required restrictions*, and shows every text field in English first and Traditional Chinese second.
+This project collects open-source tools and data resources for **MOF structure processing, gas adsorption, carbon capture / direct air capture (DAC), periodic DFT, and machine learning**. Photo- and electrocatalysis are covered by general-purpose DFT workflows and one non-MOF catalysis dataset (OC20): no dedicated open-source MOF tool or database for them could be verified (see section 3 of the source manifest). The site separates *code license*, *data-access terms*, *paper supplementary data*, *training-data availability*, and *required restrictions*, and shows every text field in English first and Traditional Chinese second.
 
 ### For ChatGPT and other research assistants
 
@@ -28,19 +28,19 @@ Compare the tools usable for MOF gas adsorption, DAC, and photo-/electrocatalysi
 
 ### Scope and curation levels
 
-This version lists **39 resources** (28 software, 8 databases, 3 portals) in two curation levels:
+This version lists **40 resources** (28 software, 9 databases, 3 portals) in two curation levels:
 
 | Curation status | Entries | Meaning |
 |---|---:|---|
 | Verified, ready to display | 5 | Official source, core use, and the main license / data access can be matched unambiguously. |
-| Verified, read the notes | 34 | Usable for research, but with version, source, restricted upstream data, unconfirmed license, model-applicability, or maintenance limits. |
+| Verified, read the notes | 35 | Usable for research, but with version, source, restricted upstream data, unconfirmed license, model-applicability, or maintenance limits. |
 
 Contents by theme:
 
 - **Simulation and DFT:** gRASPA, RASPA2, RASPA3, DAC-SIM, Quantum ESPRESSO, lammps_interface.
 - **Structure processing, validation and pore analysis:** Zeo++, PoreBlazer, MOFid / MOFkey, CoRE MOF Tools, MOSAEC, MOFChecker, mofstructure, PORMAKE, AuToGraFS, ToBaCCo 3.0.
 - **Machine learning, generative design and text mining:** mofdscribe, PACMAN-charge, MOFDiff, MOFSimBench, MOFTransformer, MOFormer, MOFSimplify, MOFFlow, ChatMOF, L2M3, GHP-MOFassemble, MOF Literature Extraction (SynMOF).
-- **Databases, portals and archives:** QMOF Database, CoRE MOF DB, Materials Project MOF Explorer, Crystallography Open Database (COD), ARC-MOF, MOFX-DB (with hMOF), NIST/ARPA-E adsorbent database, Materials Cloud Archive, Open DAC 2025, NOMAD, Cambridge Structural Database (licensed, not open).
+- **Databases, portals and archives:** QMOF Database, CoRE MOF DB, Materials Project MOF Explorer, Crystallography Open Database (COD), ARC-MOF, MOFX-DB (with hMOF), NIST/ARPA-E adsorbent database, Materials Cloud Archive, Open DAC 2025, Open Catalyst 2020 (OC20, not MOF-specific), NOMAD, Cambridge Structural Database (licensed, not open).
 
 Candidates that failed verification were not added (for example MOSAEC-DB, whose Zenodo record currently returns HTTP 410, and JARVIS-DFT, whose terms and MOF scope could not be confirmed). They are listed in the source manifest's *Excluded* section.
 
@@ -112,7 +112,7 @@ The site code is under the MIT license set in `package.json`; **the listed third
 
 ## 繁體中文
 
-本專案整理適用於 **MOF 結構處理、氣體吸附、碳捕捉／直接空氣捕捉（DAC）、週期性 DFT，以及機器學習**。光電／電催化目前僅以通用 DFT 工作流程呈現：尚無可核實的 MOF 專用開源工具或資料庫（見來源清冊第三節） 的開源工具與資料資源。網站將「程式碼授權」、「資料存取條件」、「論文補充資料」、「訓練資料可用性」與「必要限制」分開標示，且所有文字欄位皆英文在前、繁體中文在後。
+本專案整理適用於 **MOF 結構處理、氣體吸附、碳捕捉／直接空氣捕捉（DAC）、週期性 DFT，以及機器學習**。光電／電催化目前以通用 DFT 工作流程與一個非 MOF 的催化資料集（OC20）呈現：尚無可核實的 MOF 專用開源工具或資料庫（見來源清冊第三節） 的開源工具與資料資源。網站將「程式碼授權」、「資料存取條件」、「論文補充資料」、「訓練資料可用性」與「必要限制」分開標示，且所有文字欄位皆英文在前、繁體中文在後。
 
 ### 給 ChatGPT 與其他研究助理
 
@@ -132,19 +132,19 @@ The site code is under the MIT license set in `package.json`; **the listed third
 
 ### 核實範圍
 
-本版本收錄 **39 項**資源（28 項軟體、8 項資料庫、3 項資料入口），分為兩個策展層級：
+本版本收錄 **40 項**資源（28 項軟體、9 項資料庫、3 項資料入口），分為兩個策展層級：
 
 | 策展狀態 | 項目 | 意義 |
 |---|---:|---|
 | 已核實，可立即展示 | 5 | 官方來源、核心用途與主要授權／資料存取可明確對應。 |
-| 已核實，須閱讀註記 | 34 | 可供研究使用，但有版本、來源、受限上游資料、授權未確認、模型適用範圍或維護狀態等必要限制。 |
+| 已核實，須閱讀註記 | 35 | 可供研究使用，但有版本、來源、受限上游資料、授權未確認、模型適用範圍或維護狀態等必要限制。 |
 
 依主題的收錄內容：
 
 - **分子模擬與 DFT**：gRASPA、RASPA2、RASPA3、DAC-SIM、Quantum ESPRESSO、lammps_interface。
 - **結構處理、驗證與孔隙分析**：Zeo++、PoreBlazer、MOFid／MOFkey、CoRE MOF Tools、MOSAEC、MOFChecker、mofstructure、PORMAKE、AuToGraFS、ToBaCCo 3.0。
 - **機器學習、生成式設計與文獻探勘**：mofdscribe、PACMAN-charge、MOFDiff、MOFSimBench、MOFTransformer、MOFormer、MOFSimplify、MOFFlow、ChatMOF、L2M3、GHP-MOFassemble、MOF Literature Extraction（SynMOF）。
-- **資料庫、資料入口與保存庫**：QMOF Database、CoRE MOF DB、Materials Project MOF Explorer、Crystallography Open Database（COD）、ARC-MOF、MOFX-DB（含 hMOF）、NIST/ARPA-E 吸附材料資料庫、Materials Cloud Archive、Open DAC 2025、NOMAD、Cambridge Structural Database（需授權，非開放）。
+- **資料庫、資料入口與保存庫**：QMOF Database、CoRE MOF DB、Materials Project MOF Explorer、Crystallography Open Database（COD）、ARC-MOF、MOFX-DB（含 hMOF）、NIST/ARPA-E 吸附材料資料庫、Materials Cloud Archive、Open DAC 2025、Open Catalyst 2020（OC20，非 MOF 專屬）、NOMAD、Cambridge Structural Database（需授權，非開放）。
 
 未通過核實的候選未收錄（例如 MOSAEC-DB：其 Zenodo 紀錄目前回應 HTTP 410；JARVIS-DFT：條款與 MOF 範圍無法確認），列於來源清冊的「排除」一節。
 

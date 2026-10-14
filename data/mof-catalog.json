@@ -9,7 +9,7 @@
     "zh-Hant"
   ],
   "verificationDate": "2026-10-14",
-  "itemCount": 39,
+  "itemCount": 40,
   "curationGuide": {
     "immediate": {
       "en": "Official source, core use, and the main license and data access can all be matched unambiguously.",
@@ -4886,6 +4886,139 @@
           "模型檢查點使用 FAIR Chemistry License v1；該頁說明不提供給受全面制裁地區及中國、俄羅斯、白俄羅斯，非開放授權。",
           "尚未找到 ODAC25 的同儕審查期刊版本，目前僅可引用預印本。",
           "ODAC23 已被標為 deprecated；兩代資料的計算設定不同，不可直接混用。"
+        ]
+      }
+    },
+    {
+      "id": "oc20",
+      "name": "Open Catalyst 2020 (OC20)",
+      "author": "Meta FAIR Chemistry 與 Chanussot 等人（OC20 論文作者）",
+      "githubUrl": "https://github.com/facebookresearch/fairchem",
+      "webUrl": "https://github.com/facebookresearch/fairchem/blob/main/docs/catalysts/datasets/oc20.md",
+      "entityType": "database",
+      "curationTier": "caveat",
+      "category": "photo",
+      "dataAccess": "open",
+      "languages": [
+        "LMDB",
+        "Python（fairchem）"
+      ],
+      "paper": {
+        "title": "Open Catalyst 2020 (OC20) Dataset and Community Challenges",
+        "doi": "10.1021/acscatal.0c04525",
+        "url": "https://doi.org/10.1021/acscatal.0c04525"
+      },
+      "primarySource": {
+        "url": "https://github.com/facebookresearch/fairchem/blob/main/docs/catalysts/datasets/oc20.md"
+      },
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "lastVerified": "2026-10-14",
+      "en": {
+        "entityTypeLabel": "Database",
+        "curationTierLabel": "Verified | read the notes",
+        "categoryLabel": "Photo- / electrocatalysis",
+        "dataAccessLabel": "Public download; data CC BY 4.0 (model checkpoints separate)",
+        "sourceStatus": "The official fairchem dataset documentation states that OC20 is CC BY 4.0 and lists the ACS Catalysis 2021 paper with its DOI; the fairchem code is MIT; OC20 is not a MOF-specific dataset.",
+        "description": "A DFT dataset of adsorption on catalyst surfaces: the official documentation states about 460,000 adsorbate-catalyst systems, 82 adsorbates, 55 elements and more than 133 million DFT calculations, with three machine-learning tasks (S2EF, IS2RE, IS2RS) and predefined splits, for training models that predict adsorption energies and atomic forces.",
+        "capabilities": [
+          "Adsorbate-catalyst DFT relaxations",
+          "S2EF / IS2RE / IS2RS tasks",
+          "Predefined train / validation / test splits",
+          "LMDB format",
+          "Relaxation trajectories and Bader charges (optional download)"
+        ],
+        "license": "Data: CC BY 4.0 (stated in the official documentation); fairchem code: MIT; model checkpoint licenses vary by application area (fairchem README)",
+        "maintenanceStatus": "The fairchem repository is active (its README announces the June 2025 UMA / OMol25 releases); the OC20 page lists updates in February, March and September 2021, and data downloaded before 10 February 2021 should be downloaded again.",
+        "mofApplicability": "Not MOF-specific: the official page never mentions MOFs, and the data are relaxations of adsorbates on catalyst surfaces; whether any MOF structure is included is not confirmed. It is listed because the catalog has no other open data resource for photo- or electrocatalysis, and because fairchem's UMA model has a task named oc20 that the README describes as \"use this for catalysis\".",
+        "supplementaryResources": [
+          {
+            "label": "fairchem OC20 dataset documentation",
+            "resourceType": "Official documentation",
+            "url": "https://github.com/facebookresearch/fairchem/blob/main/docs/catalysts/datasets/oc20.md",
+            "access": "Public",
+            "dataType": "Size, tasks, download and preprocessing instructions, changelog, license (CC BY 4.0) and citation; IS2* data are LMDB"
+          },
+          {
+            "label": "OC20 preprint (arXiv)",
+            "resourceType": "Original paper",
+            "url": "https://arxiv.org/abs/2010.09990",
+            "access": "Public",
+            "dataType": "Description of the dataset and community challenges; the title differs slightly from the journal version"
+          }
+        ],
+        "primarySourceLabel": "fairchem OC20 dataset documentation",
+        "problemsSolved": [
+          "Supplies DFT energy and force labels for adsorbates on many catalyst surfaces, for training machine-learning models that approximate DFT.",
+          "Provides common task definitions, data splits and community benchmarks so that different models can be compared."
+        ],
+        "keyFeatures": [
+          "About 460,000 adsorbate-catalyst systems, 82 adsorbates, 55 elements",
+          "Three tasks (S2EF, IS2RE, IS2RS); official splits include out-of-distribution validation and test sets",
+          "IS2* data come as LMDB; S2EF train / validation data need preprocessing",
+          "Optional downloads: relaxation trajectories and Bader charge data"
+        ],
+        "trainingUse": "Usable as machine-learning training data: the official documentation states CC BY 4.0 (attribution required) and asks that the ACS Catalysis 2021 paper be cited. Model checkpoints in the same repository are licensed by application area, so the data license must not be read as freedom to use the models.",
+        "caveats": [
+          "Not MOF-specific data: the official page never mentions MOFs and whether MOF structures are included is not confirmed, so it cannot be treated as MOF catalysis data.",
+          "The data are DFT results, not experimental measurements; calculation settings and range of applicability should be taken from the paper (not checked item by item here).",
+          "The stated size depends on how it is counted: the official page says \"133M+ DFT calculations, about 460K systems\", while an arXiv abstract obtained through a web search (the page itself was not opened) gives about 1.28 million relaxations and about 265 million single-point evaluations. State the counting basis and version when quoting numbers.",
+          "Data downloaded before 10 February 2021 were updated because of bugs (affecting under 1% of the data) and should be downloaded again.",
+          "The fairchem code is MIT, but the README says model and checkpoint licenses vary by application area; the data license and the model license must be read separately.",
+          "opencatalystproject.org and the data download host could not be opened in this check, so the availability of the download links was not checked; the content above comes from the official documentation and license file inside the fairchem repository."
+        ]
+      },
+      "zh": {
+        "entityTypeLabel": "資料庫",
+        "curationTierLabel": "已核實｜須閱讀註記",
+        "categoryLabel": "光電／電催化",
+        "dataAccessLabel": "公開下載；資料 CC BY 4.0（模型檢查點另計）",
+        "sourceStatus": "fairchem 官方資料集文件明確載明 OC20 為 CC BY 4.0，並列出 ACS Catalysis 2021 論文與 DOI；fairchem 程式碼為 MIT；OC20 並非 MOF 專屬資料集。",
+        "description": "催化劑表面吸附反應的 DFT 資料集：官方文件載明約 46 萬個吸附物—催化劑系統、82 種吸附物、55 種元素、超過 1.33 億次 DFT 計算，提供 S2EF、IS2RE、IS2RS 三種機器學習任務與預設資料切分，用於訓練預測吸附能與原子受力的模型。",
+        "capabilities": [
+          "吸附物—催化劑 DFT 弛豫",
+          "S2EF／IS2RE／IS2RS 任務",
+          "預設訓練／驗證／測試切分",
+          "LMDB 格式",
+          "弛豫軌跡與 Bader 電荷（選用下載）"
+        ],
+        "license": "資料：CC BY 4.0（官方文件明載）；fairchem 程式碼：MIT；模型檢查點授權依應用領域而異（fairchem README）",
+        "maintenanceStatus": "fairchem 程式庫持續更新（README 公告 2025 年 6 月的 UMA／OMol25 發布）；OC20 文件列有 2021 年 2 月、3 月與 9 月的更新紀錄，2021 年 2 月 10 日前下載的資料應重新下載。",
+        "mofApplicability": "非 MOF 專屬：官方文件全文未提及 MOF，資料為吸附物在催化劑表面上的弛豫；是否含任何 MOF 結構未確認。列入原因：目錄在光電／電催化沒有其他開放資料資源，且 fairchem 的 UMA 模型有一個名為 oc20 的任務，README 說明為「用於催化」。",
+        "supplementaryResources": [
+          {
+            "label": "fairchem OC20 官方資料集文件",
+            "resourceType": "官方文件",
+            "url": "https://github.com/facebookresearch/fairchem/blob/main/docs/catalysts/datasets/oc20.md",
+            "access": "公開",
+            "dataType": "資料規模、任務、下載與預處理說明、更新紀錄、授權（CC BY 4.0）與引用；IS2* 為 LMDB"
+          },
+          {
+            "label": "OC20 預印本（arXiv）",
+            "resourceType": "原始論文",
+            "url": "https://arxiv.org/abs/2010.09990",
+            "access": "公開",
+            "dataType": "資料集與社群挑戰的說明；與期刊版標題略有不同"
+          }
+        ],
+        "primarySourceLabel": "fairchem OC20 官方資料集文件",
+        "problemsSolved": [
+          "提供吸附物在多種催化劑表面上的 DFT 能量與受力標籤，用於訓練可近似 DFT 的機器學習模型。",
+          "提供統一的任務定義、資料切分與社群基準，使不同模型可以比較。"
+        ],
+        "keyFeatures": [
+          "約 46 萬個吸附物—催化劑系統、82 種吸附物、55 種元素",
+          "S2EF、IS2RE、IS2RS 三項任務，官方切分含分布外（OOD）驗證與測試集",
+          "IS2* 以 LMDB 提供；S2EF 訓練／驗證資料需預處理",
+          "選用下載：弛豫軌跡與 Bader 電荷資料"
+        ],
+        "trainingUse": "可作機器學習訓練資料：官方文件明載 CC BY 4.0（需署名），並請引用 ACS Catalysis 2021 論文。同一程式庫中的模型檢查點授權依應用領域而異，不可由資料授權推論模型可自由使用。",
+        "caveats": [
+          "非 MOF 專屬資料：官方文件全文未提及 MOF，是否含 MOF 結構未確認，不能直接視為 MOF 催化資料。",
+          "資料是 DFT 計算結果而非實驗測量；計算設定與適用範圍請以論文為準（本次未逐項核對）。",
+          "規模說法依口徑而異：官方文件寫「133M+ DFT 計算、約 46 萬個系統」；經網路搜尋取得的 arXiv 摘要（未直接開啟原頁）以不同口徑列出約 128 萬次弛豫與約 2.65 億次單點計算。引用數字時請說明口徑與版本。",
+          "2021 年 2 月 10 日前下載的資料因錯誤（影響不到 1%）已更新，請重新下載。",
+          "fairchem 程式碼為 MIT，但 README 明說模型與檢查點的授權依應用領域而異；資料授權與模型授權需分開判讀。",
+          "本次未能開啟 opencatalystproject.org 與資料下載主機，下載連結的可用性未檢查；以上內容來自 fairchem 程式庫內的官方文件與授權檔。"
         ]
       }
     },
