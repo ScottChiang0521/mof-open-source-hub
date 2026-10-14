@@ -4198,7 +4198,7 @@
         "Python"
       ],
       "paper": {
-        "title": "MatterGen (Nature 2025; title as cited by the README DOI badge)",
+        "title": "A generative model for inorganic materials design",
         "doi": "10.1038/s41586-025-08628-5",
         "url": "https://doi.org/10.1038/s41586-025-08628-5"
       },
@@ -4233,7 +4233,7 @@
         "trainingUse": "Not a training database; it is a model or library, and the terms of its training data and pre-trained weights were not checked one by one.",
         "caveats": [
           "The README scope is inorganic materials; for MOF generation see dedicated tools such as MOFDiff.",
-          "The paper title was not matched against the publisher page; the link follows the README DOI badge only."
+          "The paper title was matched against its Crossref record (source check, 2026-10-14)."
         ]
       },
       "zh": {
@@ -4262,7 +4262,7 @@
         "trainingUse": "非訓練資料庫；為模型／程式庫，訓練資料與預訓練權重的條款未逐一核對。",
         "caveats": [
           "README 的範圍是無機材料；MOF 生成請看 MOFDiff 等專用工具。",
-          "論文標題未與出版社頁面核對；此處只依 README 的 DOI 徽章連結。"
+          "論文標題已與 Crossref 紀錄比對（2026-10-14 來源檢查）。"
         ]
       }
     },
@@ -4359,7 +4359,7 @@
         "Python"
       ],
       "paper": {
-        "title": "CHGNet (Nature Machine Intelligence; as cited by the README)",
+        "title": "CHGNet as a pretrained universal neural network potential for charge-informed atomistic modelling",
         "doi": "10.1038/s42256-023-00716-3",
         "url": "https://doi.org/10.1038/s42256-023-00716-3"
       },
@@ -4440,7 +4440,7 @@
         "Python"
       ],
       "paper": {
-        "title": "MatGL (npj Computational Materials 11, 253; as cited by the README)",
+        "title": "Materials Graph Library (MatGL), an open-source graph deep learning library for materials science and chemistry",
         "doi": "10.1038/s41524-025-01742-y",
         "url": "https://doi.org/10.1038/s41524-025-01742-y"
       },

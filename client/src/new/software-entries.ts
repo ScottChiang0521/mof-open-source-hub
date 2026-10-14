@@ -636,7 +636,7 @@ export const NEW_SOFTWARE: MOFProject[] = [
     maintenanceStatus: '未核對最後推送日期（本次查核只讀 README 與 LICENSE）。',
     mofApplicability: '非 MOF 專用。README 未提到 MOF；用於 MOF 前須自行驗證，MOF 相關表現請見第三方研究。',
     paper: {
-      title: 'MatterGen (Nature 2025; title as cited by the README DOI badge)',
+      title: 'A generative model for inorganic materials design',
       doi: '10.1038/s41586-025-08628-5',
       url: 'https://doi.org/10.1038/s41586-025-08628-5',
     },
@@ -645,7 +645,7 @@ export const NEW_SOFTWARE: MOFProject[] = [
     problemsSolved: ['以生成模型直接提出符合性質條件的無機晶體候選。'],
     keyFeatures: ['README 稱公開的檢查點由此程式庫重新訓練，並非論文所用的檢查點，結果可能略有差異'],
     trainingUse: '非訓練資料庫；為模型／程式庫，訓練資料與預訓練權重的條款未逐一核對。',
-    caveats: ['README 的範圍是無機材料；MOF 生成請看 MOFDiff 等專用工具。', '論文標題未與出版社頁面核對；此處只依 README 的 DOI 徽章連結。'],
+    caveats: ['README 的範圍是無機材料；MOF 生成請看 MOFDiff 等專用工具。', '論文標題已與 Crossref 紀錄比對（2026-10-14 來源檢查）。'],
     lastVerified: '2026-10-14',
   },
   {
@@ -699,7 +699,7 @@ export const NEW_SOFTWARE: MOFProject[] = [
     maintenanceStatus: '未核對最後推送日期（本次查核只讀 README 與 LICENSE）。',
     mofApplicability: '非 MOF 專用。README 未提到 MOF；用於 MOF 前須自行驗證，MOF 相關表現請見第三方研究。',
     paper: {
-      title: 'CHGNet (Nature Machine Intelligence; as cited by the README)',
+      title: 'CHGNet as a pretrained universal neural network potential for charge-informed atomistic modelling',
       doi: '10.1038/s42256-023-00716-3',
       url: 'https://doi.org/10.1038/s42256-023-00716-3',
     },
@@ -731,7 +731,7 @@ export const NEW_SOFTWARE: MOFProject[] = [
     maintenanceStatus: '未核對最後推送日期（本次查核只讀 README 與 LICENSE）。',
     mofApplicability: '非 MOF 專用。README 未提到 MOF；用於 MOF 前須自行驗證，MOF 相關表現請見第三方研究。',
     paper: {
-      title: 'MatGL (npj Computational Materials 11, 253; as cited by the README)',
+      title: 'Materials Graph Library (MatGL), an open-source graph deep learning library for materials science and chemistry',
       doi: '10.1038/s41524-025-01742-y',
       url: 'https://doi.org/10.1038/s41524-025-01742-y',
     },
@@ -1105,7 +1105,7 @@ export const NEW_SOFTWARE_EN: Record<string, ProjectEn> = {
     problemsSolved: ["Proposes inorganic crystal candidates that meet property constraints directly with a generative model."],
     keyFeatures: ["The README says the released checkpoints were re-trained with this repository and are not those used in the paper, so results may deviate slightly"],
     trainingUse: "Not a training database; it is a model or library, and the terms of its training data and pre-trained weights were not checked one by one.",
-    caveats: ["The README scope is inorganic materials; for MOF generation see dedicated tools such as MOFDiff.", "The paper title was not matched against the publisher page; the link follows the README DOI badge only."],
+    caveats: ["The README scope is inorganic materials; for MOF generation see dedicated tools such as MOFDiff.", "The paper title was matched against its Crossref record (source check, 2026-10-14)."],
   },
   mace: {
     sourceStatus: "Only the official README and LICENSE were verified; MOF applicability was not independently verified.",
