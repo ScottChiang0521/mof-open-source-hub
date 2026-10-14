@@ -102,7 +102,7 @@ export const MOF_PROJECTS: MOFProject[] = [
     },
     supplementaryResources: [
       { label: 'gRASPA GitHub Releases', resourceType: '程式碼 release', url: 'https://github.com/snurr-group/gRASPA/releases', access: '公開', dataType: '版本化原始碼與 release 資產' },
-      { label: 'ACS Supporting Information', resourceType: '出版者 SI', url: 'https://doi.org/jctcce/article-supplement/163686/pdf/ct4c01058_si_001/', access: '出版者頁標示可免費取得', dataType: '計時、力場、ML potential 訓練與補充圖表' },
+      { label: 'ACS Supporting Information', resourceType: '出版者 SI', url: 'https://pubs.acs.org/doi/suppl/10.1021/acs.jctc.4c01058/suppl_file/ct4c01058_si_001.pdf', access: '出版者頁標示可免費取得', dataType: '計時、力場、ML potential 訓練與補充圖表' },
     ],
     primarySource: { label: 'gRASPA 官方程式庫', url: 'https://github.com/snurr-group/gRASPA' },
     problemsSolved: ['將多孔材料的 Monte Carlo 吸附模擬轉移到 GPU，以支援高通量篩選。', '支援混合物、Widom 與 GC-TMMC 等吸附計算，而非只限單組分等溫線。'],

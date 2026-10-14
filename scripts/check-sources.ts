@@ -1,28 +1,35 @@
 /**
- * Source check: re-verify what the catalog says about licenses and links.
+ * Source check: re-verify what the catalog says about licenses, DOIs and links.
  *
  *   pnpm check:sources                      check, exit 1 on a failure
  *   pnpm check:sources --update-baseline    record the current license-file hashes
- *   --licenses-only   skip the link check          --report <file>  also write the report
- *   --catalog <file>  --baseline <file>             (paths; mainly for tests)
+ *   --licenses-only   only the license files        --no-links       skip the link check
+ *   --report <file>   also write the report         --catalog <file> --baseline <file>  (tests)
  *
  * Why this exists: `lastVerified` in the catalog is a date, not a guarantee. Licenses
- * change and links rot, and the cheapest moment to notice is a scheduled run.
- *
- * Three kinds of check, with deliberately different severities:
+ * change, links rot and DOIs get mistyped, and the cheapest moment to notice is a
+ * scheduled run.
  *
  *   FAILURE  a license file's text changed since the baseline          (needs a human)
  *   FAILURE  the license file no longer matches the catalog's wording   (needs a human)
+ *   FAILURE  a DOI is registered with neither Crossref nor DataCite    (mistyped or withdrawn)
  *   FAILURE  a URL answers 404 or 410                                  (really gone)
- *   WARNING  403 / 429 / 5xx / network error / timeout
+ *   WARNING  403 / 429 / 5xx / network error / timeout / registry unreachable
+ *   WARNING  a DOI exists but its registered title shares little with the catalog's title
  *
- * Only 404 and 410 fail the run. Publishers and archives often refuse automated
- * requests (the README already says so), and a network error cannot tell link rot
- * from a bad minute, so those are reported but never red.
+ * Only 404 and 410 fail a link. Publishers and archives routinely refuse automated
+ * requests, and a network error cannot tell link rot from a bad minute, so those are
+ * reported (grouped by host, collapsed) but never turn the run red.
+ *
+ * DOIs are NOT checked by following doi.org: it redirects to the publisher, which
+ * answers a bot with 403, so that would prove nothing. They are looked up in the
+ * registries' own APIs, which allow automated use. That proves the DOI exists and,
+ * for a paper's main DOI, that its title resembles the catalog's; it does not prove
+ * that the DOI is the right citation for a tool.
  *
  * Only files that ARE a license text are hashed (raw GitHub/GitLab files). Terms pages
  * and creativecommons.org pages get the link check only: their markup changes without
- * the license changing, and hashing them would send a false alarm every month.
+ * the license changing, and hashing them would raise a false alarm every month.
  */
 import { createHash } from 'node:crypto';
 import { appendFileSync, existsSync, readFileSync, writeFileSync } from 'node:fs';
@@ -33,7 +40,7 @@ type Resource = {
   githubUrl?: string;
   webUrl?: string;
   licenseUrl: string;
-  paper?: { url: string };
+  paper?: { title?: string; doi?: string; url: string };
   primarySource: { url: string };
   en: { license: string; supplementaryResources?: Supplementary[] };
 };
@@ -53,9 +60,15 @@ const BASELINE = opt('--baseline', 'data/source-baseline.json');
 const REPORT = opt('--report', '');
 const UPDATE = has('--update-baseline');
 const LICENSES_ONLY = has('--licenses-only');
+const NO_LINKS = has('--no-links');
+
+// Overridable so the logic can be tested against a local mock of the registries.
+const CROSSREF = process.env.CROSSREF_API ?? 'https://api.crossref.org/works/';
+const DATACITE = process.env.DATACITE_API ?? 'https://api.datacite.org/dois/';
 
 const TIMEOUT_MS = 25_000;
 const CONCURRENCY = 6;
+const TITLE_OVERLAP_MIN = 0.6;
 const UA = 'mof-open-source-hub-source-check (+https://github.com/ScottChiang0521/mof-open-source-hub)';
 
 // ---- helpers ---------------------------------------------------------------
@@ -80,6 +93,12 @@ function toRawLicenseUrl(u: string): string | null {
   return null;
 }
 
+/** The DOI inside a https://doi.org/10.xxxx/... URL, else null. */
+function doiFromUrl(u: string): string | null {
+  const m = u.match(/^https?:\/\/(?:dx\.)?doi\.org\/(10\.\d{4,9}\/[^\s?#]+)/i);
+  return m ? decodeURIComponent(m[1]) : null;
+}
+
 async function request(url: string, wantBody: boolean) {
   for (let attempt = 0; attempt < 2; attempt++) {
     const ctl = new AbortController();
@@ -93,17 +112,23 @@ async function request(url: string, wantBody: boolean) {
       const text = wantBody && res.ok ? await res.text() : undefined;
       if (!wantBody) await res.body?.cancel();
       if (res.status >= 500 && attempt === 0) continue; // one retry for a transient server error
-      return { status: res.status, text, error: undefined as string | undefined };
+      let host = '';
+      try {
+        host = new URL(res.url).host;
+      } catch {
+        /* keep empty */
+      }
+      return { status: res.status, text, host, error: undefined as string | undefined };
     } catch (e) {
       if (attempt === 1) {
         const msg = e instanceof Error ? (e.cause instanceof Error ? e.cause.message : e.message) : String(e);
-        return { status: 0, text: undefined, error: msg };
+        return { status: 0, text: undefined, host: '', error: msg };
       }
     } finally {
       clearTimeout(timer);
     }
   }
-  return { status: 0, text: undefined, error: 'unknown' };
+  return { status: 0, text: undefined, host: '', error: 'unknown' };
 }
 
 /** Which license families the text looks like. Keyword-level on purpose. */
@@ -144,6 +169,59 @@ const CLAIM_PATTERN: Record<string, RegExp> = {
 
 const sha256 = (t: string) => createHash('sha256').update(t.replace(/\s+/g, ' ').trim()).digest('hex');
 
+/** Share of the shorter title's words that also appear in the other title (0..1). */
+function titleOverlap(a: string, b: string): number {
+  const words = (s: string) =>
+    new Set(
+      s
+        .toLowerCase()
+        .normalize('NFKD')
+        .replace(/<[^>]+>/g, ' ') // Crossref titles can carry markup
+        .replace(/[^a-z0-9]+/g, ' ')
+        .split(' ')
+        .filter((w) => w.length >= 3),
+    );
+  const A = words(a);
+  const B = words(b);
+  const small = A.size <= B.size ? A : B;
+  const large = A.size <= B.size ? B : A;
+  if (small.size === 0) return 0;
+  let hit = 0;
+  small.forEach((w) => large.has(w) && hit++);
+  return hit / small.size;
+}
+
+type DoiResult =
+  | { state: 'found'; via: 'Crossref' | 'DataCite'; title?: string }
+  | { state: 'missing' }
+  | { state: 'unknown'; why: string };
+
+async function lookupDoi(doi: string): Promise<DoiResult> {
+  const path = doi.split('/').map(encodeURIComponent).join('/');
+  const cr = await request(CROSSREF + path, true);
+  if (cr.status === 200 && cr.text) {
+    try {
+      const title = JSON.parse(cr.text)?.message?.title?.[0];
+      return { state: 'found', via: 'Crossref', title: typeof title === 'string' ? title : undefined };
+    } catch {
+      return { state: 'found', via: 'Crossref' };
+    }
+  }
+  if (cr.status !== 404) return { state: 'unknown', why: `Crossref ${cr.status || cr.error}` };
+  // Not in Crossref: arXiv, Zenodo, Figshare and others register with DataCite.
+  const dc = await request(DATACITE + path, true);
+  if (dc.status === 200 && dc.text) {
+    try {
+      const title = JSON.parse(dc.text)?.data?.attributes?.titles?.[0]?.title;
+      return { state: 'found', via: 'DataCite', title: typeof title === 'string' ? title : undefined };
+    } catch {
+      return { state: 'found', via: 'DataCite' };
+    }
+  }
+  if (dc.status === 404) return { state: 'missing' };
+  return { state: 'unknown', why: `DataCite ${dc.status || dc.error}` };
+}
+
 async function pool<T, R>(items: T[], n: number, fn: (x: T) => Promise<R>): Promise<R[]> {
   const out: R[] = new Array(items.length);
   let next = 0;
@@ -168,7 +246,8 @@ async function main() {
     : { updated: '', licenses: {} };
 
   const failures: string[] = [];
-  const warnings: string[] = [];
+  const doiWarnings: string[] = [];
+  const otherWarnings: string[] = [];
 
   // 1. License files -----------------------------------------------------------
   const licenseJobs = resources
@@ -186,7 +265,7 @@ async function main() {
       continue;
     }
     if (!res.text) {
-      warnings.push(`**${r.id}** — license file not read (${res.status || res.error}): ${raw}`);
+      otherWarnings.push(`**${r.id}** — license file not read (${res.status || res.error}): ${raw}`);
       continue;
     }
     const detected = detect(res.text);
@@ -197,7 +276,7 @@ async function main() {
       if (!known || known.sha256 !== hash || known.url !== raw) changes.push(`${r.id}: ${known ? 'updated' : 'added'}`);
       newBaseline[r.id] = { url: raw, sha256: hash, detected };
     } else if (!known) {
-      warnings.push(`**${r.id}** — no baseline yet; current sha256 \`${hash}\` (detected: ${detected.join(', ') || '?'})`);
+      otherWarnings.push(`**${r.id}** — no baseline yet; current sha256 \`${hash}\` (detected: ${detected.join(', ') || '?'})`);
     } else if (known.sha256 !== hash) {
       failures.push(
         `**${r.id}** — license text changed since the baseline (${baseline.updated || 'unknown date'}). ` +
@@ -207,7 +286,7 @@ async function main() {
 
     // Does the file still look like what the catalog says it is?
     if (detected.length === 0) {
-      warnings.push(`**${r.id}** — license type not recognised from the file text; check by hand: ${raw}`);
+      otherWarnings.push(`**${r.id}** — license type not recognised from the file text; check by hand: ${raw}`);
     } else if (!detected.some((t) => CLAIM_PATTERN[t]?.test(r.en.license))) {
       failures.push(
         `**${r.id}** — file looks like ${detected.join(' / ')} but the catalog says "${r.en.license.slice(0, 120)}". ${raw}`,
@@ -220,25 +299,78 @@ async function main() {
   // Baseline entries whose id left the catalog
   const ids = new Set(resources.map((r) => r.id));
   for (const id of Object.keys(baseline.licenses)) {
-    if (!ids.has(id)) warnings.push(`baseline has \`${id}\`, which is no longer in the catalog`);
+    if (!ids.has(id)) otherWarnings.push(`baseline has \`${id}\`, which is no longer in the catalog`);
   }
 
-  // 2. Links -------------------------------------------------------------------
-  let linkCount = 0;
-  let linksOk = 0;
+  // 2. Baseline update mode ----------------------------------------------------
+  if (UPDATE) {
+    const out: Baseline = { updated: new Date().toISOString().slice(0, 10), licenses: newBaseline };
+    writeFileSync(BASELINE, JSON.stringify(out, null, 2) + '\n', 'utf-8');
+    console.log(`Baseline written to ${BASELINE}: ${Object.keys(newBaseline).length} license file(s).`);
+    console.log(changes.length ? changes.map((c) => `  ${c}`).join('\n') : '  (no changes)');
+    for (const w of otherWarnings) console.log(`  warning: ${w}`);
+    return;
+  }
+
+  // 3. DOIs --------------------------------------------------------------------
+  let doiTotal = 0;
+  let doiFound = 0;
+  const doiVia = { Crossref: 0, DataCite: 0 };
+  // Every URL in the catalog, so DOI-style links are verified as DOIs rather than followed.
+  const allUrls = new Map<string, string[]>();
+  const addUrl = (u: string | undefined, id: string) => {
+    if (u && /^https?:/.test(u)) allUrls.set(u.split('#')[0], [...(allUrls.get(u.split('#')[0]) ?? []), id]);
+  };
+  for (const r of resources) {
+    [r.githubUrl, r.webUrl, r.primarySource.url, r.licenseUrl, r.paper?.url].forEach((u) => addUrl(u, r.id));
+    r.en.supplementaryResources?.forEach((s) => addUrl(s.url, r.id));
+  }
+
   if (!LICENSES_ONLY) {
-    const urls = new Map<string, string[]>();
-    const add = (u: string | undefined, id: string) => {
-      if (!u || !/^https?:/.test(u)) return;
-      const key = u.split('#')[0];
-      urls.set(key, [...(urls.get(key) ?? []), id]);
+    const dois = new Map<string, { who: Set<string>; title?: string }>();
+    const addDoi = (doi: string | null | undefined, id: string, title?: string) => {
+      if (!doi) return;
+      const key = doi.toLowerCase();
+      const cur = dois.get(key) ?? { who: new Set<string>() };
+      cur.who.add(id);
+      if (title && !cur.title) cur.title = title;
+      dois.set(key, cur);
     };
     for (const r of resources) {
-      [r.githubUrl, r.webUrl, r.primarySource.url, r.licenseUrl, r.paper?.url].forEach((u) => add(u, r.id));
-      r.en.supplementaryResources?.forEach((s) => add(s.url, r.id));
+      addDoi(r.paper?.doi, r.id, r.paper?.title);
+      for (const u of allUrls.keys()) if (allUrls.get(u)!.includes(r.id)) addDoi(doiFromUrl(u), r.id);
     }
-    linkCount = urls.size;
-    const results = await pool([...urls.entries()], CONCURRENCY, async ([u, who]) => ({
+    doiTotal = dois.size;
+    const looked = await pool([...dois.entries()], 4, async ([doi, v]) => ({ doi, ...v, res: await lookupDoi(doi) }));
+    for (const { doi, who, title, res } of looked) {
+      const label = `${[...who].join(', ')} — ${doi}`;
+      if (res.state === 'missing') {
+        failures.push(`**DOI not registered** with Crossref or DataCite: ${label}`);
+      } else if (res.state === 'unknown') {
+        doiWarnings.push(`could not check (${res.why}): ${label}`);
+      } else {
+        doiFound++;
+        doiVia[res.via]++;
+        if (title && res.title) {
+          const o = titleOverlap(title, res.title);
+          if (o < TITLE_OVERLAP_MIN) {
+            doiWarnings.push(
+              `title differs (word overlap ${Math.round(o * 100)}%): ${label}\n  - catalog: ${title}\n  - ${res.via}: ${res.title}`,
+            );
+          }
+        }
+      }
+    }
+  }
+
+  // 4. Links -------------------------------------------------------------------
+  let linkCount = 0;
+  let linksOk = 0;
+  const blocked = new Map<string, string[]>(); // host -> entries (403/429/other 4xx)
+  if (!LICENSES_ONLY && !NO_LINKS) {
+    const urls = [...allUrls.entries()].filter(([u]) => doiFromUrl(u) === null); // DOIs were handled above
+    linkCount = urls.length;
+    const results = await pool(urls, CONCURRENCY, async ([u, who]) => ({
       u,
       who: [...new Set(who)],
       res: await request(u, false),
@@ -246,33 +378,44 @@ async function main() {
     for (const { u, who, res } of results) {
       const label = `${who.join(', ')} — ${u}`;
       if (res.status === 404 || res.status === 410) failures.push(`**dead link** (HTTP ${res.status}): ${label}`);
-      else if (res.status === 0) warnings.push(`unreachable (${res.error}): ${label}`);
-      else if (res.status >= 400) warnings.push(`HTTP ${res.status} (may be blocking automated requests): ${label}`);
-      else linksOk++;
+      else if (res.status === 0) otherWarnings.push(`unreachable (${res.error}): ${label}`);
+      else if (res.status >= 400) {
+        const host = res.host || new URL(u).host;
+        blocked.set(host, [...(blocked.get(host) ?? []), `${label} (HTTP ${res.status})`]);
+      } else linksOk++;
     }
   }
 
-  // 3. Baseline update mode ----------------------------------------------------
-  if (UPDATE) {
-    const out: Baseline = { updated: new Date().toISOString().slice(0, 10), licenses: newBaseline };
-    writeFileSync(BASELINE, JSON.stringify(out, null, 2) + '\n', 'utf-8');
-    console.log(`Baseline written to ${BASELINE}: ${Object.keys(newBaseline).length} license file(s).`);
-    console.log(changes.length ? changes.map((c) => `  ${c}`).join('\n') : '  (no changes)');
-    for (const w of warnings) console.log(`  warning: ${w}`);
-    return;
-  }
-
-  // 4. Report ------------------------------------------------------------------
+  // 5. Report ------------------------------------------------------------------
+  const blockedCount = [...blocked.values()].reduce((n, v) => n + v.length, 0);
+  const warnCount = doiWarnings.length + otherWarnings.length + blockedCount;
   const lines = [
     `# Source check ${new Date().toISOString().slice(0, 10)}`,
     '',
     `- License files read and consistent with the catalog: **${licensesOk} / ${licenseJobs.length}**`,
-    LICENSES_ONLY ? '- Links: skipped (`--licenses-only`)' : `- Links reachable: **${linksOk} / ${linkCount}**`,
-    `- Failures: **${failures.length}** · Warnings: **${warnings.length}**`,
+    LICENSES_ONLY
+      ? '- DOIs and links: skipped (`--licenses-only`)'
+      : `- DOIs found in a registry: **${doiFound} / ${doiTotal}** (Crossref ${doiVia.Crossref}, DataCite ${doiVia.DataCite})`,
+    LICENSES_ONLY || NO_LINKS
+      ? '- Links: skipped'
+      : `- Links reachable: **${linksOk} / ${linkCount}** (DOI links are checked as DOIs, not followed)`,
+    `- Failures: **${failures.length}** · Warnings: **${warnCount}**`,
     '',
   ];
   if (failures.length) lines.push('## Failures', '', ...failures.map((f) => `- ${f}`), '');
-  if (warnings.length) lines.push('## Warnings (do not fail the run)', '', ...warnings.map((w) => `- ${w}`), '');
+  if (doiWarnings.length) lines.push('## Warnings: DOIs', '', ...doiWarnings.map((w) => `- ${w}`), '');
+  if (otherWarnings.length) lines.push('## Warnings: other', '', ...otherWarnings.map((w) => `- ${w}`), '');
+  if (blockedCount) {
+    lines.push(
+      '## Not followed: answered 4xx (usually a publisher refusing automated requests)',
+      '',
+      'These never fail the run. Open them in a browser if one looks wrong.',
+      '',
+    );
+    for (const [host, items] of [...blocked.entries()].sort((a, b) => b[1].length - a[1].length)) {
+      lines.push(`<details><summary>${host}: ${items.length} URL(s)</summary>`, '', ...items.map((i) => `- ${i}`), '', '</details>', '');
+    }
+  }
   const report = lines.join('\n');
   console.log(report);
   if (REPORT) writeFileSync(REPORT, report, 'utf-8');

@@ -74,7 +74,7 @@
           {
             "label": "ACS Supporting Information",
             "resourceType": "Publisher SI",
-            "url": "https://doi.org/jctcce/article-supplement/163686/pdf/ct4c01058_si_001/",
+            "url": "https://pubs.acs.org/doi/suppl/10.1021/acs.jctc.4c01058/suppl_file/ct4c01058_si_001.pdf",
             "access": "The publisher page indicates it is freely available",
             "dataType": "Timing, force fields, ML potential training, and supplementary figures and tables"
           }
@@ -123,7 +123,7 @@
           {
             "label": "ACS Supporting Information",
             "resourceType": "出版者 SI",
-            "url": "https://doi.org/jctcce/article-supplement/163686/pdf/ct4c01058_si_001/",
+            "url": "https://pubs.acs.org/doi/suppl/10.1021/acs.jctc.4c01058/suppl_file/ct4c01058_si_001.pdf",
             "access": "出版者頁標示可免費取得",
             "dataType": "計時、力場、ML potential 訓練與補充圖表"
           }
