@@ -9,7 +9,7 @@
     "zh-Hant"
   ],
   "verificationDate": "2026-10-14",
-  "itemCount": 45,
+  "itemCount": 49,
   "curationGuide": {
     "immediate": {
       "en": "Official source, core use, and the main license and data access can all be matched unambiguously.",
@@ -4509,6 +4509,89 @@
       }
     },
     {
+      "id": "alab-management",
+      "name": "A-Lab management (alab_management)",
+      "author": "Ceder Group (UC Berkeley / LBNL)",
+      "githubUrl": "https://github.com/CederGroupHub/alab_management",
+      "webUrl": "https://cedergrouphub.github.io/alabos/",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "category": "ml",
+      "dataAccess": "not-applicable",
+      "languages": [
+        "Python"
+      ],
+      "paper": {
+        "title": "Alab Management manuscript (arXiv 2405.13930, as linked by the README)",
+        "url": "https://arxiv.org/abs/2405.13930"
+      },
+      "primarySource": {
+        "url": "https://github.com/CederGroupHub/alab_management"
+      },
+      "licenseUrl": "https://raw.githubusercontent.com/CederGroupHub/alab_management/main/LICENSE",
+      "lastVerified": "2026-10-14",
+      "en": {
+        "entityTypeLabel": "Software",
+        "curationTierLabel": "Verified | read the notes",
+        "categoryLabel": "Machine learning and data",
+        "dataAccessLabel": "Not applicable (software)",
+        "sourceStatus": "Only the official README and LICENSE (MIT) were verified; the A-Lab experimental results are outside this entry.",
+        "description": "Python software for managing workflows in an autonomous lab; it needs MongoDB and RabbitMQ and accompanies a 2024 Digital Discovery manuscript and arXiv 2405.13930.",
+        "capabilities": [
+          "Autonomous-lab workflow management",
+          "alabos documentation site"
+        ],
+        "license": "MIT License (code)",
+        "maintenanceStatus": "Last-push date not checked; the README lists Python 3.8 to 3.10, which may be dated.",
+        "mofApplicability": "Not MOF-specific: the README and official pages do not target MOFs. It is listed because the requested slide extract named it; validate it yourself before using it on MOFs. This is lab-workflow software and contains neither materials data nor the A-Lab synthesis results.",
+        "supplementaryResources": [],
+        "primarySourceLabel": "alab_management official repository",
+        "problemsSolved": [
+          "Lets the instruments and tasks of an autonomous lab be scheduled and recorded."
+        ],
+        "keyFeatures": [
+          "You must provide MongoDB and RabbitMQ",
+          "The README links a documentation site at cedergrouphub.github.io/alabos (not opened)"
+        ],
+        "trainingUse": "Not a training database; it is lab-management software.",
+        "caveats": [
+          "Not MOF-specific: the README and official pages do not target MOFs. It is listed because the requested slide extract named it; validate it yourself before using it on MOFs.",
+          "The paper title was not checked; the entry only cites the preprint linked by the README, and no DOI is given.",
+          "The A-Lab experimental results and their data are not in this repository, and whether they are public was not confirmed."
+        ]
+      },
+      "zh": {
+        "entityTypeLabel": "軟體",
+        "curationTierLabel": "已核實｜須閱讀註記",
+        "categoryLabel": "機器學習與資料",
+        "dataAccessLabel": "不適用（軟體）",
+        "sourceStatus": "僅核實官方 README 與 LICENSE（MIT）；A-Lab 實驗成果本身不在此條目範圍。",
+        "description": "管理自主實驗室（Autonomous Lab）工作流程的 Python 軟體，需要 MongoDB 與 RabbitMQ；對應 Digital Discovery 2024 手稿與 arXiv 2405.13930。",
+        "capabilities": [
+          "自主實驗室工作流程管理",
+          "文件站 alabos"
+        ],
+        "license": "MIT License（程式碼）",
+        "maintenanceStatus": "未核對最後推送日期；README 列的 Python 版本為 3.8 至 3.10，可能落後。",
+        "mofApplicability": "非 MOF 專用：README 與官方頁面未以 MOF 為對象。列入是因為使用者要求收錄投影片提到的材料領域資源；用於 MOF 前須自行驗證。此為實驗室工作流程軟體，不含材料資料或 A-Lab 的合成結果。",
+        "supplementaryResources": [],
+        "primarySourceLabel": "alab_management 官方程式庫",
+        "problemsSolved": [
+          "讓自主實驗室的多台儀器與任務能被排程與記錄。"
+        ],
+        "keyFeatures": [
+          "需自備 MongoDB 與 RabbitMQ",
+          "README 連結文件站 cedergrouphub.github.io/alabos（未開啟）"
+        ],
+        "trainingUse": "非訓練資料庫；為實驗室管理軟體。",
+        "caveats": [
+          "非 MOF 專用：README 與官方頁面未以 MOF 為對象。列入是因為使用者要求收錄投影片提到的材料領域資源；用於 MOF 前須自行驗證。",
+          "論文標題未核對，條目只引用 README 所連結的預印本；DOI 未填。",
+          "A-Lab 的實驗成果與其資料不在此程式庫內，是否公開未確認。"
+        ]
+      }
+    },
+    {
       "id": "arc-mof",
       "name": "ARC-MOF",
       "author": "Woo group, University of Ottawa（Burner et al.）",
@@ -5429,6 +5512,266 @@
           "2021 年 2 月 10 日前下載的資料因錯誤（影響不到 1%）已更新，請重新下載。",
           "fairchem 程式碼為 MIT，但 README 明說模型與檢查點的授權依應用領域而異；資料授權與模型授權需分開判讀。",
           "本次未能開啟 opencatalystproject.org 與資料下載主機，下載連結的可用性未檢查；以上內容來自 fairchem 程式庫內的官方文件與授權檔。"
+        ]
+      }
+    },
+    {
+      "id": "omat24",
+      "name": "Open Materials 2024 (OMat24)",
+      "author": "Meta FAIR Chemistry（Barroso-Luque 等人）",
+      "githubUrl": "https://github.com/facebookresearch/fairchem",
+      "webUrl": "https://arxiv.org/abs/2410.12771",
+      "entityType": "database",
+      "curationTier": "caveat",
+      "category": "ml",
+      "dataAccess": "limited",
+      "languages": [
+        "Python（fairchem）"
+      ],
+      "paper": {
+        "title": "Open Materials 2024 (OMat24) Inorganic Materials Dataset and Models",
+        "url": "https://arxiv.org/abs/2410.12771"
+      },
+      "primarySource": {
+        "url": "https://arxiv.org/abs/2410.12771"
+      },
+      "licenseUrl": "https://huggingface.co/datasets/facebook/OMAT24",
+      "lastVerified": "2026-10-14",
+      "en": {
+        "entityTypeLabel": "Database",
+        "curationTierLabel": "Verified | read the notes",
+        "categoryLabel": "Machine learning and data",
+        "dataAccessLabel": "Download requires accepting a custom license (per a search summary); terms not retrieved, confirm yourself",
+        "sourceStatus": "The fairchem README (read) covers the DFT settings of OMat24-trained models and the code license; the dataset license and size come from search-result summaries of the arXiv and Hugging Face pages, which were not opened directly.",
+        "description": "A Meta FAIR dataset of inorganic-materials DFT calculations with pre-trained models; search-result summaries put it at over 110 million DFT calculations, emphasising structural and compositional diversity.",
+        "capabilities": [
+          "Inorganic-materials DFT data",
+          "Pre-trained models (fairchem)"
+        ],
+        "license": "Data: a custom “OMat24 License” on Hugging Face (per a search summary; full text not retrieved); fairchem code: MIT",
+        "maintenanceStatus": "The fairchem repository is active; the update status of the OMat24 dataset itself was not checked.",
+        "mofApplicability": "Not MOF-specific: the README and official pages do not target MOFs. It is listed because the requested slide extract named it; validate it yourself before using it on MOFs.",
+        "supplementaryResources": [],
+        "primarySourceLabel": "OMat24 preprint (arXiv 2410.12771)",
+        "problemsSolved": [
+          "Supplies large-scale inorganic-materials DFT labels for training interatomic potentials and foundation models."
+        ],
+        "keyFeatures": [
+          "fairchem README: UMA and legacy inorganic bulk models trained on OMat24 use DFT total-energy labels that are not compatible with Materials Project calculations"
+        ],
+        "trainingUse": "Usable as training data, but the data license is a custom one (per a search summary) and its commercial-use and redistribution limits were not confirmed.",
+        "caveats": [
+          "License conflict warning: the Hugging Face page is reported by a search summary as a custom license that requires accepting terms; a third-party aggregator says CC BY 4.0, which contradicts the official page and is not adopted here. Read the official page in full.",
+          "Not MOF-specific: the README and official pages do not target MOFs. It is listed because the requested slide extract named it; validate it yourself before using it on MOFs.",
+          "The fairchem README says not to use MP2020 corrections or Materials Project reference compounds with models trained on OMat24.",
+          "The Hugging Face page and OMat24 data documentation could not be opened in this check, so size and license were not independently verified."
+        ]
+      },
+      "zh": {
+        "entityTypeLabel": "資料庫",
+        "curationTierLabel": "已核實｜須閱讀註記",
+        "categoryLabel": "機器學習與資料",
+        "dataAccessLabel": "需同意自訂授權才能下載（據搜尋摘要）；條款未取得，須自行確認",
+        "sourceStatus": "fairchem README（已讀）說明 OMat24 訓練模型的 DFT 設定與程式碼授權；資料集授權與規模來自搜尋結果對 arXiv 與 Hugging Face 頁面的摘要，未直接開啟原頁。",
+        "description": "Meta FAIR 發布的無機材料 DFT 資料集與預訓練模型；搜尋結果摘要稱含逾 1.1 億次 DFT 計算，強調結構與組成多樣性。",
+        "capabilities": [
+          "無機材料 DFT 資料",
+          "預訓練模型（fairchem）"
+        ],
+        "license": "資料：Hugging Face 上的自訂「OMat24 License」（據搜尋摘要；全文未取得）；fairchem 程式碼：MIT",
+        "maintenanceStatus": "fairchem 程式庫持續更新；OMat24 資料集本身的更新狀態未核對。",
+        "mofApplicability": "非 MOF 專用：README 與官方頁面未以 MOF 為對象。列入是因為使用者要求收錄投影片提到的材料領域資源；用於 MOF 前須自行驗證。",
+        "supplementaryResources": [],
+        "primarySourceLabel": "OMat24 預印本（arXiv 2410.12771）",
+        "problemsSolved": [
+          "提供大量無機材料 DFT 標籤，用於訓練原子間勢與基礎模型。"
+        ],
+        "keyFeatures": [
+          "fairchem README：以 OMat24 訓練的 UMA 與舊版無機塊材模型，使用的 DFT 總能標籤與 Materials Project 計算不相容"
+        ],
+        "trainingUse": "可作機器學習訓練資料，但資料授權為自訂條款（據搜尋摘要），商用與再散布限制未確認。",
+        "caveats": [
+          "授權衝突警示：Hugging Face 頁面經搜尋摘要顯示為自訂授權並需同意條款；有第三方聚合網站寫 CC BY 4.0，與官方頁面矛盾，此處不採用 CC BY 4.0。請以官方頁面全文為準。",
+          "非 MOF 專用：README 與官方頁面未以 MOF 為對象。列入是因為使用者要求收錄投影片提到的材料領域資源；用於 MOF 前須自行驗證。",
+          "fairchem README 明說不要把 MP2020 修正或 MP 參考化合物用於 OMat24 訓練的模型。",
+          "本次無法開啟 Hugging Face 頁面與 OMat24 資料文件，資料規模與授權未獨立核實。"
+        ]
+      }
+    },
+    {
+      "id": "gnome",
+      "name": "GNoME (Materials Discovery)",
+      "author": "Google DeepMind（Merchant 等人）",
+      "githubUrl": "https://github.com/google-deepmind/materials_discovery",
+      "webUrl": "https://github.com/google-deepmind/materials_discovery",
+      "entityType": "database",
+      "curationTier": "caveat",
+      "category": "ml",
+      "dataAccess": "mixed",
+      "languages": [
+        "Python",
+        "JAX"
+      ],
+      "paper": {
+        "title": "Scaling deep learning for materials discovery",
+        "doi": "10.1038/s41586-023-06735-9",
+        "url": "https://doi.org/10.1038/s41586-023-06735-9"
+      },
+      "primarySource": {
+        "url": "https://github.com/google-deepmind/materials_discovery"
+      },
+      "licenseUrl": "https://raw.githubusercontent.com/google-deepmind/materials_discovery/main/LICENSE",
+      "lastVerified": "2026-10-14",
+      "en": {
+        "entityTypeLabel": "Database",
+        "curationTierLabel": "Verified | read the notes",
+        "categoryLabel": "Machine learning and data",
+        "dataAccessLabel": "Public download; data non-commercial only (CC BY-NC 4.0)",
+        "sourceStatus": "The official repository README (read) states the data license, code license, data size and paper DOI; a LICENSE file exists.",
+        "description": "Google DeepMind GNoME project: releases 381,000 novel stable materials, expanded in August 2024 to all materials within 1 meV/atom of the convex hull (over 520,000), with Colab notebooks and model definitions.",
+        "capabilities": [
+          "Stable-material data (CSV summary and structures)",
+          "r2SCAN subset",
+          "GNoME and NequIP model definitions (JAX)",
+          "Colab examples"
+        ],
+        "license": "Data: CC BY-NC 4.0 (non-commercial only, per the README); Colab notebooks and code: Apache License 2.0",
+        "maintenanceStatus": "The README records a data expansion in August 2024 and still lists unfinished items under Upcoming; the last-push date was not checked.",
+        "mofApplicability": "Not MOF-specific: the README and official pages do not target MOFs. It is listed because the requested slide extract named it; validate it yourself before using it on MOFs. GNoME targets inorganic crystals.",
+        "supplementaryResources": [],
+        "primarySourceLabel": "GNoME official repository",
+        "problemsSolved": [
+          "Expands the known stable inorganic crystals with large-scale machine learning and releases the results, giving a fuller convex hull."
+        ],
+        "keyFeatures": [
+          "The README says baseline calculations use PBE, with r2SCAN results for some binaries and ternaries",
+          "The GNoME model was trained on a 2018 Materials Project snapshot (README)"
+        ],
+        "trainingUse": "Data are CC BY-NC 4.0 and may not be used commercially; the README also says the data are for theoretical modeling only and provided as is.",
+        "caveats": [
+          "Not MOF-specific: the README and official pages do not target MOFs. It is listed because the requested slide extract named it; validate it yourself before using it on MOFs.",
+          "The data license is non-commercial (CC BY-NC 4.0) and differs from the Apache-2.0 code license; read them separately.",
+          "README disclaimer: the data are for theoretical modeling only and should be used with caution; it is a research project, not an official Google product.",
+          "The data are VASP DFT results, not experimental measurements."
+        ]
+      },
+      "zh": {
+        "entityTypeLabel": "資料庫",
+        "curationTierLabel": "已核實｜須閱讀註記",
+        "categoryLabel": "機器學習與資料",
+        "dataAccessLabel": "公開下載；資料僅限非商業（CC BY-NC 4.0）",
+        "sourceStatus": "官方程式庫 README（已讀）載明資料授權、程式碼授權、資料規模與論文 DOI；LICENSE 檔存在。",
+        "description": "Google DeepMind 的 GNoME 計畫：釋出 381,000 個新穩定材料，並於 2024 年 8 月擴充為距凸包 1 meV/atom 內的全部材料（逾 520,000 個）；含 Colab 與模型定義。",
+        "capabilities": [
+          "穩定材料資料（CSV 摘要與結構）",
+          "r²SCAN 子集",
+          "GNoME 與 NequIP 模型定義（JAX）",
+          "Colab 範例"
+        ],
+        "license": "資料：CC BY-NC 4.0（僅限非商業，README 載明）；Colab 與程式碼：Apache License 2.0",
+        "maintenanceStatus": "README 載明 2024 年 8 月擴充資料；README 的「Upcoming」清單仍列有未完成項目；最後推送日期未核對。",
+        "mofApplicability": "非 MOF 專用：README 與官方頁面未以 MOF 為對象。列入是因為使用者要求收錄投影片提到的材料領域資源；用於 MOF 前須自行驗證。GNoME 針對無機晶體。",
+        "supplementaryResources": [],
+        "primarySourceLabel": "GNoME 官方程式庫",
+        "problemsSolved": [
+          "以大規模機器學習擴充已知穩定無機晶體並釋出結果，提供更完整的凸包。"
+        ],
+        "keyFeatures": [
+          "README 稱基準計算用 PBE，並對部分二元與三元化合物提供 r²SCAN 結果",
+          "GNoME 模型以 2018 年 Materials Project 快照訓練（README）"
+        ],
+        "trainingUse": "資料為 CC BY-NC 4.0，不得商用；README 另聲明資料僅供理論建模、依現狀提供。",
+        "caveats": [
+          "非 MOF 專用：README 與官方頁面未以 MOF 為對象。列入是因為使用者要求收錄投影片提到的材料領域資源；用於 MOF 前須自行驗證。",
+          "資料授權為非商業（CC BY-NC 4.0），與程式碼的 Apache-2.0 不同，兩者須分開判讀。",
+          "README 免責聲明：資料僅供理論建模，使用須謹慎；並稱為研究專案、非 Google 官方產品。",
+          "資料為 VASP DFT 計算結果，不是實驗測量。"
+        ]
+      }
+    },
+    {
+      "id": "materials-project",
+      "name": "Materials Project",
+      "author": "Materials Project / Lawrence Berkeley National Laboratory",
+      "githubUrl": "https://github.com/materialsproject/api",
+      "webUrl": "https://next-gen.materialsproject.org/",
+      "entityType": "database",
+      "curationTier": "caveat",
+      "category": "ml",
+      "dataAccess": "open",
+      "languages": [
+        "Python（mp-api）"
+      ],
+      "paper": {
+        "title": "Commentary: The Materials Project: A materials genome approach to accelerating materials innovation",
+        "doi": "10.1063/1.4812323",
+        "url": "https://doi.org/10.1063/1.4812323"
+      },
+      "primarySource": {
+        "url": "https://github.com/materialsproject/api"
+      },
+      "licenseUrl": "https://raw.githubusercontent.com/materialsproject/api/main/LICENSE",
+      "lastVerified": "2026-10-14",
+      "en": {
+        "entityTypeLabel": "Database",
+        "curationTierLabel": "Verified | read the notes",
+        "categoryLabel": "Machine learning and data",
+        "dataAccessLabel": "Public; attribution required, bulk use through the API (per a search summary)",
+        "sourceStatus": "The API client README and LICENSE (read) were verified; the data license and terms come from a search-result summary of the terms page, which was not opened directly; the Jain 2013 DOI is from memory and not yet verified.",
+        "description": "A database of DFT-computed inorganic-material properties, accessed through the website and the mp-api client; this entry is the core database, not the MOF Explorer, which has its own entry.",
+        "capabilities": [
+          "Materials property lookup",
+          "REST API and Python client (mp-api)",
+          "Bulk access through the API"
+        ],
+        "license": "Data: CC BY 4.0 (per a search summary of the terms; the page was not opened); mp-api code: Berkeley Lab BSD-style text (see LICENSE)",
+        "maintenanceStatus": "The mp-api last-push date was not checked; the README says Python 3.11+ is required.",
+        "mofApplicability": "Not MOF-specific: the README and official pages do not target MOFs. It is listed because the requested slide extract named it; validate it yourself before using it on MOFs. For MOF content see the Materials Project MOF Explorer entry in this catalog.",
+        "supplementaryResources": [],
+        "primarySourceLabel": "mp-api official repository",
+        "problemsSolved": [
+          "Provides queryable, downloadable DFT materials data that many materials machine-learning projects train on."
+        ],
+        "keyFeatures": [
+          "Per a search summary, the terms forbid scraping the website directly; use the API for bulk access"
+        ],
+        "trainingUse": "Usable as training data (CC BY 4.0 with attribution, per a search summary); read the terms page in full.",
+        "caveats": [
+          "Not MOF-specific: the README and official pages do not target MOFs. It is listed because the requested slide extract named it; validate it yourself before using it on MOFs.",
+          "The data license and terms come only from a search summary (including a legacy-domain terms page) and were not opened directly.",
+          "The DOI and title of the 2013 APL Materials paper by Jain et al. were entered from memory; the search did not return the paper. The monthly source check compares it with Crossref; do not treat it as verified until that passes.",
+          "The data are computed values, and the terms themselves warn that accuracy may not suit every use (per a search summary)."
+        ]
+      },
+      "zh": {
+        "entityTypeLabel": "資料庫",
+        "curationTierLabel": "已核實｜須閱讀註記",
+        "categoryLabel": "機器學習與資料",
+        "dataAccessLabel": "公開；需署名，大量取用請走 API（據搜尋摘要）",
+        "sourceStatus": "API 用戶端的 README 與 LICENSE（已讀）已核實；資料授權與使用條款來自搜尋結果對條款頁的摘要，未直接開啟原頁；Jain 2013 的 DOI 憑記憶，尚未核實。",
+        "description": "以 DFT 計算的無機材料性質資料庫，透過網站與 mp-api 用戶端存取；本條目指其核心資料庫，不含另立條目的 MOF Explorer。",
+        "capabilities": [
+          "材料性質查詢",
+          "REST API 與 Python 用戶端（mp-api）",
+          "大量資料經 API 下載"
+        ],
+        "license": "資料：CC BY 4.0（據搜尋摘要所述條款，未開啟原頁）；mp-api 程式碼：Berkeley Lab 的 BSD 類授權文字（見 LICENSE）",
+        "maintenanceStatus": "未核對 mp-api 的最後推送日期；README 稱需 Python 3.11 以上。",
+        "mofApplicability": "非 MOF 專用：README 與官方頁面未以 MOF 為對象。列入是因為使用者要求收錄投影片提到的材料領域資源；用於 MOF 前須自行驗證。MOF 相關內容請見目錄中的 Materials Project MOF Explorer。",
+        "supplementaryResources": [],
+        "primarySourceLabel": "mp-api 官方程式庫",
+        "problemsSolved": [
+          "提供可查詢、可下載的 DFT 材料性質資料，作為許多材料機器學習工作的訓練來源。"
+        ],
+        "keyFeatures": [
+          "搜尋摘要：條款禁止直接爬取網站，大量取用請透過 API"
+        ],
+        "trainingUse": "可作訓練資料（CC BY 4.0，需署名，據搜尋摘要）；請以條款頁全文為準。",
+        "caveats": [
+          "非 MOF 專用：README 與官方頁面未以 MOF 為對象。列入是因為使用者要求收錄投影片提到的材料領域資源；用於 MOF 前須自行驗證。",
+          "資料授權與使用條款僅來自搜尋摘要（含 legacy 網域的條款頁），尚未直接開啟核對。",
+          "Jain 等人 2013 年 APL Materials 論文的 DOI 與標題憑記憶填入，搜尋結果未出現該論文；每月來源檢查會以 Crossref 比對，結果出來前請勿當作已核實。",
+          "資料是計算值，條款頁自己提醒其準確度未必適用於所有用途（據搜尋摘要）。"
         ]
       }
     },

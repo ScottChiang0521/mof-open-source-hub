@@ -79,16 +79,5 @@
       "whyUnverified": "Known from search-result summaries: it compares CHGNet, MACE-MP-0 and Equiformer V2 with a classical force field on adsorbate-induced MOF deformation. The paper text and any released code or data were not read.",
       "whatToCheck": "Whether code or data are released, and the paper's own numbers before quoting any."
     }
-  ],
-  "checkedNotAdded": {
-    "reason": "Named in the Talk1 slide extract and checked against the repository's own files on 2026-10-14. MatterGen, MACE, CHGNet and MatGL were added to the catalog with 'not MOF-specific' caveats. The item below was not, because only the fairchem README (not the OMat24 dataset page and licence) was read.",
-    "items": [
-      {
-        "name": "OMat24 (facebookresearch/fairchem)",
-        "note": "Inorganic bulk materials dataset used to train fairchem models; the OMat24 dataset page and licence were not opened. fairchem's README does mention MOFs, which is why ODAC25 and OC20 are in the catalog.",
-        "url": "https://github.com/facebookresearch/fairchem"
-      }
-    ],
-    "notChecked": "GNoME, A-Lab, Materials Project (core database) and the slide deck itself were not opened. The Materials Project MOF Explorer is already in the catalog."
-  }
+  ]
 }
