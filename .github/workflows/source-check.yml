@@ -1,0 +1,68 @@
+name: Source check
+
+# Re-verifies what the catalog says about licenses and links (scripts/check-sources.ts).
+# A license file whose text changed, a file that no longer matches the catalog's
+# wording, or a 404/410 link fails the run and opens (or updates) one issue.
+# Blocked or unreachable URLs are warnings only; see the script header for why.
+on:
+  schedule:
+    - cron: '17 3 1 * *' # 03:17 UTC on the 1st of each month
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: source-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check sources
+        id: check
+        continue-on-error: true
+        run: pnpm exec tsx scripts/check-sources.ts --report source-check-report.md
+
+      - name: Open or update an issue
+        if: steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Source check failed: license or link needs review"
+          {
+            echo "Run: $RUN_URL"
+            echo
+            head -c 60000 source-check-report.md
+          } > issue-body.md
+          existing=$(gh issue list --state open --search "\"$title\" in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file issue-body.md
+          else
+            gh issue create --title "$title" --body-file issue-body.md
+          fi
+
+      - name: Fail the run
+        if: steps.check.outcome == 'failure'
+        run: exit 1

@@ -101,6 +101,7 @@ The site code is under the MIT license set in `package.json`; **the listed third
 - Original 15 entries verified 2026-10-09; entries added and the two CoRE MOF Zenodo records appended to `core-mof-db` verified 2026-10-14 (`lastVerified` is stored per entry).
 - Evidence types: official repositories, official documentation, formal papers, publisher SI, data archives, versioned releases, data services / APIs. Every DOI of the added entries was resolved through Crossref or DataCite.
 - Where a publisher or archive blocked automated requests, the entry says so instead of claiming the page was verified.
+- **Automated re-check.** `pnpm check:sources` (also run monthly by `.github/workflows/source-check.yml`) re-reads each license file and compares it with `data/source-baseline.json` and with the license wording in the catalog, and follows every URL. A changed or mismatching license text, or a 404/410 link, fails the run and opens an issue. Blocked or unreachable URLs are only warnings, because they cannot be told apart from a refusal of automated requests. Only files that are license texts are hashed; terms pages and creativecommons.org pages get the link check only. After you have reviewed a legitimate change, run `pnpm sources:baseline` to record the new text. This catches changes; it does not replace reading the license.
 
 ---
 
@@ -199,3 +200,4 @@ data/mof-catalog.json           供程式與 LLM 使用的雙語結構化資料
 - 原 15 項核實日期：2026-10-09；新增項目及補入 `core-mof-db` 的兩筆 CoRE MOF Zenodo 紀錄核實日期：2026-10-14（`lastVerified` 逐項記錄）。
 - 主要證據類型：官方程式庫、官方文件、正式論文、出版者 SI、資料保存庫、版本化 release、資料服務／API。新增項目的每個 DOI 皆經 Crossref 或 DataCite 解析。
 - 出版者或保存庫阻擋自動化請求時，條目會如實註明，不宣稱該頁已核實。
+- **自動重新檢查。** `pnpm check:sources`（也由 `.github/workflows/source-check.yml` 每月執行）會重新讀取每份授權檔，與 `data/source-baseline.json` 及目錄中的授權文字比對，並檢查所有網址。授權文字改變、與目錄不符，或連結回應 404／410，執行會失敗並開立 issue。被擋或連不上的網址只列為警告，因為這無法與「拒絕自動化請求」區分。只有本身是授權全文的檔案會做雜湊比對；條款頁與 creativecommons.org 頁面只檢查連結。確認變更屬正當後，執行 `pnpm sources:baseline` 記錄新文字。這個檢查能發現變動，但不能取代閱讀授權本身。

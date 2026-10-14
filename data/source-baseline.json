@@ -1,0 +1,195 @@
+{
+  "updated": "2026-10-14",
+  "licenses": {
+    "graspa": {
+      "url": "https://raw.githubusercontent.com/snurr-group/gRASPA/main/LICENSE",
+      "sha256": "b5ad41f158bf616e7f6c9b456824aaf5b9c08cd3cec38ccad0c335a61803c0b3",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "quantum-espresso": {
+      "url": "https://gitlab.com/QEF/q-e/-/raw/develop/License",
+      "sha256": "5c90a2b4ad2745f44a9f9f6da6512a41fcaaabf9a0e5570c58d709269605eaab",
+      "detected": [
+        "GPL"
+      ]
+    },
+    "raspa2-iraspa": {
+      "url": "https://raw.githubusercontent.com/iRASPA/RASPA2/master/COPYING",
+      "sha256": "9b68fd326e2bb47301c258851e0cc8fe81ef65c741c8c5ac0bbd880015e1ec74",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "zeopp": {
+      "url": "https://raw.githubusercontent.com/lsmo-epfl/zeopp-lsmo/master/LICENSE",
+      "sha256": "71c838d8cf02a9b7c675dfb431b99d2a7212f40d76f3ba34dc6a37e62aa6feec",
+      "detected": [
+        "BSD"
+      ]
+    },
+    "mofid-mofkey": {
+      "url": "https://raw.githubusercontent.com/snurr-group/mofid/master/LICENSE",
+      "sha256": "29aca396a145fe071fdbe77a984128ac894c96731cff188c4f9c24c251641bd8",
+      "detected": [
+        "GPL"
+      ]
+    },
+    "core-mof-tools": {
+      "url": "https://raw.githubusercontent.com/Chung-Research-Group/CoRE-MOF-Tools/main/LICENSE",
+      "sha256": "25a40a30d753162c4026b87a389b9534c72436327abcd083f90da00ead6d6869",
+      "detected": [
+        "CC"
+      ]
+    },
+    "pacman-charge": {
+      "url": "https://raw.githubusercontent.com/Chung-Research-Group/PACMAN-charge/main/LICENSE",
+      "sha256": "abc8fee98c847733b135407ebe0ee8cde7e6e53ad7fabf6169214fea6b94cd79",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "mofdscribe": {
+      "url": "https://raw.githubusercontent.com/lamalab-org/mofdscribe/main/LICENSE",
+      "sha256": "c19e583405f0afe5dab1b5d641bf96bb59d2d042260f4d2f3f91a1e1589a5f35",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "mofdiff": {
+      "url": "https://raw.githubusercontent.com/microsoft/MOFDiff/main/LICENSE",
+      "sha256": "2bb49fa533643af3b74f016e50ddda144e9184681df3102eafc456689879245e",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "dac-sim": {
+      "url": "https://raw.githubusercontent.com/hspark1212/DAC-SIM/main/LICENSE",
+      "sha256": "2d0f2de266a59547535a005f177a7921123389f38b210e93d531a9b8fbc73e81",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "raspa3": {
+      "url": "https://raw.githubusercontent.com/iRASPA/RASPA3/main/LICENSE.md",
+      "sha256": "a55ce71d4b0791be91ef2a4927e9ab1bcee83092055ddf6487c89d18879acbfb",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "mofsimbench": {
+      "url": "https://raw.githubusercontent.com/AI4ChemS/mofsim-bench/main/LICENSE",
+      "sha256": "b70382f54233cf583144ab25e5ffcf844bd11a0f9b83d63aaec8357ef9f5361c",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "mosaec": {
+      "url": "https://raw.githubusercontent.com/uowoolab/MOSAEC/main/LICENSE",
+      "sha256": "972a178adadacfbdddec346b16d45fd4ed9937ec5e4a5bb46d8685ba4e73a0b1",
+      "detected": [
+        "GPL"
+      ]
+    },
+    "mofchecker": {
+      "url": "https://raw.githubusercontent.com/lamalab-org/mofchecker/main/LICENSE",
+      "sha256": "836ad0eef52f994579c695354a627859a7ad0f370811bb6b36ddbbf132732f21",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "pormake": {
+      "url": "https://raw.githubusercontent.com/Sangwon91/PORMAKE/main/LICENSE.md",
+      "sha256": "ae5be0dade7fd76eb450588e1a660def095cb7a8bb7875e55dcb9b74230d7a6f",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "autografs": {
+      "url": "https://raw.githubusercontent.com/DCoupry/autografs/master/LICENSE.txt",
+      "sha256": "102659bf5ea99e9ff175c4aad2cf93470de4f0cedfc7f628f8808b311225f4de",
+      "detected": [
+        "LGPL"
+      ]
+    },
+    "tobacco-3": {
+      "url": "https://raw.githubusercontent.com/tobacco-mofs/tobacco_3.0/master/LICENSE",
+      "sha256": "0e7a6737dab56068abd2b9f8fd661bb667fc36dc1ac51b44d6413d51f20a12fe",
+      "detected": [
+        "GPL"
+      ]
+    },
+    "lammps-interface": {
+      "url": "https://raw.githubusercontent.com/peteboyd/lammps_interface/master/LICENSE",
+      "sha256": "3cb77c9cbdc9c99893ae044bb21250052c0d99fa1eaa7ae4f55754ad86aefb46",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "mofstructure": {
+      "url": "https://raw.githubusercontent.com/bafgreat/mofstructure/main/LICENSE",
+      "sha256": "8e041e798aaa906553f99b4e7a7350ba7e029e03a555fa53dbfbb2010423ab0c",
+      "detected": [
+        "MIT",
+        "Apache"
+      ]
+    },
+    "moftransformer": {
+      "url": "https://raw.githubusercontent.com/hspark1212/MOFTransformer/master/LICENSE",
+      "sha256": "9a8a7b9f0c2b6ec415dabc5bf4bd7dd227f8ed83a3e7f4cf48b81773f6579f06",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "moformer": {
+      "url": "https://raw.githubusercontent.com/zcao0420/MOFormer/main/LICENSE",
+      "sha256": "a37a0a2401ef061316182460dd6575ab16aec7dd4372d5aa353a0247107721db",
+      "detected": [
+        "Apache"
+      ]
+    },
+    "mofsimplify": {
+      "url": "https://raw.githubusercontent.com/hjkgrp/MOFSimplify/main/LICENSE",
+      "sha256": "ce650d7a3dc3abbea797dad998e239d0ba50dff4e459905e9ad395e96359a1f0",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "mofflow": {
+      "url": "https://raw.githubusercontent.com/nayoung10/MOFFlow/main/LICENSE",
+      "sha256": "1f17794ed0a91f046d197aec731e880a0d318af4832967ff8d86580a16520f6e",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "chatmof": {
+      "url": "https://raw.githubusercontent.com/Yeonghun1675/ChatMOF/master/LICENSE",
+      "sha256": "bc4e68b8fcb91c745a4cea36a8fee554c0a846cee9d1c2e7d9117cb002248c9d",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "l2m3": {
+      "url": "https://raw.githubusercontent.com/Yeonghun1675/L2M3/master/LICENSE",
+      "sha256": "977dddbdb223b249f843eb72697d1b51fbf9eb0b99541e67a95d08712b9b31d9",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "ghp-mofassemble": {
+      "url": "https://raw.githubusercontent.com/hyunp2/ghp_mof/main/LICENSE-CC-BY",
+      "sha256": "25a40a30d753162c4026b87a389b9534c72436327abcd083f90da00ead6d6869",
+      "detected": [
+        "CC"
+      ]
+    },
+    "synmof-literature-extraction": {
+      "url": "https://raw.githubusercontent.com/Tsotsalas-Group/MOF_Literature_Extraction/main/LICENSE",
+      "sha256": "3b970f7a4e13de56fdc23aeb712179018408fcae582229321078fa2140ff0c3c",
+      "detected": [
+        "MIT"
+      ]
+    }
+  }
+}
