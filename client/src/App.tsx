@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Router as WouterRouter, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -32,7 +32,12 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          {/* The site is served from a sub-path on GitHub Pages
+              (/mof-open-source-hub/); Vite exposes it as BASE_URL. Without
+              this wouter sees a path other than "/" and shows the 404 page. */}
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <Router />
+          </WouterRouter>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
