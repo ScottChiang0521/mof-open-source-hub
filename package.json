@@ -10,6 +10,8 @@
     "preview": "vite preview --host",
     "check": "tsc --noEmit && tsx scripts/build-catalog.ts --check",
     "catalog": "tsx scripts/build-catalog.ts",
+    "check:sources": "tsx scripts/check-sources.ts",
+    "sources:baseline": "tsx scripts/check-sources.ts --update-baseline",
     "format": "prettier --write ."
   },
   "dependencies": {
