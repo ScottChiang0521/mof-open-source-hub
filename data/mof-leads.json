@@ -1,0 +1,38 @@
+{
+  "note": "Leads are MOF-related sources found through search-result listings only. They are NOT verified and NOT part of data/mof-catalog.json: licence, data terms, repository contents and maintenance have not been checked. Each moves into the catalog only after its primary source is opened and checked.",
+  "lastReviewed": "2026-10-14",
+  "leads": [
+    {
+      "id": "lead-photocatalysis-design-space",
+      "title": "Exploring the Chemical Design Space of Metal-Organic Frameworks for Photocatalysis",
+      "kind": "paper + code/data (claimed)",
+      "links": [
+        { "label": "Chem. Sci. 2025 article page (RSC D5SC01100K)", "url": "https://pubs.rsc.org/en/Content/ArticleLanding/2025/SC/D5SC01100K" },
+        { "label": "Zenodo record 14727983", "url": "https://zenodo.org/records/14727983" },
+        { "label": "Claimed code: github.com/bmourino/pred_cdp", "url": "https://github.com/bmourino/pred_cdp" }
+      ],
+      "whyUnverified": "A search summary tied the paper to the pred_cdp repository and the Zenodo record. On 2026-10-14 the repository's raw README and LICENSE files returned HTTP 404 on main and master, and the Zenodo record could not be opened from the verifier's network.",
+      "whatToCheck": "Whether the repository exists and is public, its licence, and the Zenodo record's files and licence."
+    },
+    {
+      "id": "lead-umof",
+      "title": "uMOF: A Universal Database, Benchmark, and Machine Learning Interatomic Potentials for Metal-Organic Frameworks",
+      "kind": "preprint (database, benchmark, MLIPs)",
+      "links": [
+        { "label": "arXiv 2608.28100", "url": "https://arxiv.org/abs/2608.28100" }
+      ],
+      "whyUnverified": "Known only from a search-result title. The preprint text, data location, code and licences were not read.",
+      "whatToCheck": "Where the database and potentials are released, under which licences, and whether the preprint has since been peer-reviewed."
+    },
+    {
+      "id": "lead-mof5-co2-photoreduction",
+      "title": "Linker Functionalization and pH Tuning Enhance Solar-Driven Catalytic CO2 Reduction in MOF-5",
+      "kind": "preprint (study of MOF-5 CO2 photoreduction)",
+      "links": [
+        { "label": "arXiv 2609.02256", "url": "https://arxiv.org/abs/2609.02256" }
+      ],
+      "whyUnverified": "Known only from a search-result title. It is a study, and whether it releases code or data was not checked.",
+      "whatToCheck": "Whether any code or data are released; if not, it belongs in a reading list rather than the tool catalog."
+    }
+  ]
+}
