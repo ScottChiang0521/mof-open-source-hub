@@ -32,7 +32,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 | Curation tier | Count | IDs |
 |---|---:|---|
 | **Ready to display** | 5 | `graspa`, `quantum-espresso`, `qmof-database`, `mofsimbench`, `pormake` |
-| **Display with caveats** | 34 | `raspa2-iraspa`, `zeopp`, `poreblazer`, `mofid-mofkey`, `core-mof-tools`, `pacman-charge`, `mofdscribe`, `mofdiff`, `dac-sim`, `core-mof-db`, `materials-project-mof-explorer`, `crystallography-open-database-cod`, `raspa3`, `mosaec`, `mofchecker`, `autografs`, `tobacco-3`, `lammps-interface`, `mofstructure`, `moftransformer`, `moformer`, `mofsimplify`, `mofflow`, `chatmof`, `l2m3`, `ghp-mofassemble`, `synmof-literature-extraction`, `arc-mof`, `mofx-db`, `nist-arpa-e-adsorbent-db`, `materials-cloud-archive`, `odac25`, `nomad-repository`, `csd-cambridge-structural-database` |
+| **Display with caveats** | 35 | `raspa2-iraspa`, `zeopp`, `poreblazer`, `mofid-mofkey`, `core-mof-tools`, `pacman-charge`, `mofdscribe`, `mofdiff`, `dac-sim`, `core-mof-db`, `materials-project-mof-explorer`, `crystallography-open-database-cod`, `raspa3`, `mosaec`, `mofchecker`, `autografs`, `tobacco-3`, `lammps-interface`, `mofstructure`, `moftransformer`, `moformer`, `mofsimplify`, `mofflow`, `chatmof`, `l2m3`, `ghp-mofassemble`, `synmof-literature-extraction`, `arc-mof`, `mofx-db`, `nist-arpa-e-adsorbent-db`, `materials-cloud-archive`, `odac25`, `nomad-repository`, `csd-cambridge-structural-database`, `oc20` |
 | **Excluded** | 2 | `mosaec-db`, `jarvis-dft` (candidates examined 2026-10-14; see section 3) |
 
 ---
@@ -865,6 +865,31 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 | Original paper | <https://doi.org/10.1021/acscentsci.3c01629> | ODAC23 paper (ACS Central Science): Paper page; license set by the publisher; ODAC23 dataset and challenges; a 2025 Correspondence has also been published |
 
 
+### Open Catalyst 2020 (OC20)
+
+- **ID / type:** `oc20`; Database / Photo- and electrocatalysis. A DFT dataset of adsorption on catalyst surfaces: the official documentation states about 460,000 adsorbate-catalyst systems, 82 adsorbates, 55 elements and more than 133 million DFT calculations, with three machine-learning tasks (S2EF, IS2RE, IS2RS) and predefined splits, for training models that predict adsorption energies and atomic forces.
+- **Display decision:** Display with caveats. Added on 2026-10-14 at the maintainer's request, after reading the files inside the fairchem repository (the official OC20 documentation page, `LICENSE.md` and the README). opencatalystproject.org and the data download host could not be opened in this check.
+- **MOF applicability:** Not MOF-specific: the official page never mentions MOFs, and the data are relaxations of adsorbates on catalyst surfaces; whether any MOF structure is included is not confirmed. It is listed because the catalog has no other open data resource for photo- or electrocatalysis, and because fairchem's UMA model has a task named `oc20` that the README describes as "use this for catalysis".
+- **License and status:** Data: CC BY 4.0, stated twice in the official documentation (the overview table and the "Citing OC20" section); fairchem code: MIT (`LICENSE.md`, "Copyright (c) Meta, Inc. and its affiliates"); the README says "Models/checkpoint licenses vary by application area". Paper: ACS Catalysis 2021, doi 10.1021/acscatal.0c04525, as listed by the official documentation.
+- **Required caveats:**
+  - Not MOF-specific data: the official page never mentions MOFs and whether MOF structures are included is not confirmed, so it cannot be treated as MOF catalysis data.
+  - The data are DFT results, not experimental measurements; calculation settings and range of applicability should be taken from the paper (not checked item by item here).
+  - The stated size depends on how it is counted: the official page says "133M+ DFT calculations, about 460K systems", while an arXiv abstract obtained through a web search (the page itself was not opened) gives about 1.28 million relaxations and about 265 million single-point evaluations. State the counting basis and version when quoting numbers.
+  - Data downloaded before 10 February 2021 were updated because of bugs (affecting under 1% of the data) and should be downloaded again.
+  - The fairchem code is MIT, but the README says model and checkpoint licenses vary by application area; the data license and the model license must be read separately.
+  - opencatalystproject.org and the data download host could not be opened in this check, so the availability of the download links was not checked.
+
+#### Source block
+
+| Category | Traceable URL | Use and boundaries |
+|---|---|---|
+| Project repository | <https://github.com/facebookresearch/fairchem> | fairchem code, MIT |
+| Official documentation | <https://github.com/facebookresearch/fairchem/blob/main/docs/catalysts/datasets/oc20.md> | fairchem OC20 dataset documentation: size, tasks, download and preprocessing instructions, changelog, license (CC BY 4.0) and citation; IS2* data are LMDB |
+| License text | <https://creativecommons.org/licenses/by/4.0/legalcode> | Data: CC BY 4.0 |
+| Code license | <https://github.com/facebookresearch/fairchem/blob/main/LICENSE.md> | MIT, "Copyright (c) Meta, Inc. and its affiliates" |
+| Original paper | <https://doi.org/10.1021/acscatal.0c04525> | ACS Catalysis 2021; DOI as listed by the official documentation |
+| Original paper | <https://arxiv.org/abs/2010.09990> | Preprint; the arXiv number comes from a web search and is not listed by the official documentation |
+
 ### NOMAD Repository
 
 - **ID / type:** `nomad-repository`; Data retrieval portal / Machine learning and data. A general materials-science research data repository and search portal that stores inputs and outputs of DFT and other calculations and offers search and an API; the QMOF PBE calculation files linked from this catalog are hosted here.
@@ -928,7 +953,7 @@ Two candidates examined on 2026-10-14 were not added. Neither is a verdict that 
 
 Not evaluated (pages unreachable on 2026-10-14, so nothing is claimed about them): RCSR (rcsr.net), OQMD (HTTP 502), and AFLOW (no usable content).
 
-**Search for photo- and electrocatalysis resources (2026-10-14).** The catalog's scope used to name photo- and electrocatalysis, but only one entry (Quantum ESPRESSO, a general-purpose DFT code) is filed under that application. A web search for dedicated open-source MOF tools or datasets for these applications, followed by direct checks of the candidates' files, produced no addition. Search-result summaries are not evidence, so what was and was not confirmed is stated separately:
+**Search for photo- and electrocatalysis resources (2026-10-14).** The catalog's scope used to name photo- and electrocatalysis, but only one entry (Quantum ESPRESSO, a general-purpose DFT code) was filed under that application. One non-MOF dataset, Open Catalyst 2020 (OC20), was added later the same day at the maintainer's request; see its entry. A web search for dedicated open-source MOF tools or datasets for these applications, followed by direct checks of the candidates' files, produced no addition. Search-result summaries are not evidence, so what was and was not confirmed is stated separately:
 
 - **pred_cdp.** A search result said that code for *Exploring the Chemical Design Space of Metal-Organic Frameworks for Photocatalysis* (Chem. Sci. 2025) is at `github.com/bmourino/pred_cdp`, with data in Zenodo record 14727983. Not confirmed: on 2026-10-14 the raw `README.md`, `LICENSE`, `LICENSE.md` and `LICENSE.txt` of that repository all returned HTTP 404 on both `main` and `master`, and the Zenodo record could not be opened from the verifier's network. No repository, license or data terms are claimed.
 - **MatCreatioNN** (`github.com/SatyaK-0/MatCreatioNN`). Confirmed from its README: a framework for generating MOFs and predicting properties with CGCNN models. The README says "MIT License unless otherwise specified", but the repository has no license file (`LICENSE`, `LICENSE.md`, `LICENSE.txt` all returned HTTP 404 on `main`), so the license rests on the README alone. The predictors the README lists (thermal and water stability, CO2 adsorption and selectivity, surface area, synthesis likelihood, cost) do not include photo- or electrocatalytic activity, so it was not filed under that application. It may belong in the machine-learning category after a full review; it has not been given one.
@@ -1091,7 +1116,7 @@ If a new verification result later confirms the license, availability, and MOF s
 | 策展層級 | 筆數 | IDs |
 |---|---:|---|
 | **可立即展示** | 5 | `graspa`、`quantum-espresso`、`qmof-database`、`mofsimbench`、`pormake` |
-| **可展示但須註記** | 34 | `raspa2-iraspa`、`zeopp`、`poreblazer`、`mofid-mofkey`、`core-mof-tools`、`pacman-charge`、`mofdscribe`、`mofdiff`、`dac-sim`、`core-mof-db`、`materials-project-mof-explorer`、`crystallography-open-database-cod`、`raspa3`、`mosaec`、`mofchecker`、`autografs`、`tobacco-3`、`lammps-interface`、`mofstructure`、`moftransformer`、`moformer`、`mofsimplify`、`mofflow`、`chatmof`、`l2m3`、`ghp-mofassemble`、`synmof-literature-extraction`、`arc-mof`、`mofx-db`、`nist-arpa-e-adsorbent-db`、`materials-cloud-archive`、`odac25`、`nomad-repository`、`csd-cambridge-structural-database` |
+| **可展示但須註記** | 35 | `raspa2-iraspa`、`zeopp`、`poreblazer`、`mofid-mofkey`、`core-mof-tools`、`pacman-charge`、`mofdscribe`、`mofdiff`、`dac-sim`、`core-mof-db`、`materials-project-mof-explorer`、`crystallography-open-database-cod`、`raspa3`、`mosaec`、`mofchecker`、`autografs`、`tobacco-3`、`lammps-interface`、`mofstructure`、`moftransformer`、`moformer`、`mofsimplify`、`mofflow`、`chatmof`、`l2m3`、`ghp-mofassemble`、`synmof-literature-extraction`、`arc-mof`、`mofx-db`、`nist-arpa-e-adsorbent-db`、`materials-cloud-archive`、`odac25`、`nomad-repository`、`csd-cambridge-structural-database`、`oc20` |
 | **排除** | 2 | `mosaec-db`、`jarvis-dft`（2026-10-14 檢視之候選；見第三節） |
 
 ---
@@ -1924,6 +1949,31 @@ If a new verification result later confirms the license, availability, and MOF s
 | 原始論文 | <https://doi.org/10.1021/acscentsci.3c01629> | ODAC23 論文（ACS Central Science）: 論文頁；授權依出版者; ODAC23 資料集與挑戰；另有 2025 年的 Correspondence 刊出 |
 
 
+### Open Catalyst 2020 (OC20)
+
+- **ID／類型：** `oc20`；資料庫／光電／電催化。催化劑表面吸附反應的 DFT 資料集：官方文件載明約 46 萬個吸附物—催化劑系統、82 種吸附物、55 種元素、超過 1.33 億次 DFT 計算，提供 S2EF、IS2RE、IS2RS 三種機器學習任務與預設資料切分，用於訓練預測吸附能與原子受力的模型。
+- **展示決定：** 可展示但須註記。2026-10-14 依維護者要求新增，依據是 fairchem 程式庫內的檔案（OC20 官方文件頁、`LICENSE.md` 與 README）。本次檢查未能開啟 opencatalystproject.org 與資料下載主機。
+- **MOF 適用性：** 非 MOF 專屬：官方文件全文未提及 MOF，資料為吸附物在催化劑表面上的弛豫；是否含任何 MOF 結構未確認。列入原因：目錄在光電／電催化沒有其他開放資料資源，且 fairchem 的 UMA 模型有一個名為 `oc20` 的任務，README 說明為「用於催化」。
+- **授權與狀態：** 資料：CC BY 4.0，官方文件兩處載明（概覽表與「Citing OC20」一節）；fairchem 程式碼：MIT（`LICENSE.md`，「Copyright (c) Meta, Inc. and its affiliates」）；README 寫明「模型／檢查點授權依應用領域而異」。論文：ACS Catalysis 2021，doi 10.1021/acscatal.0c04525，依官方文件所列。
+- **必要註記：**
+  - 非 MOF 專屬資料：官方文件全文未提及 MOF，是否含 MOF 結構未確認，不能直接視為 MOF 催化資料。
+  - 資料是 DFT 計算結果而非實驗測量；計算設定與適用範圍請以論文為準（本次未逐項核對）。
+  - 規模說法依口徑而異：官方文件寫「133M+ DFT 計算、約 46 萬個系統」；經網路搜尋取得的 arXiv 摘要（未直接開啟原頁）以不同口徑列出約 128 萬次弛豫與約 2.65 億次單點計算。引用數字時請說明口徑與版本。
+  - 2021 年 2 月 10 日前下載的資料因錯誤（影響不到 1%）已更新，請重新下載。
+  - fairchem 程式碼為 MIT，但 README 明說模型與檢查點的授權依應用領域而異；資料授權與模型授權需分開判讀。
+  - 本次未能開啟 opencatalystproject.org 與資料下載主機，下載連結的可用性未檢查。
+
+#### 來源區塊
+
+| 類別 | 可追溯網址 | 用途與界線 |
+|---|---|---|
+| 專案程式庫 | <https://github.com/facebookresearch/fairchem> | fairchem 程式碼，MIT |
+| 官方文件 | <https://github.com/facebookresearch/fairchem/blob/main/docs/catalysts/datasets/oc20.md> | fairchem OC20 官方資料集文件：資料規模、任務、下載與預處理說明、更新紀錄、授權（CC BY 4.0）與引用；IS2* 為 LMDB |
+| 授權文字 | <https://creativecommons.org/licenses/by/4.0/legalcode> | 資料：CC BY 4.0 |
+| 程式碼授權 | <https://github.com/facebookresearch/fairchem/blob/main/LICENSE.md> | MIT，「Copyright (c) Meta, Inc. and its affiliates」 |
+| 原始論文 | <https://doi.org/10.1021/acscatal.0c04525> | ACS Catalysis 2021；DOI 依官方文件所列 |
+| 原始論文 | <https://arxiv.org/abs/2010.09990> | 預印本；arXiv 編號來自網路搜尋，官方文件未列 |
+
 ### NOMAD Repository
 
 - **ID／類型：** `nomad-repository`；資料檢索入口／機器學習與資料。通用的材料科學研究資料儲存庫與搜尋入口，保存 DFT 等計算的輸入輸出檔並提供檢索與 API；目前 catalog 中的 QMOF PBE 計算檔即連結於此。
@@ -1987,7 +2037,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 未評估（2026-10-14 頁面無法連線，故不對其作任何陳述）：RCSR（rcsr.net）、OQMD（HTTP 502）、AFLOW（無可用內容）。
 
-**光電／電催化資源的搜尋（2026-10-14）。** 目錄的範圍原本點名光電／電催化，但歸在這個應用下的只有一筆（Quantum ESPRESSO，通用 DFT 程式）。我們以網路搜尋尋找這些應用的 MOF 專用開源工具或資料集，再直接檢查候選項目的檔案，結果沒有新增任何條目。搜尋結果的摘要不算證據，因此「查證到的」與「未查證的」分開陳述：
+**光電／電催化資源的搜尋（2026-10-14）。** 目錄的範圍原本點名光電／電催化，但歸在這個應用下的原本只有一筆（Quantum ESPRESSO，通用 DFT 程式）。同日稍後依維護者要求新增了一個非 MOF 的資料集 Open Catalyst 2020（OC20），見其條目。我們以網路搜尋尋找這些應用的 MOF 專用開源工具或資料集，再直接檢查候選項目的檔案，結果沒有新增任何條目。搜尋結果的摘要不算證據，因此「查證到的」與「未查證的」分開陳述：
 
 - **pred_cdp。** 有搜尋結果指出，*Exploring the Chemical Design Space of Metal-Organic Frameworks for Photocatalysis*（Chem. Sci. 2025）的程式碼在 `github.com/bmourino/pred_cdp`，資料在 Zenodo 紀錄 14727983。**未能確認：** 2026-10-14 該程式庫的 `README.md`、`LICENSE`、`LICENSE.md`、`LICENSE.txt` 原始檔在 `main` 與 `master` 分支皆回應 HTTP 404，且核實者的網路無法開啟該 Zenodo 紀錄。因此不對程式庫、授權或資料條款作任何陳述。
 - **MatCreatioNN**（`github.com/SatyaK-0/MatCreatioNN`）。**由其 README 確認：** 這是以 CGCNN 模型生成 MOF 並預測性質的框架。README 寫「MIT License unless otherwise specified」，但程式庫沒有授權檔（`LICENSE`、`LICENSE.md`、`LICENSE.txt` 在 `main` 皆回應 HTTP 404），授權僅依據 README。README 列出的預測器（熱穩定性與水穩定性、CO2 吸附與選擇性、表面積、合成可能性、成本）不含光催化或電催化活性，因此未歸入該應用。完整審查後它可能屬於機器學習類別，但目前尚未收錄。
