@@ -53,6 +53,10 @@ Candidates that failed verification were not added (for example MOSAEC-DB, whose
 
 For the full classification, URLs, and per-entry limits, see [`research/source-manifest.md`](research/source-manifest.md).
 
+### Linking to a single entry
+
+Every entry has a stable link: the site address plus `#` and the entry's `id` from `data/mof-catalog.json`, for example `https://scottchiang0521.github.io/mof-open-source-hub/#mofid-mofkey`. Opening such a link shows that entry (clearing any filters), and selecting an entry on the page updates the address bar, so the current address can always be cited. The detail panel also has a **Copy link** button. Two limits: link previews (chat apps, social sites) show the site-level description, not the entry's, because the site is a single static page; and **an `id` must not be renamed**, or links already shared would stop working.
+
 ### Run the site locally
 
 Requirements: Node.js 22+ and pnpm 10+.
@@ -102,6 +106,7 @@ The site code is under the MIT license set in `package.json`; **the listed third
 - Evidence types: official repositories, official documentation, formal papers, publisher SI, data archives, versioned releases, data services / APIs. Every DOI of the added entries was resolved through Crossref or DataCite.
 - Where a publisher or archive blocked automated requests, the entry says so instead of claiming the page was verified.
 - **Automated re-check.** `pnpm check:sources` (also run monthly by `.github/workflows/source-check.yml`) re-reads each license file and compares it with `data/source-baseline.json` and with the license wording in the catalog, looks every DOI up in the Crossref and DataCite APIs, and follows the other URLs. A changed or mismatching license text, a DOI registered with neither registry, or a 404/410 link fails the run and opens an issue. A DOI whose registered title shares little with the catalog's title, and any blocked or unreachable URL, are warnings only (publishers often refuse automated requests, and that cannot be told apart from a dead link). DOIs are looked up in the registries rather than followed, because doi.org redirects to the publisher, which answers a bot with 403. This shows that a DOI exists and that its title resembles the catalog's; it does not show that the DOI is the right citation for a tool. Only files that are license texts are hashed; terms pages and creativecommons.org pages get the link check only. After you have reviewed a legitimate change, run `pnpm sources:baseline` to record the new text. This catches changes; it does not replace reading the license.
+- **How far the first 15 entries are independently re-checked** (as of 2026-10-14). Their text was compiled on 2026-10-09 from an earlier verification report, and the source manifest states that it did not re-verify those facts, so the verifier and method of that report are not recorded here. The monthly source check now re-tests part of it itself: for 10 of the 15, that the license file still looks like the license family the catalog states (the other 5 rest on a CC page, a README or a terms page, which are only link-checked); for all 15, that the paper DOI exists in Crossref or DataCite and that its registered title resembles the catalog's; and for every entry, that the URLs still answer. **No script re-checks the descriptive text** (capabilities, MOF applicability, ML training use, maintenance status, caveats, data-access class). For those 15 entries it still rests on the earlier report.
 
 ---
 
@@ -152,6 +157,10 @@ The site code is under the MIT license set in `package.json`; **the listed third
 
 完整的資源分類、URL 與逐項限制，請見 [`research/source-manifest.md`](research/source-manifest.md)。
 
+### 連結到單一條目
+
+每個條目都有固定連結：網站位址加上 `#` 與該條目在 `data/mof-catalog.json` 中的 `id`，例如 `https://scottchiang0521.github.io/mof-open-source-hub/#mofid-mofkey`。開啟這類連結會顯示該條目（並清除篩選條件）；在頁面上選取條目時，網址列也會同步更新，因此目前的網址隨時可以直接引用。詳細面板另有「複製連結」按鈕。兩項限制：分享預覽（通訊軟體、社群網站）顯示的是整個網站的描述，而不是該條目的，因為本站是單一靜態頁面；另外 **`id` 不可更名**，否則已分享出去的連結會失效。
+
 ### 本機執行網站
 
 需求：Node.js 22+、pnpm 10+。
@@ -201,3 +210,4 @@ data/mof-catalog.json           供程式與 LLM 使用的雙語結構化資料
 - 主要證據類型：官方程式庫、官方文件、正式論文、出版者 SI、資料保存庫、版本化 release、資料服務／API。新增項目的每個 DOI 皆經 Crossref 或 DataCite 解析。
 - 出版者或保存庫阻擋自動化請求時，條目會如實註明，不宣稱該頁已核實。
 - **自動重新檢查。** `pnpm check:sources`（也由 `.github/workflows/source-check.yml` 每月執行）會重新讀取每份授權檔，與 `data/source-baseline.json` 及目錄中的授權文字比對；每個 DOI 會到 Crossref 與 DataCite 的 API 查詢；其餘網址則直接連線檢查。授權文字改變或與目錄不符、DOI 在兩個機構都查不到、連結回應 404／410，執行會失敗並開立 issue。DOI 註冊的標題與目錄標題幾乎不重疊，以及被擋或連不上的網址，只列為警告（出版者常拒絕自動化請求，這無法與失效連結區分）。DOI 是查註冊機構而不是直接連線，因為 doi.org 會轉到出版者，而出版者會以 403 回應機器人。這能證明 DOI 存在且標題與目錄相近，但不能證明該 DOI 就是某個工具該引用的文獻。只有本身是授權全文的檔案會做雜湊比對；條款頁與 creativecommons.org 頁面只檢查連結。確認變更屬正當後，執行 `pnpm sources:baseline` 記錄新文字。這個檢查能發現變動，但不能取代閱讀授權本身。
+- **前 15 項目前有多少經過獨立重新檢查**（截至 2026-10-14）。這 15 項的內容於 2026-10-09 依先前的核實報告整理，而來源清冊明確表示未重新核實這些事實，因此該報告的核實者與方法並未記錄在此。每月的來源檢查現在自行重新驗證其中一部分：15 項中的 10 項，確認授權檔仍屬目錄所述的授權類型（其餘 5 項的依據是 CC 頁面、README 或條款頁，只檢查連結）；15 項全部，確認論文 DOI 在 Crossref 或 DataCite 查得到，且註冊標題與目錄相近；每一項，確認網址仍有回應。**描述性文字沒有任何腳本檢查**（功能、MOF 適用性、ML 訓練用途、維護狀態、限制、資料存取分類），這 15 項在這些部分仍依據先前的報告。

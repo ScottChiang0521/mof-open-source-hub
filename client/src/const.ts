@@ -507,7 +507,7 @@ export const MOF_PROJECTS: MOFProject[] = [
     problemsSolved: ['將實驗結構按計算可用性與清理狀態整理，減少直接使用原始 CIF 的不確定性。', '提供結構、幾何與預測性質，支援材料—製程篩選與 ML。'],
     keyFeatures: ['CR／NCR 與 ASR／FSR／Ion 分類', '孔徑、表面積、拓撲、OMS、MOFid 與 RACs', '部分電荷、熱容、穩定性與疏水性模型輸出'],
     trainingUse: '公開 Zenodo SI 子集可用於結構—性質 ML、CR／NCR 分類與幾何描述子學習，須遵守 CC BY 4.0。模型預測性質不應混同為實測標籤。',
-    caveats: ['CC BY 4.0 只明確覆蓋 Zenodo public SI，不等同完整 CoRE MOF DB。', '完整庫中的未修改 CSD CIF 需 CCDC 授權。', '版本／截點與條目數不同，ASR／FSR 可能重疊，需去重並固定篩選規則。'],
+    caveats: ['CC BY 4.0 只明確覆蓋 Zenodo public SI，不等同完整 CoRE MOF DB。', '完整庫中的未修改 CSD CIF 需 CCDC 授權。', '版本／截點與條目數不同，ASR／FSR 可能重疊，需去重並固定篩選規則。', '官方網站 https://mof-db.pusan.ac.kr 於 2026-10-14 無回應（GitHub 伺服器的三次自動檢查皆連線逾時，維護者的瀏覽器也打不開），可能只是暫時性。目前可驗證的取得方式是補充資源中的 Zenodo 資料保存庫與 Matter 論文。'],
     lastVerified: '2026-10-09',
   },
   {

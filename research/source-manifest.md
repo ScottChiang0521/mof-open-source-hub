@@ -17,6 +17,8 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 **Manifest version:** 2026-10-14. The first 15 entries were compiled on 2026-10-09 from independent verification results provided in the brief; 24 entries were added on 2026-10-14.  
 **Curation principle:** For the original 15 entries this manifest **does not add, infer, or re-verify** any fact. The 24 entries added on 2026-10-14 are different: each was checked directly against its primary source (LICENSE file, README, publisher or archive page; DOIs resolved through Crossref or DataCite), and facts that could not be confirmed are stated as unconfirmed. For all entries, display decisions are made only from each result's `verdict`, `evidenceSummary`, `caveats`, and the listed URLs. Items marked `verified` are listed as "Ready to display"; items marked `verified_with_caveat` are listed as "Display with caveats". No original-15 item was judged unusable by its verification conclusion. The added entries cite their URLs inline in the source blocks and are not numbered in the References list. Two Zenodo records appended to the original core-mof-db entry (CoRE MOF 2024 v1.1 and CoRE MOF 2019 v1.1.4) were checked on 2026-10-14; the rest of that entry keeps its 2026-10-09 verification.
 
+> **Independent re-checks since 2026-10-14.** The statement above describes how the text was compiled. A monthly automated check (`pnpm check:sources`) now re-tests part of the original 15 on its own: the license file against the catalog's wording (10 of 15), the paper DOI in Crossref or DataCite with a title comparison (15 of 15), and URL status. It does not re-check the descriptive text. See the README section *Verification* for the exact coverage.
+
 > **Data quality and boundaries of use**
 >
 > 1. This manifest covers both **software/tools** and **databases/data portals**. The open-source license of software, the data license of a dataset, the right to obtain a paper's supplementary information (SI), and the terms of use of a model file must be presented separately; the right to reuse one must not be inferred from another.
@@ -343,7 +345,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 | Category | Traceable URL | Use and boundaries |
 |---|---|---|
-| General official database website | <https://mof-db.pusan.ac.kr> [99] | Entry point to the full-database classification, scope, and data sources. |
+| General official database website | <https://mof-db.pusan.ac.kr> [99] | Entry point to the full-database classification, scope, and data sources. **Did not respond on 2026-10-14** (connection timeouts from GitHub's servers in three scheduled-check runs; the maintainer's browser could not open it either). Possibly temporary; the Zenodo records below are the verified route to the data. |
 | Data repository / versioned public SI | <https://zenodo.org/records/15621349> [100] | 2025 public SI, CC BY 4.0, files, and versions. |
 | Original / related paper (publisher) | <https://www.cell.com/matter/fulltext/S2590-2385(25)00183-3> [101] | CoRE MOF DB paper and supplementary material entry point. |
 | Bibliographic metadata | <https://api.crossref.org/works/10.1016/j.matt.2025.102140> [102] | Check of DOI/title. |
@@ -1066,6 +1068,8 @@ If a new verification result later confirms the license, availability, and MOF s
 **清冊版本：** 2026-10-14。前 15 筆於 2026-10-09 依題示的獨立核實結果整理；2026-10-14 新增 24 筆。  
 **策展原則：** 對原 15 筆，本清冊**不新增、推斷或重新核實**任何事實；2026-10-14 新增的 24 筆則不同：每筆都直接對照其主要來源（LICENSE 檔、README、出版者或保存庫頁面；DOI 經 Crossref 或 DataCite 解析）核實，無法確認的事實一律標示為未確認。對所有條目，展示決定僅依每筆結果的 `verdict`、`evidenceSummary`、`caveats` 與所列 URL 作成。`verified` 項目列為「可立即展示」；`verified_with_caveat` 項目列為「可展示但須註記」。原 15 筆中沒有被原核實結論判為不可用的項目。新增條目的 URL 直接列於各自的來源區塊，未編入 References 編號。附加於原 core-mof-db 條目的兩筆 Zenodo 紀錄（CoRE MOF 2024 v1.1 與 2019 v1.1.4）於 2026-10-14 核實；該條目其餘部分維持 2026-10-09 的核實。
 
+> **2026-10-14 起的獨立重新檢查。** 上述文字說明的是內容當初的整理方式。每月的自動檢查（`pnpm check:sources`）現在自行重新驗證原 15 筆的一部分：授權檔與目錄文字是否相符（15 筆中的 10 筆）、論文 DOI 在 Crossref 或 DataCite 的查證與標題比對（15 筆全部），以及網址狀態；描述性文字則不在檢查範圍內。確切的涵蓋範圍見 README 的「資料核實」一節。
+
 > **資料品質與使用邊界**
 >
 > 1. 此清冊同時涵蓋**軟體／工具**與**資料庫／資料入口**。軟體的開源授權、資料集的資料授權、論文補充資訊（SI）的取得權利，以及模型檔的使用條款必須分開呈現；不得由其中一項推論另一項的再利用權。
@@ -1392,7 +1396,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 | 類別 | 可追溯 URL | 用途與界線 |
 |---|---|---|
-| 一般官方資料庫網站 | <https://mof-db.pusan.ac.kr> [99] | 全庫分類、範圍與資料來源入口。 |
+| 一般官方資料庫網站 | <https://mof-db.pusan.ac.kr> [99] | 全庫分類、範圍與資料來源入口。**2026-10-14 無回應**（GitHub 伺服器的三次自動檢查皆連線逾時，維護者的瀏覽器也打不開），可能只是暫時性；目前可驗證的取得方式是下列 Zenodo 資料保存庫。 |
 | 資料保存庫／版本化 public SI | <https://zenodo.org/records/15621349> [100] | 2025 公開 SI、CC BY 4.0、檔案與版本。 |
 | 原始／關聯論文（出版者） | <https://www.cell.com/matter/fulltext/S2590-2385(25)00183-3> [101] | CoRE MOF DB 論文與補充資料入口。 |
 | 書目中繼資料 | <https://api.crossref.org/works/10.1016/j.matt.2025.102140> [102] | DOI／題名核對。 |

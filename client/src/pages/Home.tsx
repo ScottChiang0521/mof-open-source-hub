@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   APPLICATION_GUIDE,
   CATEGORY_LABELS,
@@ -40,6 +40,7 @@ import {
   Github,
   Layers,
   LibraryBig,
+  Link2,
   Microscope,
   Scale,
   Search,
@@ -49,6 +50,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { toast } from 'sonner';
 
 type WorkflowKey = keyof typeof APPLICATION_GUIDE;
 
@@ -83,12 +85,29 @@ function dataAccessClass(access: MOFProject['dataAccess']) {
   return 'border-border bg-muted text-muted-foreground';
 }
 
+/**
+ * Entry deep links: https://.../mof-open-source-hub/#<id>, where <id> is the catalog's
+ * `id` field (for example #mofid-mofkey). A hash is used rather than a path because the
+ * site is static hosting: a path like /entry/x would be answered with HTTP 404 (and the
+ * copy of index.html in 404.html), which breaks link previews and crawlers. Section
+ * anchors (#projects, #workflows, #about) are not entry ids and are left to the browser.
+ */
+function projectFromHash(): MOFProject | null {
+  let id = window.location.hash.replace(/^#/, '');
+  try {
+    id = decodeURIComponent(id);
+  } catch {
+    return null;
+  }
+  return MOF_PROJECTS.find((project) => project.id === id) ?? null;
+}
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<MOFCategory | 'all'>('all');
   const [selectedEntity, setSelectedEntity] = useState<EntityType | 'all'>('all');
   const [selectedTier, setSelectedTier] = useState<CurationTier | 'all'>('all');
-  const [selectedProject, setSelectedProject] = useState<MOFProject | null>(MOF_PROJECTS[0]);
+  const [selectedProject, setSelectedProject] = useState<MOFProject | null>(() => projectFromHash() ?? MOF_PROJECTS[0]);
   const [activeWorkflowTab, setActiveWorkflowTab] = useState<WorkflowKey>('gas');
 
   const filteredProjects = useMemo(() => {
@@ -137,8 +156,43 @@ export default function Home() {
   const detailRef = useRef<HTMLDivElement>(null);
   const selectProject = (project: MOFProject) => {
     setSelectedProject(project);
+    // replaceState does not fire hashchange and does not add history entries, so the
+    // address bar is always a shareable link to the entry on screen.
+    window.history.replaceState(null, '', `#${project.id}`);
     if (window.matchMedia('(max-width: 1023px)').matches) {
       detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  // Arriving on (or navigating to) a #<id> link: show that entry. Filters are cleared so
+  // the entry cannot be hidden by one, then the page scrolls to it.
+  useEffect(() => {
+    const showEntryFromHash = () => {
+      const project = projectFromHash();
+      if (!project) return;
+      setSearchTerm('');
+      setSelectedCategory('all');
+      setSelectedEntity('all');
+      setSelectedTier('all');
+      setSelectedProject(project);
+      requestAnimationFrame(() => {
+        const mobile = window.matchMedia('(max-width: 1023px)').matches;
+        (mobile ? detailRef.current : document.getElementById('projects'))?.scrollIntoView({ block: 'start' });
+      });
+    };
+    showEntryFromHash();
+    window.addEventListener('hashchange', showEntryFromHash);
+    return () => window.removeEventListener('hashchange', showEntryFromHash);
+  }, []);
+
+  const copyEntryLink = async (project: MOFProject) => {
+    const { origin, pathname, search } = window.location;
+    const url = `${origin}${pathname}${search}#${project.id}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      toast.success(bl('Link copied', '已複製連結'));
+    } catch {
+      toast(url); // clipboard unavailable (insecure context, denied permission): show it instead
     }
   };
   const sel = selectedProject && filteredProjects.some((project) => project.id === selectedProject.id) ? selectedProject : null;
@@ -363,6 +417,7 @@ export default function Home() {
                           <p className="mt-1 font-mono text-xs text-muted-foreground">{bl('Maintainer / publisher', '維護／發布者')}: <span className="text-foreground">{sel.author}</span></p>
                         </div>
                         <div className="flex flex-wrap gap-2">
+                          <Button size="sm" variant="outline" className="font-mono text-xs" onClick={() => copyEntryLink(sel)}><Link2 className="mr-1.5 h-3.5 w-3.5" />{bl('Copy link', '複製連結')}</Button>
                           {sel.githubUrl && <Button size="sm" variant="outline" className="font-mono text-xs" asChild><a href={sel.githubUrl} target="_blank" rel="noopener noreferrer"><Github className="mr-1.5 h-3.5 w-3.5" />{bl('Repository', '程式庫')}</a></Button>}
                           {sel.webUrl && <Button size="sm" variant="outline" className="font-mono text-xs" asChild><a href={sel.webUrl} target="_blank" rel="noopener noreferrer"><ExternalLink className="mr-1.5 h-3.5 w-3.5" />{bl('Official source', '官方來源')}</a></Button>}
                         </div>
