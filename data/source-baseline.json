@@ -190,6 +190,34 @@
       "detected": [
         "MIT"
       ]
+    },
+    "mattergen": {
+      "url": "https://raw.githubusercontent.com/microsoft/mattergen/main/LICENSE",
+      "sha256": "1f17794ed0a91f046d197aec731e880a0d318af4832967ff8d86580a16520f6e",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "mace": {
+      "url": "https://raw.githubusercontent.com/ACEsuit/mace/main/LICENSE.md",
+      "sha256": "15cd7c370879fbc598a68d949d02375619b024aecad8d94fc60db6d791f65349",
+      "detected": [
+        "MIT"
+      ]
+    },
+    "chgnet": {
+      "url": "https://raw.githubusercontent.com/CederGroupHub/chgnet/main/LICENSE",
+      "sha256": "0c449e280bf0b74608c675ba8b265f64ec539663d456d0df3e9f5e46495b6b41",
+      "detected": [
+        "BSD"
+      ]
+    },
+    "matgl": {
+      "url": "https://raw.githubusercontent.com/materialyzeai/matgl/main/LICENSE",
+      "sha256": "043af1ab7490ba7fb9af286e7c81fd78731e92455517b4f4dac489def5f862d2",
+      "detected": [
+        "BSD"
+      ]
     }
   }
 }

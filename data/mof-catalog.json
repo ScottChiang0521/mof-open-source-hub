@@ -9,7 +9,7 @@
     "zh-Hant"
   ],
   "verificationDate": "2026-10-14",
-  "itemCount": 41,
+  "itemCount": 45,
   "curationGuide": {
     "immediate": {
       "en": "Official source, core use, and the main license and data access can all be matched unambiguously.",
@@ -4182,6 +4182,329 @@
           "授權僅見於 README 一句「除非另有說明，採 MIT License」，未找到 LICENSE 檔，使用前請向作者確認。",
           "README 提到「相關論文」但未給出引用或連結，論文與成果的同儕審查狀態未確認。",
           "模型效能、資料來源與可重現性均未獨立驗證；列入僅表示其與 MOF 相關。"
+        ]
+      }
+    },
+    {
+      "id": "mattergen",
+      "name": "MatterGen",
+      "author": "Microsoft",
+      "githubUrl": "https://github.com/microsoft/mattergen",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "category": "ml",
+      "dataAccess": "not-applicable",
+      "languages": [
+        "Python"
+      ],
+      "paper": {
+        "title": "MatterGen (Nature 2025; title as cited by the README DOI badge)",
+        "doi": "10.1038/s41586-025-08628-5",
+        "url": "https://doi.org/10.1038/s41586-025-08628-5"
+      },
+      "primarySource": {
+        "url": "https://github.com/microsoft/mattergen"
+      },
+      "licenseUrl": "https://raw.githubusercontent.com/microsoft/mattergen/main/LICENSE",
+      "lastVerified": "2026-10-14",
+      "en": {
+        "entityTypeLabel": "Software",
+        "curationTierLabel": "Verified | read the notes",
+        "categoryLabel": "Machine learning and data",
+        "dataAccessLabel": "Not applicable (software)",
+        "sourceStatus": "Only the official README and LICENSE were verified; MOF applicability was not independently verified.",
+        "description": "A generative model for inorganic materials design across the periodic table, which can be fine-tuned to steer generation toward property constraints.",
+        "capabilities": [
+          "Inorganic crystal generation",
+          "Property-conditioned fine-tuning",
+          "Evaluation and benchmark scripts"
+        ],
+        "license": "MIT License (code)",
+        "maintenanceStatus": "Last-push date not checked (only the README and LICENSE were read).",
+        "mofApplicability": "Not MOF-specific. The README does not mention MOFs; validate it yourself before using it on MOFs and see third-party studies for MOF performance.",
+        "supplementaryResources": [],
+        "primarySourceLabel": "MatterGen official repository",
+        "problemsSolved": [
+          "Proposes inorganic crystal candidates that meet property constraints directly with a generative model."
+        ],
+        "keyFeatures": [
+          "The README says the released checkpoints were re-trained with this repository and are not those used in the paper, so results may deviate slightly"
+        ],
+        "trainingUse": "Not a training database; it is a model or library, and the terms of its training data and pre-trained weights were not checked one by one.",
+        "caveats": [
+          "The README scope is inorganic materials; for MOF generation see dedicated tools such as MOFDiff.",
+          "The paper title was not matched against the publisher page; the link follows the README DOI badge only."
+        ]
+      },
+      "zh": {
+        "entityTypeLabel": "軟體",
+        "curationTierLabel": "已核實｜須閱讀註記",
+        "categoryLabel": "機器學習與資料",
+        "dataAccessLabel": "不適用（軟體）",
+        "sourceStatus": "僅核實官方 README 與 LICENSE；MOF 適用性未獨立驗證。",
+        "description": "生成式模型，用於跨週期表的無機材料設計，可微調以朝特定性質條件生成。",
+        "capabilities": [
+          "無機晶體生成",
+          "性質條件微調",
+          "評估與基準腳本"
+        ],
+        "license": "MIT License（程式碼）",
+        "maintenanceStatus": "未核對最後推送日期（本次查核只讀 README 與 LICENSE）。",
+        "mofApplicability": "非 MOF 專用。README 未提到 MOF；用於 MOF 前須自行驗證，MOF 相關表現請見第三方研究。",
+        "supplementaryResources": [],
+        "primarySourceLabel": "MatterGen 官方程式庫",
+        "problemsSolved": [
+          "以生成模型直接提出符合性質條件的無機晶體候選。"
+        ],
+        "keyFeatures": [
+          "README 稱公開的檢查點由此程式庫重新訓練，並非論文所用的檢查點，結果可能略有差異"
+        ],
+        "trainingUse": "非訓練資料庫；為模型／程式庫，訓練資料與預訓練權重的條款未逐一核對。",
+        "caveats": [
+          "README 的範圍是無機材料；MOF 生成請看 MOFDiff 等專用工具。",
+          "論文標題未與出版社頁面核對；此處只依 README 的 DOI 徽章連結。"
+        ]
+      }
+    },
+    {
+      "id": "mace",
+      "name": "MACE (MACE-MP-0)",
+      "author": "ACEsuit / MACE authors",
+      "githubUrl": "https://github.com/ACEsuit/mace",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "category": "ml",
+      "dataAccess": "not-applicable",
+      "languages": [
+        "Python"
+      ],
+      "paper": {
+        "title": "MACE-MP-0 foundation model paper (arXiv 2401.00096, as cited by the README)",
+        "url": "https://arxiv.org/abs/2401.00096"
+      },
+      "primarySource": {
+        "url": "https://github.com/ACEsuit/mace"
+      },
+      "licenseUrl": "https://raw.githubusercontent.com/ACEsuit/mace/main/LICENSE.md",
+      "lastVerified": "2026-10-14",
+      "en": {
+        "entityTypeLabel": "Software",
+        "curationTierLabel": "Verified | read the notes",
+        "categoryLabel": "Machine learning and data",
+        "dataAccessLabel": "Not applicable (software)",
+        "sourceStatus": "Only the official README and LICENSE were verified; MOF applicability was not independently verified.",
+        "description": "A machine learning interatomic potential library based on higher-order equivariant message passing, including the pre-trained MACE-MP-0 foundation models.",
+        "capabilities": [
+          "Interatomic potential training",
+          "Pre-trained foundation models",
+          "ASE calculator"
+        ],
+        "license": "MIT License (code)",
+        "maintenanceStatus": "Last-push date not checked (only the README and LICENSE were read).",
+        "mofApplicability": "Not MOF-specific. The README does not mention MOFs; validate it yourself before using it on MOFs and see third-party studies for MOF performance.",
+        "supplementaryResources": [],
+        "primarySourceLabel": "MACE (MACE-MP-0) official repository",
+        "problemsSolved": [
+          "Provides a general interatomic potential that can be used directly or fine-tuned."
+        ],
+        "keyFeatures": [
+          "The README asks users of MACE-MP-0 to cite arXiv 2401.00096"
+        ],
+        "trainingUse": "Not a training database; it is a model or library, and the terms of its training data and pre-trained weights were not checked one by one.",
+        "caveats": [
+          "MOF performance is covered by third-party studies, for example the MOF-phonon fine-tune MACE-MP-MOF0 (see Unverified leads); verify phonon and adsorption-energy accuracy yourself.",
+          "The license covers the code; each pre-trained model follows the terms where it is released, which were not checked one by one."
+        ]
+      },
+      "zh": {
+        "entityTypeLabel": "軟體",
+        "curationTierLabel": "已核實｜須閱讀註記",
+        "categoryLabel": "機器學習與資料",
+        "dataAccessLabel": "不適用（軟體）",
+        "sourceStatus": "僅核實官方 README 與 LICENSE；MOF 適用性未獨立驗證。",
+        "description": "高階等變訊息傳遞的機器學習原子間勢程式庫，含預訓練的 MACE-MP-0 基礎模型。",
+        "capabilities": [
+          "原子間勢訓練",
+          "預訓練基礎模型",
+          "ASE 計算器"
+        ],
+        "license": "MIT License（程式碼）",
+        "maintenanceStatus": "未核對最後推送日期（本次查核只讀 README 與 LICENSE）。",
+        "mofApplicability": "非 MOF 專用。README 未提到 MOF；用於 MOF 前須自行驗證，MOF 相關表現請見第三方研究。",
+        "supplementaryResources": [],
+        "primarySourceLabel": "MACE (MACE-MP-0) 官方程式庫",
+        "problemsSolved": [
+          "提供可直接使用或微調的通用原子間勢。"
+        ],
+        "keyFeatures": [
+          "README 要求使用 MACE-MP-0 時引用 arXiv 2401.00096"
+        ],
+        "trainingUse": "非訓練資料庫；為模型／程式庫，訓練資料與預訓練權重的條款未逐一核對。",
+        "caveats": [
+          "MOF 表現見第三方研究，例如針對 MOF 聲子的微調版 MACE-MP-MOF0（見「待核實線索」）；聲子與吸附能準確度須自行驗證。",
+          "授權僅指程式碼；各預訓練模型的授權以其發布處為準，未逐一核對。"
+        ]
+      }
+    },
+    {
+      "id": "chgnet",
+      "name": "CHGNet",
+      "author": "Ceder Group (UC Berkeley / LBNL)",
+      "githubUrl": "https://github.com/CederGroupHub/chgnet",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "category": "ml",
+      "dataAccess": "not-applicable",
+      "languages": [
+        "Python"
+      ],
+      "paper": {
+        "title": "CHGNet (Nature Machine Intelligence; as cited by the README)",
+        "doi": "10.1038/s42256-023-00716-3",
+        "url": "https://doi.org/10.1038/s42256-023-00716-3"
+      },
+      "primarySource": {
+        "url": "https://github.com/CederGroupHub/chgnet"
+      },
+      "licenseUrl": "https://raw.githubusercontent.com/CederGroupHub/chgnet/main/LICENSE",
+      "lastVerified": "2026-10-14",
+      "en": {
+        "entityTypeLabel": "Software",
+        "curationTierLabel": "Verified | read the notes",
+        "categoryLabel": "Machine learning and data",
+        "dataAccessLabel": "Not applicable (software)",
+        "sourceStatus": "Only the official README and LICENSE were verified; MOF applicability was not independently verified.",
+        "description": "A charge-informed universal interatomic potential trained on the Materials Project trajectory data (MPtrj).",
+        "capabilities": [
+          "Universal interatomic potential",
+          "Relaxation and molecular dynamics",
+          "Magnetic-moment and charge inference"
+        ],
+        "license": "Berkeley Lab BSD-style license (see the LICENSE text)",
+        "maintenanceStatus": "Last-push date not checked (only the README and LICENSE were read).",
+        "mofApplicability": "Not MOF-specific. The README does not mention MOFs; validate it yourself before using it on MOFs and see third-party studies for MOF performance.",
+        "supplementaryResources": [],
+        "primarySourceLabel": "CHGNet official repository",
+        "problemsSolved": [
+          "Offers a ready-to-use universal potential that includes charge information."
+        ],
+        "keyFeatures": [
+          "The README asks users of CHGNet or MPtrj to cite the paper above"
+        ],
+        "trainingUse": "Not a training database; it is a model or library, and the terms of its training data and pre-trained weights were not checked one by one.",
+        "caveats": [
+          "MOF performance is covered by third-party studies, such as the direct-air-capture MOF deformation force-field comparison (see Unverified leads); a search summary says CHGNet adsorption-energy errors were still too large, and the paper itself was not read.",
+          "The license is a Berkeley Lab BSD-style text rather than a standard SPDX license; read the full text."
+        ]
+      },
+      "zh": {
+        "entityTypeLabel": "軟體",
+        "curationTierLabel": "已核實｜須閱讀註記",
+        "categoryLabel": "機器學習與資料",
+        "dataAccessLabel": "不適用（軟體）",
+        "sourceStatus": "僅核實官方 README 與 LICENSE；MOF 適用性未獨立驗證。",
+        "description": "電荷感知的通用原子間勢，以 Materials Project 軌跡資料（MPtrj）訓練。",
+        "capabilities": [
+          "通用原子間勢",
+          "結構弛豫與分子動力學",
+          "磁矩與電荷推斷"
+        ],
+        "license": "Berkeley Lab BSD 類授權（見 LICENSE 全文）",
+        "maintenanceStatus": "未核對最後推送日期（本次查核只讀 README 與 LICENSE）。",
+        "mofApplicability": "非 MOF 專用。README 未提到 MOF；用於 MOF 前須自行驗證，MOF 相關表現請見第三方研究。",
+        "supplementaryResources": [],
+        "primarySourceLabel": "CHGNet 官方程式庫",
+        "problemsSolved": [
+          "提供免訓練即可使用的通用勢，並納入電荷資訊。"
+        ],
+        "keyFeatures": [
+          "README 要求使用 CHGNet 或 MPtrj 時引用上述論文"
+        ],
+        "trainingUse": "非訓練資料庫；為模型／程式庫，訓練資料與預訓練權重的條款未逐一核對。",
+        "caveats": [
+          "MOF 表現見第三方研究，例如直接空氣捕捉 MOF 變形的力場比較（見「待核實線索」）；搜尋摘要稱 CHGNet 的吸附能誤差仍過大，未讀原文。",
+          "授權文字為 Berkeley Lab 的 BSD 類條款，並非標準 SPDX 授權，請閱讀全文。"
+        ]
+      }
+    },
+    {
+      "id": "matgl",
+      "name": "MatGL (M3GNet)",
+      "author": "Materials Virtual Lab (Ong group)",
+      "githubUrl": "https://github.com/materialyzeai/matgl",
+      "entityType": "software",
+      "curationTier": "caveat",
+      "category": "ml",
+      "dataAccess": "not-applicable",
+      "languages": [
+        "Python"
+      ],
+      "paper": {
+        "title": "MatGL (npj Computational Materials 11, 253; as cited by the README)",
+        "doi": "10.1038/s41524-025-01742-y",
+        "url": "https://doi.org/10.1038/s41524-025-01742-y"
+      },
+      "primarySource": {
+        "url": "https://github.com/materialyzeai/matgl"
+      },
+      "licenseUrl": "https://raw.githubusercontent.com/materialyzeai/matgl/main/LICENSE",
+      "lastVerified": "2026-10-14",
+      "en": {
+        "entityTypeLabel": "Software",
+        "curationTierLabel": "Verified | read the notes",
+        "categoryLabel": "Machine learning and data",
+        "dataAccessLabel": "Not applicable (software)",
+        "sourceStatus": "Only the official README and LICENSE were verified; MOF applicability was not independently verified.",
+        "description": "A graph deep learning library for materials science that provides universal interatomic potentials such as M3GNet and pre-trained models.",
+        "capabilities": [
+          "M3GNet and other universal potentials",
+          "Pre-trained models",
+          "Materials property prediction"
+        ],
+        "license": "BSD 3-Clause License (code)",
+        "maintenanceStatus": "Last-push date not checked (only the README and LICENSE were read).",
+        "mofApplicability": "Not MOF-specific. The README does not mention MOFs; validate it yourself before using it on MOFs and see third-party studies for MOF performance.",
+        "supplementaryResources": [],
+        "primarySourceLabel": "MatGL (M3GNet) official repository",
+        "problemsSolved": [
+          "Provides several graph neural network materials models behind one interface."
+        ],
+        "keyFeatures": [
+          "The README asks users of pre-trained models to cite each model original paper"
+        ],
+        "trainingUse": "Not a training database; it is a model or library, and the terms of its training data and pre-trained weights were not checked one by one.",
+        "caveats": [
+          "The repository now lives at materialyzeai/matgl; the older materialsvirtuallab/matgl address still served the README, and whether it redirects was not checked.",
+          "MOF applicability of the original M3GNet paper was not checked."
+        ]
+      },
+      "zh": {
+        "entityTypeLabel": "軟體",
+        "curationTierLabel": "已核實｜須閱讀註記",
+        "categoryLabel": "機器學習與資料",
+        "dataAccessLabel": "不適用（軟體）",
+        "sourceStatus": "僅核實官方 README 與 LICENSE；MOF 適用性未獨立驗證。",
+        "description": "材料圖深度學習函式庫，提供 M3GNet 等通用原子間勢與預訓練模型。",
+        "capabilities": [
+          "M3GNet 等通用勢",
+          "預訓練模型",
+          "材料性質預測"
+        ],
+        "license": "BSD 3-Clause License（程式碼）",
+        "maintenanceStatus": "未核對最後推送日期（本次查核只讀 README 與 LICENSE）。",
+        "mofApplicability": "非 MOF 專用。README 未提到 MOF；用於 MOF 前須自行驗證，MOF 相關表現請見第三方研究。",
+        "supplementaryResources": [],
+        "primarySourceLabel": "MatGL (M3GNet) 官方程式庫",
+        "problemsSolved": [
+          "以統一介面提供多種圖神經網路材料模型。"
+        ],
+        "keyFeatures": [
+          "README 要求使用預訓練模型時引用各模型的原論文"
+        ],
+        "trainingUse": "非訓練資料庫；為模型／程式庫，訓練資料與預訓練權重的條款未逐一核對。",
+        "caveats": [
+          "程式庫位址現為 materialyzeai/matgl；舊的 materialsvirtuallab/matgl 位址仍能取得 README，是否為轉址未確認。",
+          "M3GNet 原論文的 MOF 適用性未核對。"
         ]
       }
     },
