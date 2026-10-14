@@ -1,4 +1,4 @@
-import { writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import {
   CATEGORY_LABELS,
   CURATION_TIER_LABELS,
@@ -12,7 +12,14 @@ import {
   ENTITY_TYPE_LABELS_EN,
   RESOURCE_TYPE_EN,
 } from '../client/src/const.en';
-import { ALL_PROJECTS, ALL_PROJECTS_EN } from '../client/src/catalog';
+import { ALL_PROJECTS, ALL_PROJECTS_EN, validateCatalog } from '../client/src/catalog';
+
+// Validate the paired records first: the mapping below indexes English lists by the Chinese index.
+const problems = validateCatalog();
+if (problems.length > 0) {
+  console.error(problems.join('\n'));
+  process.exit(1);
+}
 
 const resources = ALL_PROJECTS.map((p) => {
   const en = ALL_PROJECTS_EN[p.id];
@@ -105,5 +112,17 @@ const catalog = {
   resources,
 };
 
-writeFileSync(new URL('../data/mof-catalog.json', import.meta.url), JSON.stringify(catalog, null, 2) + '\n', 'utf-8');
-console.log(`wrote data/mof-catalog.json with ${resources.length} resources`);
+const target = new URL('../data/mof-catalog.json', import.meta.url);
+const output = JSON.stringify(catalog, null, 2) + '\n';
+
+if (process.argv.includes('--check')) {
+  const committed = readFileSync(target, 'utf-8').replace(/\r\n/g, '\n');
+  if (committed !== output) {
+    console.error('data/mof-catalog.json is out of date; run pnpm catalog and commit the result.');
+    process.exit(1);
+  }
+  console.log(`data/mof-catalog.json matches the entries (${resources.length} resources)`);
+} else {
+  writeFileSync(target, output, 'utf-8');
+  console.log(`wrote data/mof-catalog.json with ${resources.length} resources`);
+}
