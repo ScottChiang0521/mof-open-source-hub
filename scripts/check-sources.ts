@@ -118,17 +118,35 @@ async function request(url: string, wantBody: boolean) {
       } catch {
         /* keep empty */
       }
-      return { status: res.status, text, host, error: undefined as string | undefined };
+      const ra = Number(res.headers.get('retry-after'));
+      const retryAfterMs = Number.isFinite(ra) && ra > 0 ? ra * 1000 : 0;
+      return { status: res.status, text, host, retryAfterMs, error: undefined as string | undefined };
     } catch (e) {
       if (attempt === 1) {
         const msg = e instanceof Error ? (e.cause instanceof Error ? e.cause.message : e.message) : String(e);
-        return { status: 0, text: undefined, host: '', error: msg };
+        return { status: 0, text: undefined, host: '', retryAfterMs: 0, error: msg };
       }
     } finally {
       clearTimeout(timer);
     }
   }
-  return { status: 0, text: undefined, host: '', error: 'unknown' };
+  return { status: 0, text: undefined, host: '', retryAfterMs: 0, error: 'unknown' };
+}
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * GET against a registry API. The first real run sent four lookups at once and Crossref
+ * answered 429 to 40 of 52, so: retry a 429 after the time the server asks for (or an
+ * increasing pause), at most three times.
+ */
+async function registryGet(url: string) {
+  let res = await request(url, true);
+  for (let attempt = 0; res.status === 429 && attempt < 3; attempt++) {
+    await sleep(Math.min(res.retryAfterMs || 2000 * 2 ** attempt, 30_000));
+    res = await request(url, true);
+  }
+  return res;
 }
 
 /** Which license families the text looks like. Keyword-level on purpose. */
@@ -198,7 +216,7 @@ type DoiResult =
 
 async function lookupDoi(doi: string): Promise<DoiResult> {
   const path = doi.split('/').map(encodeURIComponent).join('/');
-  const cr = await request(CROSSREF + path, true);
+  const cr = await registryGet(CROSSREF + path);
   if (cr.status === 200 && cr.text) {
     try {
       const title = JSON.parse(cr.text)?.message?.title?.[0];
@@ -209,7 +227,7 @@ async function lookupDoi(doi: string): Promise<DoiResult> {
   }
   if (cr.status !== 404) return { state: 'unknown', why: `Crossref ${cr.status || cr.error}` };
   // Not in Crossref: arXiv, Zenodo, Figshare and others register with DataCite.
-  const dc = await request(DATACITE + path, true);
+  const dc = await registryGet(DATACITE + path);
   if (dc.status === 200 && dc.text) {
     try {
       const title = JSON.parse(dc.text)?.data?.attributes?.titles?.[0]?.title;
@@ -341,7 +359,12 @@ async function main() {
       for (const u of allUrls.keys()) if (allUrls.get(u)!.includes(r.id)) addDoi(doiFromUrl(u), r.id);
     }
     doiTotal = dois.size;
-    const looked = await pool([...dois.entries()], 4, async ([doi, v]) => ({ doi, ...v, res: await lookupDoi(doi) }));
+    // One at a time with a pause: Crossref's public pool allows roughly one concurrent request.
+    const looked = await pool([...dois.entries()], 1, async ([doi, v]) => {
+      const res = await lookupDoi(doi);
+      await sleep(250);
+      return { doi, ...v, res };
+    });
     for (const { doi, who, title, res } of looked) {
       const label = `${[...who].join(', ')} — ${doi}`;
       if (res.state === 'missing') {
