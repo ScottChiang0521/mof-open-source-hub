@@ -28,12 +28,12 @@ Compare the tools usable for MOF gas adsorption, DAC, and photo-/electrocatalysi
 
 ### Scope and curation levels
 
-This version lists **41 resources** (29 software, 9 databases, 3 portals) in two curation levels:
+This version lists **45 resources** (33 software, 9 databases, 3 portals) in two curation levels:
 
 | Curation status | Entries | Meaning |
 |---|---:|---|
 | Verified, ready to display | 5 | Official source, core use, and the main license / data access can be matched unambiguously. |
-| Verified, read the notes | 36 | Usable for research, but with version, source, restricted upstream data, unconfirmed license, model-applicability, or maintenance limits. |
+| Verified, read the notes | 40 | Usable for research, but with version, source, restricted upstream data, unconfirmed license, model-applicability, or maintenance limits. |
 
 Contents by theme:
 
@@ -112,7 +112,7 @@ The site code is under the MIT license set in `package.json`; **the listed third
 
 ## Unverified leads
 
-`data/mof-leads.json` lists MOF-related sources known only from search-result listings (a photocatalysis design-space paper with claimed code and a Zenodo record, the uMOF preprint, a MOF-5 CO2 photoreduction preprint, MACE-MP-MOF0, and a direct-air-capture force-field benchmark), plus a list of general materials tools that were checked and not added because their own READMEs are not MOF-specific. They are shown on the site under "Unverified leads", are **not** in `data/mof-catalog.json`, and carry no license or data-access claim. A lead moves into the catalog only after its primary source has been opened and checked.
+`data/mof-leads.json` lists MOF-related sources known only from search-result listings (a photocatalysis design-space paper with claimed code and a Zenodo record, the uMOF preprint, a MOF-5 CO2 photoreduction preprint, MACE-MP-MOF0, and a direct-air-capture force-field benchmark). They are shown on the site under "Unverified leads", are **not** in `data/mof-catalog.json`, and carry no license or data-access claim. A lead moves into the catalog only after its primary source has been opened and checked. General materials tools named in the Talk1 extract (MatterGen, MACE, CHGNet, MatGL) are catalogued with an explicit "not MOF-specific" caveat.
 
 ## 繁體中文
 
@@ -136,12 +136,12 @@ The site code is under the MIT license set in `package.json`; **the listed third
 
 ### 核實範圍
 
-本版本收錄 **41 項**資源（29 項軟體、9 項資料庫、3 項資料入口），分為兩個策展層級：
+本版本收錄 **45 項**資源（33 項軟體、9 項資料庫、3 項資料入口），分為兩個策展層級：
 
 | 策展狀態 | 項目 | 意義 |
 |---|---:|---|
 | 已核實，可立即展示 | 5 | 官方來源、核心用途與主要授權／資料存取可明確對應。 |
-| 已核實，須閱讀註記 | 36 | 可供研究使用，但有版本、來源、受限上游資料、授權未確認、模型適用範圍或維護狀態等必要限制。 |
+| 已核實，須閱讀註記 | 40 | 可供研究使用，但有版本、來源、受限上游資料、授權未確認、模型適用範圍或維護狀態等必要限制。 |
 
 依主題的收錄內容：
 

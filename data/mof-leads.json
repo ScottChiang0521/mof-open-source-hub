@@ -81,31 +81,11 @@
     }
   ],
   "checkedNotAdded": {
-    "reason": "Named in the Talk1 slide extract, but their own primary READMEs describe general (non-MOF) scope, so they do not meet the MOF-related bar for the catalog. Checked 2026-10-14 from the repositories' README and LICENSE files.",
+    "reason": "Named in the Talk1 slide extract and checked against the repository's own files on 2026-10-14. MatterGen, MACE, CHGNet and MatGL were added to the catalog with 'not MOF-specific' caveats. The item below was not, because only the fairchem README (not the OMat24 dataset page and licence) was read.",
     "items": [
       {
-        "name": "MatterGen (microsoft/mattergen)",
-        "note": "README: generative model for inorganic materials across the periodic table; MIT licence text present.",
-        "url": "https://github.com/microsoft/mattergen"
-      },
-      {
-        "name": "MACE / MACE-MP-0 (ACEsuit/mace)",
-        "note": "README has no MOF mention; MIT licence text present. MOF use is documented only by third-party studies (see leads).",
-        "url": "https://github.com/ACEsuit/mace"
-      },
-      {
-        "name": "CHGNet (CederGroupHub/chgnet)",
-        "note": "README has no MOF mention; BSD-style licence from Berkeley Lab.",
-        "url": "https://github.com/CederGroupHub/chgnet"
-      },
-      {
-        "name": "M3GNet via MatGL (materialsvirtuallab/matgl)",
-        "note": "README has no MOF mention; BSD 3-Clause.",
-        "url": "https://github.com/materialsvirtuallab/matgl"
-      },
-      {
         "name": "OMat24 (facebookresearch/fairchem)",
-        "note": "Inorganic bulk materials dataset. fairchem's README does mention MOFs, which is why ODAC25 and OC20 are already in the catalog.",
+        "note": "Inorganic bulk materials dataset used to train fairchem models; the OMat24 dataset page and licence were not opened. fairchem's README does mention MOFs, which is why ODAC25 and OC20 are in the catalog.",
         "url": "https://github.com/facebookresearch/fairchem"
       }
     ],
