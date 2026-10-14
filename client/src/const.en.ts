@@ -17,7 +17,7 @@ export const CATEGORY_LABELS_EN: Record<'gas' | 'carbon' | 'photo' | 'structure'
 
 export const ENTITY_TYPE_LABELS_EN: Record<'software' | 'database' | 'portal', string> = {
   software: 'Open-source software',
-  database: 'Open database',
+  database: 'Database',
   portal: 'Data retrieval portal',
 };
 
@@ -279,8 +279,8 @@ export const MOF_PROJECTS_EN: Record<string, ProjectEn> = {
       { label: 'CoRE MOF 2025 Dataset', access: 'Public, CC BY 4.0', dataType: 'Public SI CIFs, JSON metadata, screening lists, and error flags' },
       { label: 'Matter Supplementary Information', access: 'Public download', dataType: 'Supplementary PDF' },
       { label: 'Matter Supplementary Data S1', access: 'Public download', dataType: 'Diversity analysis of 2019 / 2024 CoRE MOF' },
-      { label: 'CoRE MOF 2024 Dataset (v1.1)', access: 'Open, CC BY 4.0; CSD-derived parts need a separate CCDC licence', dataType: '2024 SI CIFs, ASR/FSR/ION lists and property tables (8,300 SI structures)' },
-      { label: 'CoRE MOF 2019 Dataset (v1.1.4)', access: 'Open, CC BY 4.0', dataType: '2019 ASR public 12,020 / FSR public 7,061 CIF archives and lists; companion paper doi 10.1021/acs.jced.9b00835' },
+      { label: 'CoRE MOF 2024 Dataset (v1.1)', access: 'Open, CC BY 4.0; CSD-derived parts need a separate CCDC licence', dataType: '2024 SI CIFs, ASR/FSR/ION lists and property tables (8,300 SI structures); record checked 2026-10-14' },
+      { label: 'CoRE MOF 2019 Dataset (v1.1.4)', access: 'Open, CC BY 4.0', dataType: '2019 ASR public 12,020 / FSR public 7,061 CIF archives and lists; companion paper doi 10.1021/acs.jced.9b00835; record checked 2026-10-14' },
     ],
     primarySourceLabel: 'CoRE MOF DB official website',
     problemsSolved: ['Organizes experimental structures by computational usability and cleaning status, reducing the uncertainty of using raw CIFs directly.', 'Provides structural, geometric, and predicted properties to support material–process screening and ML.'],

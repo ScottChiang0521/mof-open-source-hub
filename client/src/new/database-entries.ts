@@ -148,7 +148,7 @@ export const NEW_DATABASES: MOFProject[] = [
     licenseUrl: 'https://archive.materialscloud.org/information',
     dataAccess: 'mixed',
     dataAccessLabel: DATA_ACCESS_LABELS.mixed,
-    maintenanceStatus: '政策載明紀錄至少保存至存入後 10 年；下列紀錄為 2021、2022 年的 v1。',
+    maintenanceStatus: '政策載明紀錄於 repository 存續期間內持續保存，且至少保存至存入後 10 年；下列紀錄為 2021、2022 年的 v1。',
     mofApplicability: '部分相關。平台涵蓋計算材料科學，MOF 資料需逐筆搜尋；本次僅核實下列兩筆。',
     paper: {
       title: 'Materials Cloud, a platform for open computational science',

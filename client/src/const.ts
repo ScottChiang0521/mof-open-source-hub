@@ -58,7 +58,7 @@ export const CATEGORY_LABELS: Record<MOFCategory, string> = {
 
 export const ENTITY_TYPE_LABELS: Record<EntityType, string> = {
   software: '開源軟體',
-  database: '開放資料庫',
+  database: '資料庫',
   portal: '資料檢索入口',
 };
 
@@ -500,8 +500,8 @@ export const MOF_PROJECTS: MOFProject[] = [
       { label: 'CoRE MOF 2025 Dataset', resourceType: '資料保存庫', url: 'https://zenodo.org/records/15621349', access: '公開，CC BY 4.0', dataType: '公開 SI CIF、JSON metadata、篩選清單與錯誤旗標' },
       { label: 'Matter Supplementary Information', resourceType: '出版者 SI', url: 'https://www.cell.com/cms/10.1016/j.matt.2025.102140/attachment/4b4a57b1-4afd-447f-a94f-456945fd2e58/mmc1.pdf', access: '公開下載', dataType: '補充 PDF' },
       { label: 'Matter Supplementary Data S1', resourceType: '出版者 SI', url: 'https://www.cell.com/cms/10.1016/j.matt.2025.102140/attachment/bd29a0a4-a55e-4250-b35f-49b247619168/mmc2.zip', access: '公開下載', dataType: '2019／2024 CoRE MOF 多樣性分析' },
-      { label: 'CoRE MOF 2024 Dataset（v1.1）', resourceType: '資料保存庫', url: 'https://zenodo.org/records/15055758', access: '公開，CC BY 4.0；CSD 衍生部分另需 CCDC 授權', dataType: '2024 版 SI CIF、ASR／FSR／ION 清單與性質表（SI 8,300 筆）' },
-      { label: 'CoRE MOF 2019 Dataset（v1.1.4）', resourceType: '資料保存庫', url: 'https://zenodo.org/records/7691378', access: '公開，CC BY 4.0', dataType: '2019 版 ASR public 12,020／FSR public 7,061 CIF 壓縮檔與清單；對應論文 doi 10.1021/acs.jced.9b00835' },
+      { label: 'CoRE MOF 2024 Dataset（v1.1）', resourceType: '資料保存庫', url: 'https://zenodo.org/records/15055758', access: '公開，CC BY 4.0；CSD 衍生部分另需 CCDC 授權', dataType: '2024 版 SI CIF、ASR／FSR／ION 清單與性質表（SI 8,300 筆）；此紀錄於 2026-10-14 核實' },
+      { label: 'CoRE MOF 2019 Dataset（v1.1.4）', resourceType: '資料保存庫', url: 'https://zenodo.org/records/7691378', access: '公開，CC BY 4.0', dataType: '2019 版 ASR public 12,020／FSR public 7,061 CIF 壓縮檔與清單；對應論文 doi 10.1021/acs.jced.9b00835；此紀錄於 2026-10-14 核實' },
     ],
     primarySource: { label: 'CoRE MOF DB 官方網站', url: 'https://mof-db.pusan.ac.kr' },
     problemsSolved: ['將實驗結構按計算可用性與清理狀態整理，減少直接使用原始 CIF 的不確定性。', '提供結構、幾何與預測性質，支援材料—製程篩選與 ML。'],
