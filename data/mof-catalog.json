@@ -1708,7 +1708,7 @@
           "CC BY 4.0 explicitly covers only the Zenodo public SI and is not equivalent to the full CoRE MOF DB.",
           "Unmodified CSD CIFs in the full database require a CCDC license.",
           "Versions / cutoff points and entry counts differ, and ASR / FSR may overlap; deduplicate and fix the screening rules.",
-          "The official website https://mof-db.pusan.ac.kr did not respond on 2026-10-14 (connection timeouts from GitHub's servers in three scheduled-check runs, and the maintainer's browser could not open it either). This may be temporary. The Zenodo records and the Matter paper listed under supplementary resources remain the verified way to obtain the data."
+          "The official website https://mof-db.pusan.ac.kr timed out on 2026-10-14 from both GitHub's servers (three runs) and the environment used for this review, but the maintainer opened its home page in a browser on 2026-10-19. The page says it holds more than 40,000 MOFs reported up to 31 December 2023, links the 2025 Matter paper, a Zenodo SI dataset and the CSD datasets, and its footer states CC-BY-4.0. So the site is back or only reachable from some networks, and the monthly automatic check may still warn about timeouts. Only the home page was confirmed; the Search, API and other pages were not tested."
         ]
       },
       "zh": {
@@ -1780,7 +1780,7 @@
           "CC BY 4.0 只明確覆蓋 Zenodo public SI，不等同完整 CoRE MOF DB。",
           "完整庫中的未修改 CSD CIF 需 CCDC 授權。",
           "版本／截點與條目數不同，ASR／FSR 可能重疊，需去重並固定篩選規則。",
-          "官方網站 https://mof-db.pusan.ac.kr 於 2026-10-14 無回應（GitHub 伺服器的三次自動檢查皆連線逾時，維護者的瀏覽器也打不開），可能只是暫時性。目前可驗證的取得方式是補充資源中的 Zenodo 資料保存庫與 Matter 論文。"
+          "官方網站 https://mof-db.pusan.ac.kr 於 2026-10-14 對 GitHub 伺服器與本站的核對環境皆連線逾時（三次），但維護者於 2026-10-19 以瀏覽器成功開啟首頁（內容為「超過 40,000 個 MOF、截至 2023 年 12 月 31 日」，並列出 Matter 2025 論文、Zenodo SI 與 CSD 資料集連結；頁尾註明 CC-BY-4.0）。可見網站已恢復或只對部分網路可達，每月自動檢查仍可能對它發出逾時警告。本次只確認首頁，未逐一測試 Search、API 等頁面。"
         ]
       }
     },

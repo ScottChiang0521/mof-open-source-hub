@@ -345,7 +345,7 @@ This file has two parts. **Part A is English; Part B (繁體中文) follows afte
 
 | Category | Traceable URL | Use and boundaries |
 |---|---|---|
-| General official database website | <https://mof-db.pusan.ac.kr> [99] | Entry point to the full-database classification, scope, and data sources. **Did not respond on 2026-10-14** (connection timeouts from GitHub's servers in three scheduled-check runs; the maintainer's browser could not open it either). Possibly temporary; the Zenodo records below are the verified route to the data. |
+| General official database website | <https://mof-db.pusan.ac.kr> [99] | Entry point to the full-database classification, scope, and data sources. Timed out on 2026-10-14 from GitHub's servers and the review environment; **the maintainer opened the home page in a browser on 2026-10-19** (it states more than 40,000 MOFs up to 31 December 2023 and CC-BY-4.0 in the footer). Only the home page was confirmed; the monthly check may still warn about timeouts from GitHub's network. The Zenodo records below remain the verified route to the data. |
 | Data repository / versioned public SI | <https://zenodo.org/records/15621349> [100] | 2025 public SI, CC BY 4.0, files, and versions. |
 | Original / related paper (publisher) | <https://www.cell.com/matter/fulltext/S2590-2385(25)00183-3> [101] | CoRE MOF DB paper and supplementary material entry point. |
 | Bibliographic metadata | <https://api.crossref.org/works/10.1016/j.matt.2025.102140> [102] | Check of DOI/title. |
@@ -1429,7 +1429,7 @@ If a new verification result later confirms the license, availability, and MOF s
 
 | 類別 | 可追溯 URL | 用途與界線 |
 |---|---|---|
-| 一般官方資料庫網站 | <https://mof-db.pusan.ac.kr> [99] | 全庫分類、範圍與資料來源入口。**2026-10-14 無回應**（GitHub 伺服器的三次自動檢查皆連線逾時，維護者的瀏覽器也打不開），可能只是暫時性；目前可驗證的取得方式是下列 Zenodo 資料保存庫。 |
+| 一般官方資料庫網站 | <https://mof-db.pusan.ac.kr> [99] | 全庫分類、範圍與資料來源入口。2026-10-14 對 GitHub 伺服器與核對環境連線逾時；**維護者於 2026-10-19 以瀏覽器成功開啟首頁**（頁面稱超過 40,000 個 MOF、截至 2023 年 12 月 31 日，頁尾註明 CC-BY-4.0）。只確認首頁；每月自動檢查仍可能因 GitHub 網路對它逾時而警告。可驗證的資料取得方式仍是下列 Zenodo 資料保存庫。 |
 | 資料保存庫／版本化 public SI | <https://zenodo.org/records/15621349> [100] | 2025 公開 SI、CC BY 4.0、檔案與版本。 |
 | 原始／關聯論文（出版者） | <https://www.cell.com/matter/fulltext/S2590-2385(25)00183-3> [101] | CoRE MOF DB 論文與補充資料入口。 |
 | 書目中繼資料 | <https://api.crossref.org/works/10.1016/j.matt.2025.102140> [102] | DOI／題名核對。 |
